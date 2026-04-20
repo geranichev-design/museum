@@ -125,7 +125,7 @@ function Group8() {
 
 function Frame4() {
   return (
-    <div className="h-[185.021px] relative shrink-0 w-[289px]">
+    <div className="h-[185.021px] max-w-[289px] relative shrink-0 w-full self-center">
       <div className="absolute flex items-center justify-center left-[167.64px] size-[98.614px] top-[53.41px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "0" } as React.CSSProperties}>
         <div className="flex-none rotate-[34.22deg]">
           <div className="bg-[#dfbe22] size-[70.982px]" />
@@ -150,9 +150,9 @@ function Frame6() {
 function Frame8() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 text-[16px] text-white w-full">
-      <p className="font-['Montserrat',sans-serif] font-bold leading-[normal] min-w-full relative shrink-0 w-[min-content]">Історія ЧАЕС починається із Постанови Ради Міністрів СРСР від 29 вересня 1966 року про введення в дію енергетичних потужностей у розмірі 11,9 млн кВт. Частину цієї потужності – 8 млн кВт – мали генерувати атомні електростанції.</p>
-      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 w-[min-content]">{`У південній частині Об'єднаної енергетичної системи СРСР планувалося будівництво атомної станції, яка повинна забезпечити електроенергією Центральний енергетичний район – 27 областей Української РСР і Ростовську область із населенням 53 мільйони осіб.`}</p>
-      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] relative shrink-0 w-[569px]">Наказом Міністра енергетики і електрифікації СРСР № 297 від 11 грудня 1969 року було організовано Дирекцію АЕС, що будується, з місцезнаходженням у селі Копачі Чорнобильського району Київської області з підпорядкуванням її «Головатоменерго». Проммайданчик Чорнобильської АЕС розташовувався у східній частині українсько-білоруського Полісся за 110 км на північний схід від Києва і 15 км на північний захід від міста Чорнобиля Київської області.</p>
+      <p className="font-['Montserrat',sans-serif] font-bold leading-[normal] min-w-0 relative shrink-0 w-full">Історія ЧАЕС починається із Постанови Ради Міністрів СРСР від 29 вересня 1966 року про введення в дію енергетичних потужностей у розмірі 11,9 млн кВт. Частину цієї потужності – 8 млн кВт – мали генерувати атомні електростанції.</p>
+      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-0 relative shrink-0 w-full">{`У південній частині Об'єднаної енергетичної системи СРСР планувалося будівництво атомної станції, яка повинна забезпечити електроенергією Центральний енергетичний район – 27 областей Української РСР і Ростовську область із населенням 53 мільйони осіб.`}</p>
+      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-0 relative shrink-0 w-full">Наказом Міністра енергетики і електрифікації СРСР № 297 від 11 грудня 1969 року було організовано Дирекцію АЕС, що будується, з місцезнаходженням у селі Копачі Чорнобильського району Київської області з підпорядкуванням її «Головатоменерго». Проммайданчик Чорнобильської АЕС розташовувався у східній частині українсько-білоруського Полісся за 110 км на північний схід від Києва і 15 км на північний захід від міста Чорнобиля Київської області.</p>
     </div>
   );
 }
@@ -168,7 +168,7 @@ function Frame5() {
 
 function Frame10() {
   return (
-    <div className="content-stretch flex flex-col gap-[30px] items-start justify-center relative shrink-0">
+    <div className="content-stretch flex flex-col gap-[30px] items-start justify-center max-w-full relative shrink-0 w-full">
       <Frame4 />
       <Frame5 />
     </div>
@@ -179,7 +179,7 @@ function Frame11() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
       <Frame10 />
-      <div className="font-['Montserrat',sans-serif] font-normal leading-[0] min-w-full relative shrink-0 text-[16px] text-white w-[min-content] whitespace-pre-wrap">
+      <div className="font-['Montserrat',sans-serif] font-normal leading-[0] min-w-0 relative shrink-0 text-[16px] text-white w-full whitespace-pre-wrap">
         <p className="leading-[22px] mb-0">{`15 серпня 1972 року у фундамент головного корпусу було закладено перший кубометр бетону. А 26 вересня 1977 року включенням у мережу турбогенератора № 2 енергоблок №1 ЧАЕС був введений у дію. На території України з'явилася перша атомна електростанція.`}</p>
         <p className="leading-[22px] mb-0">Останній енергоблок Чорнобильської АЕС – енергоблок №4 – виведений на проектну потужність 1000 МВт 28 березня 1984 року.</p>
         <p className="leading-[22px]">{`У квітні 1986 року в експлуатації знаходилось чотири енергоблоки потужністю  1000 Мвт кожний, у структурних підрозділах ЧАЕС  на той час працювало близько 6 тис осіб.`}</p>

@@ -156,7 +156,7 @@ function Frame10() {
   return (
     <div className="content-stretch flex gap-[16px] items-start relative shrink-0 w-full">
       <div className="bg-[#dfbe22] shrink-0 size-[34px]" />
-      <p className="font-['Oswald',sans-serif] font-medium leading-[34px] relative shrink-0 text-[#f5f3ea] text-[32px] uppercase whitespace-nowrap">{`Історія події `}</p>
+      <p className="font-['Oswald',sans-serif] font-medium leading-[34px] relative shrink-0 text-[#f5f3ea] text-[32px] uppercase whitespace-nowrap">{`Історія катастрофи `}</p>
     </div>
   );
 }

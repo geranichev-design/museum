@@ -167,7 +167,7 @@ function Frame16() {
   return (
     <div className="content-stretch flex gap-[16px] items-start relative shrink-0 w-full">
       <div className="bg-[#dfbe22] shrink-0 size-[32px]" />
-      <p className="font-['Oswald',sans-serif] font-medium leading-[34px] relative shrink-0 text-[#f5f3ea] text-[32px] uppercase whitespace-nowrap"><T uk="Історія події" en="History of the event" /></p>
+      <p className="font-['Oswald',sans-serif] font-medium leading-[34px] relative shrink-0 text-[#f5f3ea] text-[32px] uppercase whitespace-nowrap"><T uk="Історія катастрофи" en="History of the disaster" /></p>
     </div>
   );
 }

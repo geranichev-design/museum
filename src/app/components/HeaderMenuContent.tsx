@@ -18,7 +18,7 @@ export default function HeaderMenuContent() {
             <DesktopNavItem to="/" preset={pathname === "/"} size="lg">
               {uk ? 'Головна' : 'Home'}
             </DesktopNavItem>
-            <DesktopNavItem to="/#history" size="sm">{uk ? 'Історія події' : 'History of the event'}</DesktopNavItem>
+            <DesktopNavItem to="/#history" size="sm">{uk ? 'Історія катастрофи' : 'History of the disaster'}</DesktopNavItem>
             <DesktopNavItem to="/#tours" size="sm">{uk ? 'Тематичні екскурсії' : 'Thematic tours'}</DesktopNavItem>
             <DesktopNavItem to="/#spaces" size="sm">{uk ? 'Простори музею' : 'Museum spaces'}</DesktopNavItem>
             <DesktopNavItem to="/#events" size="sm">{uk ? 'Події' : 'Events'}</DesktopNavItem>

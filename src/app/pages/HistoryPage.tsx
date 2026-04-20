@@ -131,7 +131,7 @@ export default function HistoryPage() {
         }
       `}</style>
       <Header />
-      <div className="flex-1">
+      <div className="flex-1 overflow-x-hidden bg-black pt-[89px] pb-[40px] md:pt-[105px] md:pb-[72px]">
         {isMobile ? <MobileHistoryBase /> : <DesktopHistoryBase />}
       </div>
       <Footer />
