@@ -17,7 +17,7 @@ function EventCard({ event, onClick }: { event: EventRecord; onClick: () => void
   return (
     <div className="flex flex-col gap-[16px] cursor-pointer group w-full" onClick={onClick}>
       <div className="aspect-square bg-[#d9d9d9] flex items-center justify-center relative overflow-hidden">
-        <div aria-hidden="true" className="absolute border-[8px] border-black inset-0 pointer-events-none z-10" />
+        <div aria-hidden="true" className="absolute border-[8px] border-black inset-0 pointer-events-none" />
         <div className="w-[50%] h-[50%]">
           <AtomIcon />
         </div>

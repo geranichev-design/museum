@@ -58,7 +58,7 @@ function RelatedCard({ tags, title, date, onClick }: { tags: string[]; title: st
   return (
     <div className="flex flex-col gap-[12px] cursor-pointer group" onClick={onClick}>
       <div className="aspect-square bg-[#d9d9d9] flex items-center justify-center relative overflow-hidden">
-        <div aria-hidden="true" className="absolute border-[6px] border-black inset-0 pointer-events-none z-10" />
+        <div aria-hidden="true" className="absolute border-[6px] border-black inset-0 pointer-events-none" />
         <div className="w-[55%] h-[55%]">
           <AtomIcon />
         </div>
@@ -99,12 +99,17 @@ export default function EventDetailComponent({
         {/* Back link */}
         <button
           onClick={onBack}
-          className="flex items-center gap-[6px] font-['Montserrat',sans-serif] text-[16px] text-black hover:underline self-start"
+          className="flex items-center gap-[8px] font-['Oswald',sans-serif] font-medium text-[28px] uppercase text-black hover:opacity-70 self-start leading-none"
         >
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M11 4L6 9L11 14" stroke="black" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          <span>Назад</span>
+          <span className="flex items-center" style={{ letterSpacing: "-0.1em" }}>
+            <svg width="22" height="28" viewBox="0 0 22 28" fill="none">
+              <path d="M16 4L6 14L16 24" stroke="black" strokeWidth="3.5" strokeLinecap="square" strokeLinejoin="miter" />
+            </svg>
+            <svg width="22" height="28" viewBox="0 0 22 28" fill="none" className="-ml-[6px]">
+              <path d="M16 4L6 14L16 24" stroke="black" strokeWidth="3.5" strokeLinecap="square" strokeLinejoin="miter" />
+            </svg>
+          </span>
+          <span>Події</span>
         </button>
 
         {/* Main layout: gallery + details */}

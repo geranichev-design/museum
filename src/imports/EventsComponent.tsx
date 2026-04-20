@@ -32,7 +32,7 @@ function EventCard({ tags, title, date, onClick }: { tags: string[]; title: stri
   return (
     <div className="flex flex-col gap-[12px] cursor-pointer group" onClick={onClick}>
       <div className="aspect-square bg-[#d9d9d9] flex items-center justify-center relative overflow-hidden">
-        <div aria-hidden="true" className="absolute border-[6px] border-black inset-0 pointer-events-none z-10" />
+        <div aria-hidden="true" className="absolute border-[6px] border-black inset-0 pointer-events-none" />
         <div className="w-[55%] h-[55%]">
           <AtomIcon />
         </div>
