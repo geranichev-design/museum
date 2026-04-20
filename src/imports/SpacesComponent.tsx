@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type ReactElement } from "react";
 import { useSearchParams } from "react-router";
 import { ImageLightbox } from "../app/components/ui/ImageLightbox";
 import { PageHero } from "../app/components/PageHero";
@@ -89,7 +89,7 @@ type FeatureIcon = "monitor" | "star" | "person" | "briefcase" | "camera" | "cof
 interface Feature { icon: FeatureIcon; text: string }
 interface Space { name: string; description: string; features: Feature[] }
 
-const ICON_MAP: Record<FeatureIcon, JSX.Element> = {
+const ICON_MAP: Record<FeatureIcon, ReactElement> = {
   monitor: <IconMonitor />,
   star: <IconStar />,
   person: <IconPerson />,

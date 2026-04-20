@@ -1202,7 +1202,7 @@ function Card1() {
           <p className="font-['Oswald',sans-serif] font-medium h-[20px] leading-[24px] relative shrink-0 text-[20px] uppercase w-[489px]">Надсилайте запит на адресу</p>
           <p className="font-['Montserrat',sans-serif] font-normal leading-[0] min-w-full relative shrink-0 text-[0px] w-[min-content]">
             <a className="cursor-pointer decoration-solid leading-[normal] text-[16px] underline" href="mailto:info@chornobyl-museum.kyiv.ua" target="_blank">
-              <span className="decoration-solid underline" href="mailto:info@chornobyl-museum.kyiv.ua" target="_blank">
+              <span className="decoration-solid underline">
                 info@chornobyl-museum.kyiv.ua
               </span>
             </a>
