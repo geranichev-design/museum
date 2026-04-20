@@ -65,8 +65,8 @@ export function HomeEventsSection() {
 
           {/* Cards grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[24px] md:gap-[32px] w-full">
-            {events.map((event, i) => (
-              <EventCard key={i} event={event} onClick={() => navigate("/events")} />
+            {events.map((event) => (
+              <EventCard key={event.id} event={event} onClick={() => navigate(`/events/${event.id}`)} />
             ))}
           </div>
         </div>

@@ -3,6 +3,8 @@ import { useNavigate, useSearchParams } from "react-router";
 import { PageHero } from "../app/components/PageHero";
 import { MuseumSelect } from "../app/components/ui/MuseumSelect";
 import { MuseumInput } from "../app/components/ui/MuseumInput";
+import { EVENTS_DATA, TAG_STYLES } from "../data/eventsData";
+import { MuseumButton } from "../app/components/ui/MuseumButton";
 
 const EVENT_TYPE_OPTIONS = [
   { value: "Виставки", label: "Виставки" },
@@ -11,11 +13,7 @@ const EVENT_TYPE_OPTIONS = [
   { value: "Лекції", label: "Лекції" },
   { value: "Дитячі програми", label: "Дитячі програми" },
 ];
-
-import { EVENTS_DATA, TAG_STYLES } from "../data/eventsData";
-import { MuseumButton } from "../app/components/ui/MuseumButton";
-
-const PAGE_NUMBERS: (number | null)[] = [1, 2, 3, null, 13, 14, 15];
+const EVENTS_PER_PAGE = 8;
 
 function AtomIcon() {
   return (
@@ -59,14 +57,42 @@ function EventCard({ tags, title, date, onClick }: { tags: string[]; title: stri
 
 export default function EventsComponent({ onBuyTicket }: { onBuyTicket?: () => void }) {
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [selectedType, setSelectedType] = useState(searchParams.get("type") ?? "");
-  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedDate, setSelectedDate] = useState(searchParams.get("date") ?? "");
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     setSelectedType(searchParams.get("type") ?? "");
+    setSelectedDate(searchParams.get("date") ?? "");
+    setCurrentPage(1);
   }, [searchParams]);
+
+  const filteredEvents = EVENTS_DATA.filter((event) => {
+    const matchesType = !selectedType || event.tags.includes(selectedType) || event.category === selectedType;
+    const matchesDate = !selectedDate || event.date === selectedDate;
+    return matchesType && matchesDate;
+  });
+
+  const totalPages = Math.max(1, Math.ceil(filteredEvents.length / EVENTS_PER_PAGE));
+  const safeCurrentPage = Math.min(currentPage, totalPages);
+  const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
+  const paginatedEvents = filteredEvents.slice(
+    (safeCurrentPage - 1) * EVENTS_PER_PAGE,
+    safeCurrentPage * EVENTS_PER_PAGE
+  );
+
+  const applyFilters = () => {
+    const params = new URLSearchParams();
+    if (selectedType) {
+      params.set("type", selectedType);
+    }
+    if (selectedDate) {
+      params.set("date", selectedDate);
+    }
+    setCurrentPage(1);
+    setSearchParams(params);
+  };
 
   return (
     <div data-name="Desktop">
@@ -109,7 +135,14 @@ export default function EventsComponent({ onBuyTicket }: { onBuyTicket?: () => v
                 />
               </div>
               {/* Search button */}
-              <MuseumButton variant="solid" theme="dark" iconOnly icon="search" className="self-start sm:self-auto" />
+              <MuseumButton
+                variant="solid"
+                theme="dark"
+                iconOnly
+                icon="search"
+                className="self-start sm:self-auto"
+                onClick={applyFilters}
+              />
             </div>
           </div>
 
@@ -122,39 +155,41 @@ export default function EventsComponent({ onBuyTicket }: { onBuyTicket?: () => v
 
           {/* Events Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-[16px] md:gap-x-[24px] gap-y-[32px] md:gap-y-[48px]">
-            {EVENTS_DATA.map((event, i) => (
-              <EventCard key={i} {...event} onClick={() => navigate(`/events/${i}`)} />
+            {paginatedEvents.map((event) => (
+              <EventCard key={event.id} {...event} onClick={() => navigate(`/events/${event.id}`)} />
             ))}
           </div>
 
+          {paginatedEvents.length === 0 && (
+            <p className="font-['Montserrat',sans-serif] text-[16px] text-black">
+              За обраними фільтрами подій не знайдено.
+            </p>
+          )}
+
           {/* Load More button */}
-          <div className="flex justify-center pt-[8px]">
-            <MuseumButton variant="solid" theme="dark" icon="arrow">
-              ЗАВАНТАЖИТИ БІЛЬШЕ
-            </MuseumButton>
-          </div>
+          {safeCurrentPage < totalPages && (
+            <div className="flex justify-center pt-[8px]">
+              <MuseumButton variant="solid" theme="dark" icon="arrow" onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}>
+                ЗАВАНТАЖИТИ БІЛЬШЕ
+              </MuseumButton>
+            </div>
+          )}
 
           {/* Pagination */}
           <div className="flex items-center justify-center gap-[4px]">
-            {PAGE_NUMBERS.map((p, i) =>
-              p === null ? (
-                <span key={i} className="font-['Montserrat',sans-serif] text-[16px] text-black px-[8px]">
-                  ...
-                </span>
-              ) : (
-                <button
-                  key={i}
-                  onClick={() => setCurrentPage(p)}
-                  className={`font-['Montserrat',sans-serif] text-[16px] w-[36px] h-[36px] flex items-center justify-center transition-colors ${
-                    currentPage === p
-                      ? "bg-black text-white font-bold"
-                      : "text-black hover:bg-[#f0f0f0]"
-                  }`}
-                >
-                  {p}
-                </button>
-              )
-            )}
+            {pageNumbers.map((pageNumber) => (
+              <button
+                key={pageNumber}
+                onClick={() => setCurrentPage(pageNumber)}
+                className={`font-['Montserrat',sans-serif] text-[16px] w-[36px] h-[36px] flex items-center justify-center transition-colors ${
+                  safeCurrentPage === pageNumber
+                    ? "bg-black text-white font-bold"
+                    : "text-black hover:bg-[#f0f0f0]"
+                }`}
+              >
+                {pageNumber}
+              </button>
+            ))}
           </div>
 
         </div>

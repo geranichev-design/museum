@@ -1,34 +1,5 @@
-import { useState } from "react";
-
-const TAG_STYLES: Record<string, string> = {
-  "Вистаки": "bg-[#DFBE22]",
-  "Майстер-класи": "bg-[#DFBE22]",
-  "Тимчасові проєкти": "bg-[#d4d4d4]",
-  "Лекції": "bg-[#a8d8ea]",
-  "Дитячі програми": "bg-[#f0a0c8]",
-};
-
-const DESCRIPTION = [
-  "Lorem ipsum dolor sit amet consectetur. Vulputate massa dui nibh pellentesque. Dictum sed rhoncus cursus congue pulvinar aenean faucibus placerat in. Egestas proin feugiat diam tortor semper ut volutpat pellentesque id. Posuere consectetur vel arcu risus nam urna. Ut orci cursus luctus fermentum nibh sit faucibus. Pharetra sit ac duis sem lorem ultricies dui nibh. Nunc cursus lobortis vulputate enim consectetur ut quisque integer. Quis porttitor tincidunt feugiat elementum morbi facilisis enim nulla.",
-  "Amet rutrum diam feugiat duis nisi pellentesque a diam. Dignissim nibh in malesuada viverra sit. Diam vel quis pretium duis interdum enim sit et. Convallis et nisl leo neque. Eleifend aenean turpis elementum curabitur ut augue est at in. Donec mattis at consequat in augue ornare habitasse mi ac. Vulputate vel at sapien purus nulla. Pretium urna sed lacus fames ut purus egestas.",
-  "Lorem ipsum dolor sit amet consectetur. Vulputate massa dui nibh pellentesque. Dictum sed rhoncus cursus congue pulvinar aenean faucibus placerat in. Egestas proin feugiat diam tortor semper ut volutpat pellentesque id. Posuere consectetur vel arcu risus nam urna. Ut orci cursus luctus fermentum nibh sit faucibus. Pharetra sit ac duis sem lorem ultricies dui nibh. Nunc cursus lobortis vulputate enim consectetur ut quisque integer. Quis porttitor tincidunt feugiat elementum morbi facilisis enim nulla.",
-  "Amet rutrum diam feugiat duis nisi pellentesque a diam. Dignissim nibh in malesuada viverra sit. Diam vel quis pretium duis interdum enim sit et. Convallis et nisl leo neque. Eleifend aenean turpis elementum curabitur ut augue est at in. Donec mattis at consequat in augue ornare habitasse mi ac. Vulputate vel at sapien purus nulla. Pretium urna sed lacus fames ut purus egestas.",
-];
-
-const GALLERY: Array<{ src: string | null }> = [
-  { src: "/hero-bg.jpg" },
-  { src: "/about-hero-bg.jpg" },
-  { src: null },
-  { src: "/hero-bg.jpg" },
-  { src: "/about-hero-bg.jpg" },
-];
-
-const RELATED_EVENTS = [
-  { tags: ["Лекції"], title: "Зустріч-дискусія: 40 років після трагедії", date: "10.08.2026" },
-  { tags: ["Лекції"], title: "Зустріч-дискусія: 40 років після трагедії", date: "10.08.2026" },
-  { tags: ["Дитячі програми"], title: "Зустріч-дискусія: 40 років після трагедії", date: "10.08.2026" },
-  { tags: ["Тимчасові проєкти"], title: "Зустріч-дискусія: 40 років після трагедії", date: "10.08.2026" },
-];
+import { useEffect, useState } from "react";
+import { TAG_STYLES, type EventRecord } from "../data/eventsData";
 
 function AtomIcon() {
   return (
@@ -81,16 +52,25 @@ function RelatedCard({ tags, title, date, onClick }: { tags: string[]; title: st
 }
 
 export default function EventDetailComponent({
+  event,
+  relatedEvents,
   onBack,
   onRelatedClick,
 }: {
+  event: EventRecord;
+  relatedEvents: EventRecord[];
   onBack?: () => void;
-  onRelatedClick?: () => void;
+  onRelatedClick?: (id: string) => void;
 }) {
   const [active, setActive] = useState(0);
 
+  useEffect(() => {
+    setActive(0);
+    window.scrollTo(0, 0);
+  }, [event.id]);
+
   const prev = () => setActive((i) => Math.max(0, i - 1));
-  const next = () => setActive((i) => Math.min(GALLERY.length - 1, i + 1));
+  const next = () => setActive((i) => Math.min(event.gallery.length - 1, i + 1));
 
   return (
     <div className="bg-white">
@@ -119,12 +99,12 @@ export default function EventDetailComponent({
           <div className="w-full md:w-[48%] flex-shrink-0 flex flex-col gap-[12px]">
             {/* Main image */}
             <div className="aspect-[11/10] relative overflow-hidden border-[6px] border-black">
-              <GallerySlide src={GALLERY[active].src} />
+              <GallerySlide src={event.gallery[active]?.src ?? null} />
             </div>
 
             {/* Thumbnails */}
             <div className="flex gap-[8px]">
-              {GALLERY.slice(0, 4).map((item, i) => (
+              {event.gallery.slice(0, 4).map((item, i) => (
                 <button
                   key={i}
                   onClick={() => setActive(i)}
@@ -150,7 +130,7 @@ export default function EventDetailComponent({
               </button>
 
               <div className="flex items-center gap-[8px]">
-                {GALLERY.map((_, i) => (
+                {event.gallery.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setActive(i)}
@@ -165,7 +145,7 @@ export default function EventDetailComponent({
 
               <button
                 onClick={next}
-                disabled={active === GALLERY.length - 1}
+                disabled={active === event.gallery.length - 1}
                 className="flex items-center justify-center w-[44px] h-[44px] border-2 border-black disabled:opacity-30 hover:bg-[#f5f5f5] transition-colors"
               >
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -181,7 +161,7 @@ export default function EventDetailComponent({
             <div className="flex items-center gap-[12px]">
               <div className="bg-[#e6bc00] shrink-0 size-[32px]" />
               <h1 className="font-['Oswald',sans-serif] font-medium text-[28px] md:text-[36px] text-black uppercase leading-[1.1]">
-                ДО ТА ПІСЛЯ ТРАГЕДІЇ
+                {event.title}
               </h1>
             </div>
 
@@ -194,10 +174,10 @@ export default function EventDetailComponent({
                   <path d="M6 1V5" stroke="black" strokeWidth="1.5" strokeLinecap="round" />
                   <path d="M14 1V5" stroke="black" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
-                <span className="font-['Montserrat',sans-serif] text-[16px] text-black">10.08.2026</span>
+                <span className="font-['Montserrat',sans-serif] text-[16px] text-black">{event.date}</span>
               </div>
               <span className="bg-[#d4d4d4] font-['Montserrat',sans-serif] font-medium text-[14px] text-black px-[12px] py-[4px]">
-                Тимчасові проєкти
+                {event.category}
               </span>
             </div>
 
@@ -205,7 +185,7 @@ export default function EventDetailComponent({
 
             {/* Description */}
             <div className="flex flex-col gap-[16px]">
-              {DESCRIPTION.map((para, i) => (
+              {event.description.map((para, i) => (
                 <p key={i} className="font-['Montserrat',sans-serif] font-normal text-[16px] text-black leading-[1.65]">
                   {para}
                 </p>
@@ -217,8 +197,14 @@ export default function EventDetailComponent({
         {/* Related events */}
         <div className="border-t border-[#e0e0e0] pt-[48px]">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-[16px] md:gap-x-[24px] gap-y-[32px]">
-            {RELATED_EVENTS.map((event, i) => (
-              <RelatedCard key={i} {...event} onClick={onRelatedClick} />
+            {relatedEvents.map((relatedEvent) => (
+              <RelatedCard
+                key={relatedEvent.id}
+                tags={relatedEvent.tags}
+                title={relatedEvent.title}
+                date={relatedEvent.date}
+                onClick={() => onRelatedClick?.(relatedEvent.id)}
+              />
             ))}
           </div>
         </div>
