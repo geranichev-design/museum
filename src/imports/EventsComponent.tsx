@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router";
+import { PageHero } from "../app/components/PageHero";
 import { MuseumSelect } from "../app/components/ui/MuseumSelect";
 import { MuseumInput } from "../app/components/ui/MuseumInput";
 
@@ -89,22 +90,12 @@ export default function EventsComponent({ onBuyTicket }: { onBuyTicket?: () => v
 
   return (
     <div data-name="Desktop">
-      {/* Hero */}
-      <div className="relative h-[280px] md:h-[340px] w-full overflow-hidden">
-        <img className="absolute inset-0 w-full h-full object-cover" src="/hero-bg.jpg" alt="" />
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="absolute bottom-[32px] md:bottom-[56px] left-[16px] md:left-[120px] flex flex-col gap-[16px]">
-          <h1 className="font-['Oswald',sans-serif] font-medium text-[36px] md:text-[52px] text-white uppercase leading-[1]">
-            ПОДІЇ МУЗЕЮ
-          </h1>
-          <button
-            onClick={onBuyTicket}
-            className="bg-[#e6bc00] px-[16px] py-[8px] text-black font-['Oswald',sans-serif] font-medium text-[16px] md:text-[20px] uppercase text-left w-fit"
-          >
-            ПРИДБАТИ КВИТОК
-          </button>
-        </div>
-      </div>
+      <PageHero
+        title="ПОДІЇ МУЗЕЮ"
+        imageSrc="/hero-bg.jpg"
+        buttonText="ПРИДБАТИ КВИТОК"
+        onButtonClick={onBuyTicket}
+      />
 
       {/* Events Section */}
       <div className="bg-white py-[48px] md:py-[80px]">

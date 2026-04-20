@@ -4,9 +4,13 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import DesktopBase from "../../imports/Desktop";
 import MobileBase from "../../imports/Mobile";
+import { PageHero } from "../components/PageHero";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function HomePage() {
   const navigate = useNavigate();
+  const { lang } = useLanguage();
+  const uk = lang === "uk";
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -111,11 +115,18 @@ export default function HomePage() {
           cursor: pointer !important;
         }
 
-        /* Hide Figma headers and footers */
+        /* Hide section 7 */
+        [data-name="section7"],
+        [data-name="section 7"] {
+          display: none !important;
+        }
+
+        /* Hide Figma headers, footers and original heroes */
         [data-name="Desktop"] > [data-name="header menu"],
         [data-name="Mobile"] > [data-name="header menu"],
         [data-name="Desktop"] > [data-name="Content"] > [data-name="footer"],
-        [data-name="Mobile"] > [data-name="Content"] > [data-name="footer"] {
+        [data-name="Mobile"] > [data-name="Content"] > [data-name="footer"],
+        [data-name="Hero"] {
           display: none !important;
         }
 
@@ -135,6 +146,13 @@ export default function HomePage() {
       `}</style>
       <Header />
       <div className="flex-1">
+        <PageHero
+          titleTop={uk ? "ЧОРНОБИЛЬ" : "CHORNOBYL"}
+          title={uk ? "ПАМʼЯТЬ, ЩО ФОРМУЄ МАЙБУТНЄ" : "MEMORY THAT SHAPES THE FUTURE"}
+          imageSrc="/hero-bg.jpg"
+          buttonText={uk ? "Придбати квиток" : "Buy a ticket"}
+          buttonTo="/tickets"
+        />
         {isMobile ? <MobileBase /> : <DesktopBase />}
       </div>
       <Footer />

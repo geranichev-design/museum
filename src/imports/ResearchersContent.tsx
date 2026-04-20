@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MuseumInput } from "../app/components/ui/MuseumInput";
+import { PageHero } from "../app/components/PageHero";
 
 function SectionTitle({ children, white }: { children: string; white?: boolean }) {
   return (
@@ -42,22 +43,12 @@ function HeroSection() {
   };
 
   return (
-    <div className="relative w-full" style={{ minHeight: 240 }}>
-      <img src="/about-hero-bg.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-black/65" />
-      <div className="relative flex flex-col gap-[8px] items-start justify-end px-[16px] md:px-[55px] pb-[40px] md:pb-[56px] pt-[100px] md:pt-[140px]">
-        <p className="font-['Oswald',sans-serif] font-medium text-[32px] md:text-[48px] text-[#e6bc00] uppercase leading-tight">
-          ДОСЛІДНИКАМ
-        </p>
-        <button
-          onClick={scrollToForm}
-          className="bg-[#e6bc00] px-[16px] py-[8px] font-['Oswald',sans-serif] font-medium text-[16px] md:text-[20px] text-black uppercase cursor-pointer"
-          data-name="button"
-        >
-          ПОДАТИ ЗАЯВКУ
-        </button>
-      </div>
-    </div>
+    <PageHero
+      title="ДОСЛІДНИКАМ"
+      imageSrc="/about-hero-bg.jpg"
+      buttonText="ПОДАТИ ЗАЯВКУ"
+      onButtonClick={scrollToForm}
+    />
   );
 }
 
