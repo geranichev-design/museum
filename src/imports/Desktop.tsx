@@ -1,4 +1,7 @@
 import { createContext, useContext } from "react";
+import { HomeEventsSection } from "../app/components/HomeEventsSection";
+import { ExpositionSection } from "../app/components/ExpositionSection";
+import { MuseumSpacesSection } from "../app/components/MuseumSpacesSection";
 import { useLanguage, type Lang } from "../app/context/LanguageContext";
 import svgPaths from "./svg-egu612f841";
 import imgImage92 from "figma:asset/8d92b713f292821b0a1ee391109f066ed6f10fab.png";
@@ -1220,8 +1223,10 @@ function Content1() {
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full z-[1]" data-name="Content">
       <Hero />
       <Section />
+      <ExpositionSection />
       <Section1 />
-      <Section2 />
+      <MuseumSpacesSection />
+      <HomeEventsSection />
       <Section3 />
       <Map />
       <div className="bg-[#f5f3e9] relative shrink-0 w-full" data-name="footer">

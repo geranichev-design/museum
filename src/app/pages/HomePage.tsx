@@ -121,6 +121,11 @@ export default function HomePage() {
           display: none !important;
         }
 
+        /* Hide section 3 (mobile) */
+        [data-name="section 3(animate)"] {
+          display: none !important;
+        }
+
         /* Hide quiz section (mobile) */
         [data-name="quiz-section"] {
           display: none !important;

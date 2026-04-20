@@ -1,4 +1,7 @@
 import svgPaths from "./svg-ruc1duwf30";
+import { HomeEventsSection } from "../app/components/HomeEventsSection";
+import { ExpositionSection } from "../app/components/ExpositionSection";
+import { MuseumSpacesSection } from "../app/components/MuseumSpacesSection";
 import imgImage92 from "figma:asset/8d92b713f292821b0a1ee391109f066ed6f10fab.png";
 import imgForest from "figma:asset/12f073a52eefec5f24fd1d99b95248db5666af0d.png";
 import imgMuseum from "figma:asset/fe939b86272ba154e7cb09fa28cdbb8f264cd151.png";
@@ -300,7 +303,7 @@ function Frame18() {
 
 function Frame14() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start min-w-[220px] relative">
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative w-full max-w-[500px]">
       <div className="aspect-[343/378] max-h-[661.2244873046875px] max-w-[600px] pointer-events-none relative shrink-0 w-full">
         <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgRectangle793} />
         <div aria-hidden="true" className="absolute border-6 border-black border-solid inset-0" />
@@ -347,7 +350,7 @@ function Frame19() {
 
 function Frame15() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start min-w-[220px] relative">
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative w-full max-w-[500px]">
       <div className="h-[343px] max-w-[600px] pointer-events-none relative shrink-0 w-full">
         <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgRectangle794} />
         <div aria-hidden="true" className="absolute border-6 border-black border-solid inset-0" />
@@ -394,7 +397,7 @@ function Frame22() {
 
 function Frame16() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start min-w-[220px] relative">
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative w-full max-w-[500px]">
       <div className="aspect-[343/378] max-h-[661.2244873046875px] max-w-[600px] pointer-events-none relative shrink-0 w-full">
         <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgRectangle795} />
         <div aria-hidden="true" className="absolute border-6 border-black border-solid inset-0" />
@@ -406,7 +409,7 @@ function Frame16() {
 
 function Frame21() {
   return (
-    <div className="content-center flex flex-wrap gap-[32px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full">
       <Frame14 />
       <Frame15 />
       <Frame16 />
@@ -1146,8 +1149,10 @@ function Content() {
       <Hero />
       <Section />
       <Section3Animate />
+      <ExpositionSection />
       <Section1 />
-      <Section2 />
+      <MuseumSpacesSection />
+      <HomeEventsSection />
       <Frame33 />
       <Map />
       <div className="bg-[#f5f3e9] relative shrink-0 w-full" data-name="footer">
