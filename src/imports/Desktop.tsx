@@ -448,7 +448,7 @@ function Frame18() {
 function Frame33() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[8px] items-start justify-center leading-[normal] min-w-px relative text-black">
-      <p className="font-['Oswald',sans-serif] font-medium min-w-full relative shrink-0 text-[24px] uppercase w-[min-content]"><T uk="Зустріч-дискусія: 40 років після трагедії" en="Discussion: 40 years after the tragedy" /></p>
+      <p className="font-['Oswald',sans-serif] font-medium leading-[22px] min-w-full relative shrink-0 text-[20px] uppercase w-[min-content]"><T uk="Зустріч-дискусія: 40 років після трагедії" en="Discussion: 40 years after the tragedy" /></p>
       <p className="font-['Montserrat',sans-serif] font-normal overflow-hidden relative shrink-0 text-[16px] text-ellipsis whitespace-nowrap">10.08.2026</p>
     </div>
   );
@@ -486,7 +486,7 @@ function Frame39() {
 function Frame34() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[8px] items-start justify-center leading-[normal] min-w-px relative text-black">
-      <p className="font-['Oswald',sans-serif] font-medium min-w-full relative shrink-0 text-[24px] w-[min-content]"><T uk="Фотовиставка Павла Павленка" en="Photo exhibition by Pavlo Pavlenko" /></p>
+      <p className="font-['Oswald',sans-serif] font-medium leading-[22px] min-w-full relative shrink-0 text-[20px] uppercase w-[min-content]"><T uk="Фотовиставка Павла Павленка" en="Photo exhibition by Pavlo Pavlenko" /></p>
       <p className="font-['Montserrat',sans-serif] font-normal overflow-hidden relative shrink-0 text-[16px] text-ellipsis whitespace-nowrap">10.08.2026</p>
     </div>
   );
@@ -524,7 +524,7 @@ function Frame40() {
 function Frame35() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[8px] items-start justify-center leading-[normal] min-w-px relative text-black">
-      <p className="font-['Oswald',sans-serif] font-medium min-w-full relative shrink-0 text-[24px] w-[min-content]"><T uk="Майстер-клас: виготовлення брудної бомби" en="Workshop: creating a dirty bomb" /></p>
+      <p className="font-['Oswald',sans-serif] font-medium leading-[22px] min-w-full relative shrink-0 text-[20px] uppercase w-[min-content]"><T uk="Майстер-клас: виготовлення брудної бомби" en="Workshop: creating a dirty bomb" /></p>
       <p className="font-['Montserrat',sans-serif] font-normal overflow-hidden relative shrink-0 text-[16px] text-ellipsis whitespace-nowrap">10.08.2026</p>
     </div>
   );
@@ -562,7 +562,7 @@ function Frame41() {
 function Frame36() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[8px] items-start justify-center leading-[normal] min-w-px relative text-black">
-      <p className="font-['Oswald',sans-serif] font-medium min-w-full relative shrink-0 text-[24px] w-[min-content]"><T uk="Зустріч-дискусія: 40 років після трагедії" en="Discussion: 40 years after the tragedy" /></p>
+      <p className="font-['Oswald',sans-serif] font-medium leading-[22px] min-w-full relative shrink-0 text-[20px] uppercase w-[min-content]"><T uk="Зустріч-дискусія: 40 років після трагедії" en="Discussion: 40 years after the tragedy" /></p>
       <p className="font-['Montserrat',sans-serif] font-normal overflow-hidden relative shrink-0 text-[16px] text-ellipsis whitespace-nowrap">10.08.2026</p>
     </div>
   );

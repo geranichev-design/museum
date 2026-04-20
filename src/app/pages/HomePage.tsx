@@ -121,6 +121,11 @@ export default function HomePage() {
           display: none !important;
         }
 
+        /* Hide quiz section (mobile) */
+        [data-name="quiz-section"] {
+          display: none !important;
+        }
+
         /* Hide Figma headers, footers and original heroes */
         [data-name="Desktop"] > [data-name="header menu"],
         [data-name="Mobile"] > [data-name="header menu"],
