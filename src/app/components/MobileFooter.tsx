@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { MuseumLogo } from "./MuseumLogo";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -28,57 +29,57 @@ export default function MobileFooter() {
         </div>
 
         <div className="content-stretch flex flex-col gap-[12px] items-start justify-between relative shrink-0 text-black w-full">
-          <p className="font-['Oswald',sans-serif] font-medium leading-[24px] relative shrink-0 text-[20px] uppercase w-full">
+          <Link to="/" className="font-['Oswald',sans-serif] font-medium leading-[24px] relative shrink-0 text-[20px] uppercase w-full hover:underline block">
             {uk ? 'Головна' : 'Home'}
-          </p>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
+          </Link>
+          <Link to="/tickets" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Придбати квитки' : 'Buy tickets'}
-          </p>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
+          </Link>
+          <Link to="/history" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Історія катастрофи' : 'History of the disaster'}
-          </p>
+          </Link>
           <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
             {uk ? 'Екскурсії' : 'Tours'}
           </p>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
+          <Link to="/events" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Анонс подій' : 'Upcoming events'}
-          </p>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
+          </Link>
+          <Link to="/spaces" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Простори музею' : 'Museum spaces'}
-          </p>
+          </Link>
           <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
             {uk ? 'Вікторина' : 'Quiz'}
           </p>
         </div>
 
         <div className="content-stretch flex flex-col gap-[12px] items-start justify-between relative shrink-0 text-black w-full">
-          <p className="font-['Oswald',sans-serif] font-medium leading-[24px] relative shrink-0 text-[20px] uppercase w-full">
+          <Link to="/about" className="font-['Oswald',sans-serif] font-medium leading-[24px] relative shrink-0 text-[20px] uppercase w-full hover:underline block">
             {uk ? 'Про музей' : 'About museum'}
-          </p>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
+          </Link>
+          <Link to="/about" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Історія' : 'History'}
-          </p>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
+          </Link>
+          <Link to="/about" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Місія' : 'Mission'}
-          </p>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
+          </Link>
+          <Link to="/researchers" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Команда' : 'Team'}
-          </p>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
+          </Link>
+          <Link to="/about" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Партнери' : 'Partners'}
-          </p>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
+          </Link>
+          <Link to="/about" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Доступність' : 'Accessibility'}
-          </p>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
+          </Link>
+          <Link to="/about" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Документи' : 'Documents'}
-          </p>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
+          </Link>
+          <Link to="/about" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Допомога музею' : 'Support the museum'}
-          </p>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
+          </Link>
+          <Link to="/about" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Контакти' : 'Contacts'}
-          </p>
+          </Link>
         </div>
 
         <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0">

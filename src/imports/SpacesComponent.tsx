@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router";
+import { ImageLightbox } from "../app/components/ui/ImageLightbox";
 
 // ── Icons ──────────────────────────────────────────────────────────────────
 function IconMonitor() {
@@ -200,6 +201,7 @@ export default function SpacesComponent({ onBuyTicket }: { onBuyTicket?: () => v
     return idx >= 0 ? idx : 0;
   });
   const [activeImg, setActiveImg] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   useEffect(() => {
     const name = searchParams.get("space");
@@ -293,7 +295,10 @@ export default function SpacesComponent({ onBuyTicket }: { onBuyTicket?: () => v
             <div className="flex-1 md:pl-[40px] flex flex-col gap-[24px]">
 
               {/* Gallery image */}
-              <div className="aspect-[3/2] relative overflow-hidden">
+              <div
+                className="aspect-[3/2] relative overflow-hidden cursor-zoom-in"
+                onClick={() => setLightboxOpen(true)}
+              >
                 <img
                   key={activeImg}
                   src={GALLERY_IMAGES[activeImg]}
@@ -362,6 +367,15 @@ export default function SpacesComponent({ onBuyTicket }: { onBuyTicket?: () => v
           </div>
         </div>
       </div>
+
+      {lightboxOpen && (
+        <ImageLightbox
+          images={GALLERY_IMAGES}
+          currentIndex={activeImg}
+          onClose={() => setLightboxOpen(false)}
+          onSelect={(i) => setActiveImg(i)}
+        />
+      )}
     </div>
   );
 }

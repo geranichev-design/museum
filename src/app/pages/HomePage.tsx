@@ -23,14 +23,49 @@ export default function HomePage() {
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const button = target.closest('[data-name="button"]');
+      const button = target.closest('[data-name="button"]') as HTMLElement | null;
+      const pText = target.closest('p')?.textContent?.trim() ?? "";
 
+      // Hero CTA buttons
       if (button?.textContent?.includes("Дізнатись більше") || button?.textContent?.includes("Learn more")) {
         e.preventDefault();
         navigate("/history");
-      } else if (button?.textContent?.includes("Придбати квиток") || button?.textContent?.includes("Buy a ticket")) {
+        return;
+      }
+      if (button?.textContent?.includes("Придбати квиток") || button?.textContent?.includes("Buy a ticket")) {
         e.preventDefault();
         navigate("/tickets");
+        return;
+      }
+
+      // Events section (section 6 / section6 — Desktop vs Mobile naming)
+      if (target.closest('[data-name="section 6"]') || target.closest('[data-name="section6"]')) {
+        e.preventDefault();
+        navigate("/events");
+        return;
+      }
+
+      // Tours "Детальніше" / "More details" links
+      if (pText === "Детальніше" || pText === "More details") {
+        e.preventDefault();
+        navigate("/tickets");
+        return;
+      }
+
+      // Footer navigation
+      const footerNav: Record<string, string> = {
+        "Головна": "/",                       "Home": "/",
+        "Придбати квитки": "/tickets",         "Buy tickets": "/tickets",
+        "Екскурсії": "/tickets",               "Tours": "/tickets",
+        "Анонс подій": "/events",              "Upcoming events": "/events",
+        "Історія катастрофи": "/history",      "History of the disaster": "/history",
+        "Простори музею": "/spaces",           "Museum spaces": "/spaces",
+        "Про музей": "/about",                 "About museum": "/about",
+      };
+      if (footerNav[pText]) {
+        e.preventDefault();
+        navigate(footerNav[pText]);
+        return;
       }
     };
 
@@ -50,6 +85,29 @@ export default function HomePage() {
         }
         [data-name="button"]:has(p:has-text("Дізнатись більше")) *,
         [data-name="button"]:has(p:has-text("Придбати квиток")) * {
+          cursor: pointer !important;
+        }
+
+        /* Events section */
+        [data-name="section 6"] [data-name="button"],
+        [data-name="section 6"] [data-name="button"] *,
+        [data-name="section6"] [data-name="button"],
+        [data-name="section6"] [data-name="button"] *,
+        [data-name="section 6"] p,
+        [data-name="section6"] p {
+          cursor: pointer !important;
+        }
+
+        /* Tours "Детальніше" */
+        [data-name="section 4"] p[class*="semibold"],
+        [data-name="section4"] p[class*="semibold"] {
+          cursor: pointer !important;
+        }
+
+        /* Footer nav items */
+        [data-name="atoms"] p,
+        [data-name="main"] > p,
+        [data-name="about"] > p {
           cursor: pointer !important;
         }
 
