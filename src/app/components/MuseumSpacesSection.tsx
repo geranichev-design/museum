@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { MuseumButton } from "./ui/MuseumButton";
 
 const FLOORS = [
   {
@@ -73,9 +74,9 @@ export function MuseumSpacesSection() {
 
           {/* Button */}
           <div>
-            <button className="w-full md:w-auto bg-[#e6bc00] px-[16px] py-[8px] font-['Oswald',sans-serif] font-medium text-[20px] text-black uppercase flex items-center justify-center md:justify-start gap-[8px] hover:bg-[#d4aa00] transition-colors">
-              ДО ПРОСТОРІВ МУЗЕЮ &raquo;
-            </button>
+            <MuseumButton icon="arrow" to="/spaces" className="w-full md:w-auto justify-center md:justify-start">
+              ДО ПРОСТОРІВ МУЗЕЮ
+            </MuseumButton>
           </div>
         </div>
 

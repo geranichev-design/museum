@@ -18,11 +18,10 @@ export default function HeaderMenuContent() {
             <DesktopNavItem to="/" preset={pathname === "/"} size="lg">
               {uk ? 'Головна' : 'Home'}
             </DesktopNavItem>
-            <DesktopNavItem to="/#history" size="sm">{uk ? 'Історія катастрофи' : 'History of the disaster'}</DesktopNavItem>
-            <DesktopNavItem to="/#tours" size="sm">{uk ? 'Екскурсії' : 'Tours'}</DesktopNavItem>
-            <DesktopNavItem to="/#events" size="sm">{uk ? 'Анонс подій' : 'Upcoming events'}</DesktopNavItem>
+            <DesktopNavItem to="/#history" size="sm">{uk ? 'Історія події' : 'History of the event'}</DesktopNavItem>
+            <DesktopNavItem to="/#tours" size="sm">{uk ? 'Тематичні екскурсії' : 'Thematic tours'}</DesktopNavItem>
             <DesktopNavItem to="/#spaces" size="sm">{uk ? 'Простори музею' : 'Museum spaces'}</DesktopNavItem>
-            <DesktopNavItem to="/#quiz" size="sm">{uk ? 'Вікторина' : 'Quiz'}</DesktopNavItem>
+            <DesktopNavItem to="/#events" size="sm">{uk ? 'Події' : 'Events'}</DesktopNavItem>
             <div className="content-stretch flex items-center justify-center px-[16px] py-[8px] relative shrink-0" data-name="button">
               <div aria-hidden="true" className="absolute border-3 border-[#d93a32] border-solid inset-0 pointer-events-none" />
               <div className="flex flex-col font-['Oswald',sans-serif] font-medium justify-end leading-[0] relative shrink-0 text-[#d93a32] text-[14px] uppercase whitespace-nowrap">

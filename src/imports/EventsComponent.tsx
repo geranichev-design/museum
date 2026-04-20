@@ -13,6 +13,7 @@ const EVENT_TYPE_OPTIONS = [
 ];
 
 import { EVENTS_DATA, TAG_STYLES } from "../data/eventsData";
+import { MuseumButton } from "../app/components/ui/MuseumButton";
 
 const PAGE_NUMBERS: (number | null)[] = [1, 2, 3, null, 13, 14, 15];
 
@@ -108,12 +109,7 @@ export default function EventsComponent({ onBuyTicket }: { onBuyTicket?: () => v
                 />
               </div>
               {/* Search button */}
-              <button className="bg-[#e6bc00] p-[10px] shrink-0 self-start sm:self-auto">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <circle cx="10.5" cy="10.5" r="7" stroke="black" strokeWidth="2" />
-                  <path d="M16 16L21.5 21.5" stroke="black" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-              </button>
+              <MuseumButton variant="solid" theme="dark" iconOnly icon="search" className="self-start sm:self-auto" />
             </div>
           </div>
 
@@ -133,15 +129,9 @@ export default function EventsComponent({ onBuyTicket }: { onBuyTicket?: () => v
 
           {/* Load More button */}
           <div className="flex justify-center pt-[8px]">
-            <button className="bg-[#e6bc00] flex items-center gap-[8px] px-[24px] md:px-[40px] py-[12px]">
-              <span className="font-['Oswald',sans-serif] font-medium text-[18px] md:text-[20px] text-black uppercase">
-                ЗАВАНТАЖИТИ БІЛЬШЕ
-              </span>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M5 7L12 14L19 7" stroke="black" strokeWidth="2" strokeLinecap="round" />
-                <path d="M5 13L12 20L19 13" stroke="black" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </button>
+            <MuseumButton variant="solid" theme="dark" icon="arrow">
+              ЗАВАНТАЖИТИ БІЛЬШЕ
+            </MuseumButton>
           </div>
 
           {/* Pagination */}

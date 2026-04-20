@@ -7,11 +7,30 @@ import MobileBase from "../../imports/Mobile";
 import { PageHero } from "../components/PageHero";
 import { useLanguage } from "../context/LanguageContext";
 
+function useHashScroll() {
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash.slice(1);
+      if (!hash) return;
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+    const timer = setTimeout(scrollToHash, 150);
+    const onHashChange = () => setTimeout(scrollToHash, 50);
+    window.addEventListener("hashchange", onHashChange);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("hashchange", onHashChange);
+    };
+  }, []);
+}
+
 export default function HomePage() {
   const navigate = useNavigate();
   const { lang } = useLanguage();
   const uk = lang === "uk";
   const [isMobile, setIsMobile] = useState(false);
+  useHashScroll();
 
   useEffect(() => {
     const checkMobile = () => {

@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import svgPaths from "../../imports/svg-egu612f841";
 import { imgGroup } from "../../imports/svg-no9qt";
 import { useLanguage } from "../context/LanguageContext";
+import { MuseumButton } from "./ui/MuseumButton";
 
 function Group() {
   return (
@@ -64,11 +65,9 @@ function LanguageSwitcher() {
 function TicketsButton() {
   const { lang } = useLanguage();
   return (
-    <Link to="/tickets" className="bg-[#dfbe22] content-stretch flex items-center justify-center px-[16px] py-[8px] relative shrink-0" data-name="button">
-      <div className="flex flex-col font-['Oswald',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black uppercase whitespace-nowrap">
-        <p className="leading-[22px]">{lang === 'uk' ? 'Квитки' : 'Tickets'}</p>
-      </div>
-    </Link>
+    <MuseumButton to="/tickets" variant="solid" theme="dark">
+      {lang === 'uk' ? 'Квитки' : 'Tickets'}
+    </MuseumButton>
   );
 }
 

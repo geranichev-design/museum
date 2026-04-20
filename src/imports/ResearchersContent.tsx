@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MuseumInput } from "../app/components/ui/MuseumInput";
 import { PageHero } from "../app/components/PageHero";
+import { MuseumButton } from "../app/components/ui/MuseumButton";
 
 function SectionTitle({ children, white }: { children: string; white?: boolean }) {
   return (
@@ -438,9 +439,9 @@ function ArticleCard({ title, text, date, source }: { title: string; text: strin
             <p className="font-['Montserrat',sans-serif] text-[11px] md:text-[12px] text-gray-500">{date}</p>
             <p className="font-['Montserrat',sans-serif] text-[11px] md:text-[12px] text-gray-500">{source}</p>
           </div>
-          <button className="border border-black px-[8px] md:px-[12px] py-[5px] md:py-[6px] font-['Oswald',sans-serif] font-medium text-[12px] md:text-[14px] text-black uppercase hover:bg-black hover:text-white transition-colors whitespace-nowrap">
-            ПЕРЕГЛЯНУТИ &raquo;
-          </button>
+          <MuseumButton variant="outlined" theme="light" icon="arrow">
+            ПЕРЕГЛЯНУТИ
+          </MuseumButton>
         </div>
       </div>
     </div>
@@ -479,12 +480,7 @@ function ArticlesSection() {
             onChange={setDateFilter}
           />
         </div>
-        <button className="bg-[#e6bc00] p-[10px] shrink-0 self-start md:self-auto">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <circle cx="10.5" cy="10.5" r="7" stroke="black" strokeWidth="2" />
-            <path d="M16 16L21.5 21.5" stroke="black" strokeWidth="2" strokeLinecap="round" />
-          </svg>
-        </button>
+        <MuseumButton variant="solid" theme="dark" iconOnly icon="search" className="self-start md:self-auto" />
       </div>
 
       {/* Grid — 1 col on mobile, 2 on desktop */}
@@ -495,9 +491,9 @@ function ArticlesSection() {
       </div>
 
       <div className="flex justify-center">
-        <button className="border-2 border-black w-full md:w-auto px-[32px] md:px-[48px] py-[12px] md:py-[14px] font-['Oswald',sans-serif] font-medium text-[16px] md:text-[20px] text-black uppercase hover:bg-black hover:text-white transition-colors">
-          ЗАВАНТАЖИТИ БІЛЬШЕ &raquo;
-        </button>
+        <MuseumButton variant="outlined" theme="light" icon="arrow" className="w-full md:w-auto">
+          ЗАВАНТАЖИТИ БІЛЬШЕ
+        </MuseumButton>
       </div>
     </section>
   );
@@ -544,9 +540,9 @@ function ApplicationSection() {
         </div>
 
         <div className="mt-[20px] md:mt-[24px]">
-          <button className="w-full md:w-auto bg-[#e6bc00] px-[32px] py-[14px] font-['Oswald',sans-serif] font-medium text-[18px] md:text-[20px] text-black uppercase hover:bg-[#d4aa00] transition-colors">
-            ПОДАТИ ЗАЯВКУ &raquo;
-          </button>
+          <MuseumButton variant="solid" theme="dark" icon="arrow" className="w-full md:w-auto">
+            ПОДАТИ ЗАЯВКУ
+          </MuseumButton>
         </div>
       </div>
     </section>
@@ -560,9 +556,9 @@ function RegistryBanner() {
         <p className="font-['Oswald',sans-serif] font-medium text-[18px] md:text-[24px] text-white uppercase">
           РЕЄСТР МУЗЕЙНОГО ФОНДУ УКРАЇНИ
         </p>
-        <button className="w-full md:w-auto bg-[#e6bc00] px-[24px] py-[10px] font-['Oswald',sans-serif] font-medium text-[16px] md:text-[18px] text-black uppercase hover:bg-[#d4aa00] transition-colors">
-          ПЕРЕЙТИ ДО ФОНДУ &raquo;
-        </button>
+        <MuseumButton variant="solid" theme="dark" icon="arrow" className="w-full md:w-auto">
+          ПЕРЕЙТИ ДО ФОНДУ
+        </MuseumButton>
       </div>
     </div>
   );

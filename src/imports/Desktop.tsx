@@ -1222,11 +1222,11 @@ function Content1() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full z-[1]" data-name="Content">
       <Hero />
-      <Section />
+      <div id="history" className="w-full"><Section /></div>
       <ExpositionSection />
-      <Section1 />
-      <MuseumSpacesSection />
-      <HomeEventsSection />
+      <div id="tours" className="w-full"><Section1 /></div>
+      <div id="spaces" className="w-full"><MuseumSpacesSection /></div>
+      <div id="events" className="w-full"><HomeEventsSection /></div>
       <Section3 />
       <Map />
       <div className="bg-[#f5f3e9] relative shrink-0 w-full" data-name="footer">

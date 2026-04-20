@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 import svgPaths from "./svg-p8dzwbpvk0";
 import { useLanguage } from "../app/context/LanguageContext";
+import { MuseumButton } from "../app/components/ui/MuseumButton";
 
 function ChevronIcon({ open }: { open: boolean }) {
   return (
@@ -107,14 +108,9 @@ export default function MenuOpen() {
   return (
     <div className="bg-black content-stretch flex flex-col gap-[24px] items-start p-[16px] relative size-full" data-name="menu open">
       {/* Tickets button */}
-      <Link
-        to="/tickets"
-        className="bg-[#dfbe22] w-full flex items-center justify-center px-[16px] py-[8px]"
-      >
-        <span className="font-['Oswald',sans-serif] font-medium text-[20px] text-black uppercase leading-[22px]">
-          {uk ? "Квитки" : "Tickets"}
-        </span>
-      </Link>
+      <MuseumButton to="/tickets" variant="solid" theme="dark" className="w-full">
+        {uk ? "Квитки" : "Tickets"}
+      </MuseumButton>
 
       {/* Головна — has page / */}
       <AccordionSection label={uk ? "Головна" : "Home"} to="/">

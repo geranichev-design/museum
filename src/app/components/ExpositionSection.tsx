@@ -1,3 +1,5 @@
+import { MuseumButton } from "./ui/MuseumButton";
+
 export function ExpositionSection() {
   return (
     <section className="w-full bg-white">
@@ -53,9 +55,9 @@ export function ExpositionSection() {
 
           {/* Button */}
           <div className="mt-auto">
-            <button className="w-full md:w-auto bg-[#e6bc00] px-[16px] py-[8px] font-['Oswald',sans-serif] font-medium text-[20px] text-black uppercase flex items-center justify-center md:justify-start gap-[8px] hover:bg-[#d4aa00] transition-colors">
-              ДІЗНАТИСЬ БІЛЬШЕ &raquo;
-            </button>
+            <MuseumButton icon="arrow" className="w-full md:w-auto justify-center md:justify-start">
+              ДІЗНАТИСЬ БІЛЬШЕ
+            </MuseumButton>
           </div>
         </div>
 

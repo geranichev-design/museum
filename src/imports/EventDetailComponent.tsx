@@ -99,15 +99,12 @@ export default function EventDetailComponent({
         {/* Back link */}
         <button
           onClick={onBack}
-          className="flex items-center gap-[2px] font-['Montserrat',sans-serif] text-[16px] text-black hover:underline self-start"
+          className="flex items-center gap-[6px] font-['Montserrat',sans-serif] text-[16px] text-black hover:underline self-start"
         >
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
             <path d="M11 4L6 9L11 14" stroke="black" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="-ml-[8px]">
-            <path d="M11 4L6 9L11 14" stroke="black" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          <span className="ml-[2px]">Події</span>
+          <span>Назад</span>
         </button>
 
         {/* Main layout: gallery + details */}

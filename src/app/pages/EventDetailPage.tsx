@@ -16,7 +16,7 @@ export default function EventDetailPage() {
       <Header />
       <div className="flex-1">
         <EventDetailComponent
-          onBack={() => navigate("/events")}
+          onBack={() => navigate(-1)}
           onRelatedClick={() => window.scrollTo(0, 0)}
         />
       </div>
