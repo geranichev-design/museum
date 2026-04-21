@@ -23,9 +23,9 @@ export interface MuseumButtonProps {
 
 function DoubleArrowIcon() {
   return (
-    <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
-      <path d="M1 1L7 7L1 13" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M9 1L15 7L9 13" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M10.6061 21.18L14.0752 24L24.0001 12L14.0752 0L10.6061 2.82L18.3755 12L10.6061 21.18Z" />
+      <path d="M0 21.18L3.46903 24L13.394 12L3.46903 0L0 2.82L7.76937 12L0 21.18Z" />
     </svg>
   );
 }

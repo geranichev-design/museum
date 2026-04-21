@@ -55,7 +55,7 @@ export function ExpositionSection() {
 
           {/* Button */}
           <div className="mt-auto">
-            <MuseumButton icon="arrow" className="w-full md:w-auto justify-center md:justify-start">
+            <MuseumButton icon="arrow" to="/exposition" className="w-full md:w-auto justify-center md:justify-start">
               ДІЗНАТИСЬ БІЛЬШЕ
             </MuseumButton>
           </div>

@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+// useState removed — Gallery manages its own state
 import { TAG_STYLES, type EventRecord } from "../data/eventsData";
+import { Gallery } from "../app/components/ui/Gallery";
 
 function AtomIcon() {
   return (
@@ -12,18 +14,6 @@ function AtomIcon() {
   );
 }
 
-function GallerySlide({ src }: { src: string | null }) {
-  if (!src) {
-    return (
-      <div className="w-full h-full bg-[#d9d9d9] flex items-center justify-center">
-        <div className="w-[48%] h-[48%]">
-          <AtomIcon />
-        </div>
-      </div>
-    );
-  }
-  return <img src={src} alt="" className="w-full h-full object-cover" />;
-}
 
 function RelatedCard({ tags, title, date, onClick }: { tags: string[]; title: string; date: string; onClick?: () => void }) {
   return (
@@ -62,15 +52,9 @@ export default function EventDetailComponent({
   onBack?: () => void;
   onRelatedClick?: (id: string) => void;
 }) {
-  const [active, setActive] = useState(0);
-
   useEffect(() => {
-    setActive(0);
     window.scrollTo(0, 0);
   }, [event.id]);
-
-  const prev = () => setActive((i) => Math.max(0, i - 1));
-  const next = () => setActive((i) => Math.min(event.gallery.length - 1, i + 1));
 
   return (
     <div className="bg-white">
@@ -96,63 +80,15 @@ export default function EventDetailComponent({
         <div className="flex flex-col md:flex-row gap-[32px] md:gap-[56px] items-start">
 
           {/* Left: Gallery */}
-          <div className="w-full md:w-[48%] flex-shrink-0 flex flex-col gap-[12px]">
-            {/* Main image */}
-            <div className="aspect-[11/10] relative overflow-hidden border-[6px] border-black">
-              <GallerySlide src={event.gallery[active]?.src ?? null} />
-            </div>
-
-            {/* Thumbnails */}
-            <div className="flex gap-[8px]">
-              {event.gallery.slice(0, 4).map((item, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActive(i)}
-                  className={`flex-1 aspect-square relative overflow-hidden border-[3px] transition-colors ${
-                    active === i ? "border-black" : "border-[#d4d4d4]"
-                  }`}
-                >
-                  <GallerySlide src={item.src} />
-                </button>
-              ))}
-            </div>
-
-            {/* Arrow + dot navigation */}
-            <div className="flex items-center justify-between mt-[4px]">
-              <button
-                onClick={prev}
-                disabled={active === 0}
-                className="flex items-center justify-center w-[44px] h-[44px] border-2 border-black disabled:opacity-30 hover:bg-[#f5f5f5] transition-colors"
-              >
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M12 5L7 10L12 15" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-
-              <div className="flex items-center gap-[8px]">
-                {event.gallery.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActive(i)}
-                    style={{
-                      width: active === i ? 12 : 8,
-                      height: active === i ? 12 : 8,
-                    }}
-                    className={`transition-all ${active === i ? "bg-black" : "bg-[#d4d4d4]"}`}
-                  />
-                ))}
-              </div>
-
-              <button
-                onClick={next}
-                disabled={active === event.gallery.length - 1}
-                className="flex items-center justify-center w-[44px] h-[44px] border-2 border-black disabled:opacity-30 hover:bg-[#f5f5f5] transition-colors"
-              >
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M8 5L13 10L8 15" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </div>
+          <div className="w-full md:w-[48%] flex-shrink-0">
+            <Gallery
+              key={event.id}
+              images={event.gallery}
+              aspectClass="aspect-[11/10]"
+              showThumbnails
+              mainBorder
+              lightbox
+            />
           </div>
 
           {/* Right: Event info */}

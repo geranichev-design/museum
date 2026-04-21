@@ -7,6 +7,7 @@ import ResearchersPage from "./pages/ResearchersPage";
 import EventsPage from "./pages/EventsPage";
 import EventDetailPage from "./pages/EventDetailPage";
 import SpacesPage from "./pages/SpacesPage";
+import ExpositionPage from "./pages/ExpositionPage";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
   {
     path: "/spaces",
     Component: SpacesPage,
+  },
+  {
+    path: "/exposition",
+    Component: ExpositionPage,
   },
   {
     path: "*",

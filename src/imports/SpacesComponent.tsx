@@ -1,6 +1,6 @@
 import { useState, useEffect, type ReactElement } from "react";
 import { useSearchParams } from "react-router";
-import { ImageLightbox } from "../app/components/ui/ImageLightbox";
+import { Gallery } from "../app/components/ui/Gallery";
 import { PageHero } from "../app/components/PageHero";
 
 // ── Icons ──────────────────────────────────────────────────────────────────
@@ -201,28 +201,18 @@ export default function SpacesComponent({ onBuyTicket }: { onBuyTicket?: () => v
     const idx = SPACES.findIndex((s) => s.name === name);
     return idx >= 0 ? idx : 0;
   });
-  const [activeImg, setActiveImg] = useState(0);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-
   useEffect(() => {
     const name = searchParams.get("space");
     if (!name) return;
     const idx = SPACES.findIndex((s) => s.name === name);
-    if (idx >= 0) {
-      setActiveIdx(idx);
-      setActiveImg(0);
-    }
+    if (idx >= 0) setActiveIdx(idx);
   }, [searchParams]);
 
   const space = SPACES[activeIdx];
 
   function selectSpace(i: number) {
     setActiveIdx(i);
-    setActiveImg(0);
   }
-
-  const prev = () => setActiveImg((i) => Math.max(0, i - 1));
-  const next = () => setActiveImg((i) => Math.min(GALLERY_IMAGES.length - 1, i + 1));
 
   return (
     <div data-name="Desktop">
@@ -285,52 +275,7 @@ export default function SpacesComponent({ onBuyTicket }: { onBuyTicket?: () => v
             {/* Right: gallery + info */}
             <div className="flex-1 md:pl-[40px] flex flex-col gap-[24px]">
 
-              {/* Gallery image */}
-              <div
-                className="aspect-[3/2] relative overflow-hidden cursor-zoom-in"
-                onClick={() => setLightboxOpen(true)}
-              >
-                <img
-                  key={activeImg}
-                  src={GALLERY_IMAGES[activeImg]}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Arrow + dot navigation */}
-              <div className="flex items-center justify-between">
-                <button
-                  onClick={prev}
-                  disabled={activeImg === 0}
-                  className="flex items-center justify-center w-[44px] h-[44px] border-2 border-black disabled:opacity-30 hover:bg-[#f5f5f5] transition-colors"
-                >
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M12 5L7 10L12 15" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-
-                <div className="flex items-center gap-[8px]">
-                  {GALLERY_IMAGES.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActiveImg(i)}
-                      style={{ width: activeImg === i ? 14 : 9, height: activeImg === i ? 14 : 9 }}
-                      className={`transition-all ${activeImg === i ? "bg-black" : "bg-[#d4d4d4]"}`}
-                    />
-                  ))}
-                </div>
-
-                <button
-                  onClick={next}
-                  disabled={activeImg === GALLERY_IMAGES.length - 1}
-                  className="flex items-center justify-center w-[44px] h-[44px] border-2 border-black disabled:opacity-30 hover:bg-[#f5f5f5] transition-colors"
-                >
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M8 5L13 10L8 15" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-              </div>
+              <Gallery key={activeIdx} images={GALLERY_IMAGES} aspectClass="aspect-[3/2]" lightbox />
 
               {/* Description */}
               <p className="font-['Montserrat',sans-serif] font-normal text-[16px] text-black leading-[1.65]">
@@ -359,14 +304,6 @@ export default function SpacesComponent({ onBuyTicket }: { onBuyTicket?: () => v
         </div>
       </div>
 
-      {lightboxOpen && (
-        <ImageLightbox
-          images={GALLERY_IMAGES}
-          currentIndex={activeImg}
-          onClose={() => setLightboxOpen(false)}
-          onSelect={(i) => setActiveImg(i)}
-        />
-      )}
     </div>
   );
 }
