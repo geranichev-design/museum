@@ -1,0 +1,34 @@
+import { useParams, useNavigate } from "react-router";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import CollectionItemComponent from "../../imports/CollectionItemComponent";
+import { COLLECTION_ITEMS, getRelatedItems } from "../../data/collectionData";
+
+export default function CollectionItemPage() {
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+
+  const item = COLLECTION_ITEMS.find((i) => i.id === id);
+
+  if (!item) {
+    navigate("/researchers");
+    return null;
+  }
+
+  const relatedItems = getRelatedItems(item);
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <div className="flex-1 pt-[89px] md:pt-[105px]">
+        <CollectionItemComponent
+          item={item}
+          relatedItems={relatedItems}
+          onBack={() => navigate("/researchers")}
+          onRelatedClick={(relatedId) => navigate(`/collection/${relatedId}`)}
+        />
+      </div>
+      <Footer />
+    </div>
+  );
+}

@@ -8,6 +8,7 @@ import EventsPage from "./pages/EventsPage";
 import EventDetailPage from "./pages/EventDetailPage";
 import SpacesPage from "./pages/SpacesPage";
 import ExpositionPage from "./pages/ExpositionPage";
+import CollectionItemPage from "./pages/CollectionItemPage";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
   {
     path: "/exposition",
     Component: ExpositionPage,
+  },
+  {
+    path: "/collection/:id",
+    Component: CollectionItemPage,
   },
   {
     path: "*",

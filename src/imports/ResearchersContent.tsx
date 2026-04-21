@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { MuseumInput } from "../app/components/ui/MuseumInput";
 import { PageHero } from "../app/components/PageHero";
 import { MuseumButton } from "../app/components/ui/MuseumButton";
@@ -69,10 +70,30 @@ const NEW_ITEMS = [
   "Музей отримав обладнання від Рівненської АЕС",
 ];
 
+const BUTTON_TO_ITEM_ID: Record<string, string> = {
+  "Речові пам'ятки": "digital-речові-памятки",
+  "Фото-, кіно-, пам'ятки": "digital-фото-кіно-памятки",
+  "Образотворче мистецтво": "digital-образотворче",
+  "Декоративно-ужиткове мистецтво": "digital-декоративно-ужиткове",
+  "Писемні джерела": "digital-писемні-джерела",
+  "Поповнення фондової колекції": "new-поповнення",
+  "Нові надходження": "new-надходження",
+  "Музей отримав обладнання від Рівненської АЕС": "new-рівненська-аес",
+};
+
 function CollectionCard({ title }: { title: string }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    const id = BUTTON_TO_ITEM_ID[title];
+    if (id) navigate(`/collection/${id}`);
+  };
+
   return (
-    <div className="border-[6px] border-black px-[16px] md:px-[24px] py-[16px] md:py-[20px] cursor-pointer hover:bg-gray-50 transition-colors">
-      {/* Mobile: stacked; Desktop: row */}
+    <div
+      className="border-[6px] border-black px-[16px] md:px-[24px] py-[16px] md:py-[20px] cursor-pointer hover:bg-gray-50 transition-colors"
+      onClick={handleClick}
+    >
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-[8px] md:gap-0">
         <p className="font-['Oswald',sans-serif] font-medium text-[18px] md:text-[20px] text-black uppercase leading-tight">
           {title}
@@ -488,7 +509,7 @@ function ArticlesSection() {
       </div>
 
       <div className="flex justify-center">
-        <MuseumButton variant="solid" theme="dark" icon="arrow" className="w-full md:w-auto !text-white !border-transparent">
+        <MuseumButton variant="solid" theme="dark" icon="arrow" className="w-full md:w-auto !text-black !border-transparent">
           ЗАВАНТАЖИТИ БІЛЬШЕ
         </MuseumButton>
       </div>
