@@ -1,5 +1,4 @@
 import svgPaths from "./svg-w4qh6hqxt6";
-import imgRectangleUpd1 from "figma:asset/b2695ccb01bc3b4f66b08f46ad0c7a2a4afc78b1.png";
 import imgImage113 from "figma:asset/60d48bf27ff2e549f1562f927b05a00b339ed1bf.png";
 import imgImage112 from "figma:asset/59753c9985b1cd2677d3920fc5933b717feab561.png";
 import { imgGroup } from "./svg-9gxse";
@@ -113,10 +112,9 @@ function Frame9() {
 function Group8() {
   return (
     <div className="absolute contents left-0 top-[-4.06px]">
-      <p className="absolute font-['Bebas_Neue',sans-serif] leading-[normal] left-0 not-italic text-[#e4e3e3] text-[133.677px] top-[-4.06px] whitespace-nowrap">Аварія</p>
       <div className="absolute h-[184.047px] left-0 top-0 w-[287.501px]" data-name="Rectangle upd 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[109.63%] left-[-0.29%] max-w-none top-[-9.63%] w-[110.31%]" src={imgRectangleUpd1} />
+          <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src="/AV.jpg" />
         </div>
       </div>
     </div>
@@ -125,7 +123,7 @@ function Group8() {
 
 function Frame4() {
   return (
-    <div className="h-[185.021px] max-w-[289px] relative shrink-0 w-full self-center">
+    <div className="h-[185.021px] max-w-[80vw] relative shrink-0 w-[80vw] self-center">
       <div className="absolute flex items-center justify-center left-[167.64px] size-[98.614px] top-[53.41px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "0" } as React.CSSProperties}>
         <div className="flex-none rotate-[34.22deg]">
           <div className="bg-[#dfbe22] size-[70.982px]" />
