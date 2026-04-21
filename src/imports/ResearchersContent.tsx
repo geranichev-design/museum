@@ -3,10 +3,10 @@ import { MuseumInput } from "../app/components/ui/MuseumInput";
 import { PageHero } from "../app/components/PageHero";
 import { MuseumButton } from "../app/components/ui/MuseumButton";
 
-function SectionTitle({ children, white }: { children: string; white?: boolean }) {
+function SectionTitle({ children, white, darkSquare }: { children: string; white?: boolean; darkSquare?: boolean }) {
   return (
     <div className="flex gap-[8px] items-center mb-[32px] md:mb-[40px]">
-      <div className="bg-[#DFBE22] shrink-0 size-[24px] md:size-[32px]" />
+      <div className={`${darkSquare ? "bg-black" : "bg-[#DFBE22]"} shrink-0 size-[24px] md:size-[32px]`} />
       <p className={`font-['Oswald',sans-serif] font-medium text-[22px] md:text-[32px] uppercase leading-none ${white ? "text-white" : "text-black"}`}>
         {children}
       </p>
@@ -14,14 +14,9 @@ function SectionTitle({ children, white }: { children: string; white?: boolean }
   );
 }
 
-function DarkImagePlaceholder() {
+function SectionImage({ src }: { src: string }) {
   return (
-    <div className="relative w-full aspect-square overflow-hidden bg-[#2a2a2a] mb-[16px] md:mb-[20px]">
-      <div
-        className="absolute bottom-0 right-0 bg-[#DFBE22]"
-        style={{ width: "55%", height: "55%", clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }}
-      />
-    </div>
+    <img src={src} alt="" className="w-full h-auto mb-[16px] md:mb-[20px]" />
   );
 }
 
@@ -242,7 +237,7 @@ function LibrarySection() {
         {/* Three columns — stack on mobile */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px] mb-[32px] md:mb-[48px]">
           <div>
-            <DarkImagePlaceholder />
+            <SectionImage src="/res_lib01.png" />
             <p className="font-['Oswald',sans-serif] font-medium text-[15px] md:text-[16px] text-white uppercase mb-[12px] md:mb-[16px]">
               У ФОНДІ ПРЕДСТАВЛЕНІ:
             </p>
@@ -254,7 +249,7 @@ function LibrarySection() {
             ]} />
           </div>
           <div>
-            <DarkImagePlaceholder />
+            <SectionImage src="/res_lib02.png" />
             <p className="font-['Oswald',sans-serif] font-medium text-[15px] md:text-[16px] text-white uppercase mb-[12px] md:mb-[16px]">
               ОСОБЛИВЕ МІСЦЕ ЗАЙМАЮТЬ:
             </p>
@@ -267,7 +262,7 @@ function LibrarySection() {
             ]} />
           </div>
           <div>
-            <DarkImagePlaceholder />
+            <SectionImage src="/res_lib03.png" />
             <p className="font-['Oswald',sans-serif] font-medium text-[15px] md:text-[16px] text-white uppercase mb-[12px] md:mb-[16px]">
               ДО КОЛЕКЦІЇ ВХОДЯТЬ:
             </p>
@@ -325,7 +320,7 @@ function NewspaperFundSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
           <div>
-            <DarkImagePlaceholder />
+            <SectionImage src="/res_lib04.png" />
             <p className="font-['Oswald',sans-serif] font-medium text-[15px] md:text-[16px] text-white uppercase mb-[10px] md:mb-[12px]">
               ДОКУМЕНТАЛЬНА КОЛЕКЦІЯ
             </p>
@@ -342,7 +337,7 @@ function NewspaperFundSection() {
             ]} />
           </div>
           <div>
-            <DarkImagePlaceholder />
+            <SectionImage src="/res_lib05.png" />
             <p className="font-['Oswald',sans-serif] font-medium text-[15px] md:text-[16px] text-white uppercase mb-[10px] md:mb-[12px]">
               PERIODИКА МІСТИТЬ МАТЕРІАЛИ ПРО:
             </p>
@@ -353,7 +348,7 @@ function NewspaperFundSection() {
             ]} />
           </div>
           <div>
-            <DarkImagePlaceholder />
+            <SectionImage src="/res_lib06.png" />
             <p className="font-['Oswald',sans-serif] font-medium text-[15px] md:text-[16px] text-white uppercase mb-[10px] md:mb-[12px]">
               МІСТИТЬ НАСТУПНІ ВИДАННЯ:
             </p>
@@ -397,19 +392,22 @@ function PhotoFundSection() {
           {[
             {
               label: "ДО АВАРІЇ:",
+              image: "/res_lib07.png",
               items: ["життя Чорнобильського Полісся;", "будівництво та робота ЧАЕС;", "розвиток міста Прип'ять."],
             },
             {
               label: "PERIOD АВАРІЇ:",
+              image: "/res_lib08.png",
               items: ["зруйнований 4-й енергоблок;", "евакуація населення;", "ліквідація наслідків."],
             },
             {
               label: "ПІСЛЯ АВАРІЇ:",
+              image: "/res_lib09.png",
               items: ["життя в Зоні відчуження;", "трансформація територій;", "відродження природи."],
             },
           ].map((phase) => (
             <div key={phase.label}>
-              <DarkImagePlaceholder />
+              <SectionImage src={phase.image} />
               <p className="font-['Oswald',sans-serif] font-medium text-[15px] md:text-[16px] text-white uppercase mb-[10px] md:mb-[12px]">
                 {phase.label}
               </p>
@@ -424,8 +422,8 @@ function PhotoFundSection() {
 
 function ArticleCard({ title, text, date, source }: { title: string; text: string; date: string; source: string }) {
   return (
-    <div className="border border-gray-200 flex">
-      <div className="w-[100px] md:w-[140px] shrink-0 bg-[#2a2a2a] min-h-[130px]" />
+    <div className="flex flex-col md:flex-row">
+      <div className="w-full aspect-square md:w-[220px] md:h-[220px] md:aspect-auto shrink-0 bg-[#2a2a2a]" />
       <div className="flex flex-col gap-[6px] md:gap-[8px] p-[12px] md:p-[16px] flex-1">
         <p className="font-['Oswald',sans-serif] font-medium text-[13px] md:text-[16px] text-black uppercase leading-tight">
           {title}
@@ -433,12 +431,12 @@ function ArticleCard({ title, text, date, source }: { title: string; text: strin
         <p className="font-['Montserrat',sans-serif] text-[11px] md:text-[12px] text-gray-600 leading-[1.5]">
           {text}
         </p>
-        <div className="flex items-center justify-between mt-auto pt-[4px]">
-          <div>
-            <p className="font-['Montserrat',sans-serif] text-[11px] md:text-[12px] text-gray-500">{date}</p>
-            <p className="font-['Montserrat',sans-serif] text-[11px] md:text-[12px] text-gray-500">{source}</p>
-          </div>
-          <MuseumButton variant="outlined" theme="light" icon="arrow">
+        <div>
+          <p className="font-['Montserrat',sans-serif] text-[11px] md:text-[12px] text-gray-500">{date}</p>
+          <p className="font-['Montserrat',sans-serif] text-[11px] md:text-[12px] text-gray-500">{source}</p>
+        </div>
+        <div className="mt-auto pt-[4px]">
+          <MuseumButton variant="outlined" theme="light" icon="arrow" className="w-full md:w-auto">
             ПЕРЕГЛЯНУТИ
           </MuseumButton>
         </div>
@@ -490,7 +488,7 @@ function ArticlesSection() {
       </div>
 
       <div className="flex justify-center">
-        <MuseumButton variant="outlined" theme="light" icon="arrow" className="w-full md:w-auto">
+        <MuseumButton variant="solid" theme="dark" icon="arrow" className="w-full md:w-auto !text-white !border-transparent">
           ЗАВАНТАЖИТИ БІЛЬШЕ
         </MuseumButton>
       </div>
@@ -510,9 +508,9 @@ function ApplicationSection() {
   const [extra, setExtra] = useState("");
 
   return (
-    <section id="application-form" className="w-full bg-[#f5f5f5]">
+    <section id="application-form" className="w-full bg-[#DFBE22]">
       <div className="px-[16px] md:px-[55px] py-[40px] md:py-[72px] max-w-[1200px] mx-auto w-full">
-        <SectionTitle>Подати заявку</SectionTitle>
+        <SectionTitle darkSquare>Подати заявку</SectionTitle>
 
         <p className="font-['Montserrat',sans-serif] text-[13px] md:text-[16px] text-black leading-[1.6] mb-[24px] md:mb-[40px] max-w-[900px]">
           Національний музей «Чорнобиль» відкритий для вчених, дослідників і журналістів, зацікавлених у науковому дослідженні
@@ -539,7 +537,7 @@ function ApplicationSection() {
         </div>
 
         <div className="mt-[20px] md:mt-[24px]">
-          <MuseumButton variant="solid" theme="dark" icon="arrow" className="w-full md:w-auto">
+          <MuseumButton variant="solid" theme="dark" icon="arrow" className="w-full md:w-auto border-2 border-black">
             ПОДАТИ ЗАЯВКУ
           </MuseumButton>
         </div>
@@ -550,11 +548,18 @@ function ApplicationSection() {
 
 function RegistryBanner() {
   return (
-    <div className="w-full bg-[#1a1a1a] px-[16px] md:px-[55px] py-[24px] md:py-[32px]">
-      <div className="max-w-[1200px] mx-auto w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px] md:gap-0">
-        <p className="font-['Oswald',sans-serif] font-medium text-[18px] md:text-[24px] text-white uppercase">
-          РЕЄСТР МУЗЕЙНОГО ФОНДУ УКРАЇНИ
-        </p>
+    <div
+      className="w-full px-[16px] md:px-[55px] py-[24px] md:py-[32px] relative bg-cover bg-center"
+      style={{ backgroundImage: "url('/reg_museum.png')" }}
+    >
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="relative max-w-[1200px] mx-auto w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-[16px] md:gap-0">
+        <div className="flex items-center gap-[8px]">
+          <div className="bg-[#DFBE22] shrink-0 size-[24px] md:size-[32px]" />
+          <p className="font-['Oswald',sans-serif] font-medium text-[18px] md:text-[24px] text-white uppercase">
+            РЕЄСТР МУЗЕЙНОГО ФОНДУ УКРАЇНИ
+          </p>
+        </div>
         <MuseumButton variant="solid" theme="dark" icon="arrow" className="w-full md:w-auto">
           ПЕРЕЙТИ ДО ФОНДУ
         </MuseumButton>
