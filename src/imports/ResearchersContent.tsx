@@ -6,7 +6,7 @@ import { MuseumButton } from "../app/components/ui/MuseumButton";
 function SectionTitle({ children, white }: { children: string; white?: boolean }) {
   return (
     <div className="flex gap-[8px] items-center mb-[32px] md:mb-[40px]">
-      <div className="bg-[#e6bc00] shrink-0 size-[24px] md:size-[32px]" />
+      <div className="bg-[#DFBE22] shrink-0 size-[24px] md:size-[32px]" />
       <p className={`font-['Oswald',sans-serif] font-medium text-[22px] md:text-[32px] uppercase leading-none ${white ? "text-white" : "text-black"}`}>
         {children}
       </p>
@@ -18,7 +18,7 @@ function DarkImagePlaceholder() {
   return (
     <div className="relative w-full aspect-square overflow-hidden bg-[#2a2a2a] mb-[16px] md:mb-[20px]">
       <div
-        className="absolute bottom-0 right-0 bg-[#e6bc00]"
+        className="absolute bottom-0 right-0 bg-[#DFBE22]"
         style={{ width: "55%", height: "55%", clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }}
       />
     </div>
@@ -61,23 +61,22 @@ const STATS = [
 ];
 
 const DIGITAL_ITEMS = [
-  "РЕЧОВІ ПАМ'ЯТКИ",
-  "ОБРАЗОТВОРЧЕ МИСТЕЦТВО",
-  "ФОТО-, КІНО-, ПАМ'ЯТКИ",
-  "ПИСЕМНІ ДЖЕРЕЛА",
-  "ДЕКОРАТИВНО-УЖИТКОВЕ МИСТЕЦТВО",
+  "Речові пам'ятки",
+  "Фото-, кіно-, пам'ятки",
+  "Образотворче мистецтво",
+  "Декоративно-ужиткове мистецтво",
+  "Писемні джерела",
 ];
 
 const NEW_ITEMS = [
-  "РЕЧОВІ ПАМ'ЯТКИ",
-  "ОБРАЗОТВОРЧЕ МИСТЕЦТВО",
-  "ФОТО-, КІНО-, ПАМ'ЯТКИ",
-  "ПИСЕМНІ ДЖЕРЕЛА",
+  "Поповнення фондової колекції",
+  "Нові надходження",
+  "Музей отримав обладнання від Рівненської АЕС",
 ];
 
 function CollectionCard({ title }: { title: string }) {
   return (
-    <div className="border border-black px-[16px] md:px-[24px] py-[16px] md:py-[20px] cursor-pointer hover:bg-gray-50 transition-colors">
+    <div className="border-[6px] border-black px-[16px] md:px-[24px] py-[16px] md:py-[20px] cursor-pointer hover:bg-gray-50 transition-colors">
       {/* Mobile: stacked; Desktop: row */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-[8px] md:gap-0">
         <p className="font-['Oswald',sans-serif] font-medium text-[18px] md:text-[20px] text-black uppercase leading-tight">
@@ -106,7 +105,7 @@ function FondsSection() {
         <div className="md:hidden flex flex-col">
           {STATS.map((s, i) => (
             <div key={s.value}>
-              <div className="py-[20px]">
+              <div className="py-[20px] flex flex-col items-center text-center">
                 <p className="font-['Oswald',sans-serif] font-medium text-[48px] text-black leading-none">
                   {s.value}
                 </p>
@@ -114,15 +113,15 @@ function FondsSection() {
                   {s.label}
                 </p>
               </div>
-              {i < STATS.length - 1 && <div className="h-[2px] bg-black" />}
+              {i < STATS.length - 1 && <div className="h-[6px] bg-black" />}
             </div>
           ))}
         </div>
         {/* Desktop */}
         <div className="hidden md:flex gap-0">
           {STATS.map((s, i) => (
-            <div key={s.value} className="flex items-stretch">
-              <div className="flex flex-col gap-[8px]">
+            <div key={s.value} className="flex items-stretch flex-1">
+              <div className="flex flex-col gap-[8px] items-center text-center flex-1">
                 <p className="font-['Oswald',sans-serif] font-medium text-[40px] text-black leading-none">
                   {s.value}
                 </p>
@@ -130,7 +129,7 @@ function FondsSection() {
                   {s.label}
                 </p>
               </div>
-              {i < STATS.length - 1 && <div className="w-[1px] bg-black mx-[32px] self-stretch" />}
+              {i < STATS.length - 1 && <div className="w-[6px] bg-black mx-[32px] self-stretch" />}
             </div>
           ))}
         </div>

@@ -121,7 +121,7 @@ function Frame8() {
 function Frame24() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center max-w-[400px] min-w-[240px] relative shrink-0 w-full">
-      <div className="bg-[#e6bc00] relative shrink-0 w-full" data-name="button">
+      <div className="bg-[#DFBE22] relative shrink-0 w-full" data-name="button">
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex items-center justify-center px-[16px] py-[8px] relative size-full">
             <div className="flex flex-col font-['Oswald',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black uppercase whitespace-nowrap">
@@ -177,7 +177,7 @@ function Frame9() {
     <div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0 w-full">
       <Frame10 />
       <Frame13 />
-      <div className="bg-[#e6bc00] relative shrink-0 w-full" data-name="button">
+      <div className="bg-[#DFBE22] relative shrink-0 w-full" data-name="button">
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex gap-[8px] items-center justify-center px-[16px] py-[8px] relative size-full">
             <div className="flex flex-col font-['Oswald',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black uppercase whitespace-nowrap">
@@ -749,7 +749,7 @@ function Frame4() {
       <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] overflow-hidden relative shrink-0 text-[16px] text-black text-ellipsis whitespace-nowrap"><T uk="Вікторина" en="Quiz" /></p>
       <p className="font-['Oswald',sans-serif] font-medium leading-[34px] min-w-full relative shrink-0 text-[32px] text-black uppercase w-[min-content]"><T uk="ЩО ВИ ЗНАЄТЕ ПРО ЧОРНОБИЛЬ?" en="WHAT DO YOU KNOW ABOUT CHORNOBYL?" /></p>
       <Frame3 />
-      <div className="bg-[#e6bc00] relative shrink-0 w-full" data-name="button">
+      <div className="bg-[#DFBE22] relative shrink-0 w-full" data-name="button">
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex gap-[8px] items-center justify-center px-[16px] py-[8px] relative size-full">
             <div className="flex flex-col font-['Oswald',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black uppercase whitespace-nowrap">

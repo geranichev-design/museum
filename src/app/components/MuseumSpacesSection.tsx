@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MuseumButton } from "./ui/MuseumButton";
+import { VideoLightbox } from "./ui/VideoLightbox";
 
 const FLOORS = [
   {
@@ -18,6 +19,7 @@ const FLOORS = [
 
 export function MuseumSpacesSection() {
   const [active, setActive] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   return (
     <section className="w-full bg-white">
@@ -63,12 +65,15 @@ export function MuseumSpacesSection() {
             {FLOORS[active].text}
           </p>
 
-          {/* Image — mobile only */}
-          <div className="md:hidden w-full">
-            <img
-              src="/spaces.png"
-              alt="Простори музею"
-              className="w-full object-contain"
+          {/* Video — mobile only */}
+          <div className="md:hidden w-full cursor-pointer" onClick={() => setLightboxOpen(true)}>
+            <video
+              src="/museum_720.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full object-contain pointer-events-none"
             />
           </div>
 
@@ -80,16 +85,26 @@ export function MuseumSpacesSection() {
           </div>
         </div>
 
-        {/* Right — image (desktop only) */}
-        <div className="hidden md:flex flex-1 min-w-0 items-end justify-center">
-          <img
-            src="/spaces.png"
-            alt="Простори музею"
-            className="w-full object-contain"
+        {/* Right — video (desktop only) */}
+        <div
+          className="hidden md:flex flex-1 min-w-0 items-center justify-center cursor-pointer"
+          onClick={() => setLightboxOpen(true)}
+        >
+          <video
+            src="/museum_720.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full object-contain pointer-events-none"
           />
         </div>
 
       </div>
+
+      {lightboxOpen && (
+        <VideoLightbox src="/museum_720.mp4" onClose={() => setLightboxOpen(false)} />
+      )}
     </section>
   );
 }

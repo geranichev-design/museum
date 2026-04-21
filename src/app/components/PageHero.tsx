@@ -49,7 +49,7 @@ export function PageHero({
               fontWeight: 400,
               fontSize: 32,
               lineHeight: "26px",
-              color: "#E6BC00",
+              color: "#DFBE22",
             }}
           >
             {titleTop}
@@ -85,9 +85,9 @@ function ButtonEl({
   children: React.ReactNode;
 }) {
   const cls =
-    "bg-[#e6bc00] px-[16px] py-[8px] text-black w-fit" +
+    "bg-[#DFBE22] px-[16px] py-[8px] text-black w-fit" +
     " font-['Oswald',sans-serif] font-medium text-[20px] leading-[24px] uppercase" +
-    " hover:bg-[#d4aa00] transition-colors cursor-pointer";
+    " hover:bg-[#C9AB1F] transition-colors cursor-pointer";
 
   if (to) return <Link to={to} className={cls}>{children}</Link>;
   if (href) return <a href={href} className={cls}>{children}</a>;

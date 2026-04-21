@@ -132,7 +132,7 @@ function Frame14() {
 function Frame30() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center max-w-[400px] min-w-[240px] relative shrink-0 w-full">
-      <div className="bg-[#e6bc00] relative shrink-0 w-full" data-name="button">
+      <div className="bg-[#DFBE22] relative shrink-0 w-full" data-name="button">
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex items-center justify-center px-[16px] py-[8px] relative size-full">
             <div className="flex flex-col font-['Oswald',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black uppercase whitespace-nowrap">
@@ -188,7 +188,7 @@ function Frame15() {
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[40px] items-start min-w-px relative">
       <Frame16 />
       <Frame19 />
-      <div className="bg-[#e6bc00] max-w-[240px] relative shrink-0 w-full" data-name="button">
+      <div className="bg-[#DFBE22] max-w-[240px] relative shrink-0 w-full" data-name="button">
         <div className="flex flex-row items-center justify-center max-w-[inherit] size-full">
           <div className="content-stretch flex gap-[8px] items-center justify-center max-w-[inherit] px-[16px] py-[8px] relative size-full">
             <div className="flex flex-col font-['Oswald',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black uppercase whitespace-nowrap">

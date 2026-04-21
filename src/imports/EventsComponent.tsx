@@ -110,7 +110,7 @@ export default function EventsComponent({ onBuyTicket }: { onBuyTicket?: () => v
           {/* Title + Filters row */}
           <div className="flex flex-col md:flex-row md:items-center gap-[16px] md:gap-[24px]">
             <div className="flex items-center gap-[8px] flex-1">
-              <div className="bg-[#e6bc00] shrink-0 size-[32px]" />
+              <div className="bg-[#DFBE22] shrink-0 size-[32px]" />
               <p className="font-['Oswald',sans-serif] font-medium text-[34px] md:text-[40px] text-black uppercase leading-[1]">
                 ПОДІЇ
               </p>

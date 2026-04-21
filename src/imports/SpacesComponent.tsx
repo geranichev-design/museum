@@ -308,7 +308,7 @@ export default function SpacesComponent({ onBuyTicket }: { onBuyTicket?: () => v
 
           {/* Section title */}
           <div className="flex items-center gap-[8px]">
-            <div className="bg-[#e6bc00] shrink-0 size-[32px]" />
+            <div className="bg-[#DFBE22] shrink-0 size-[32px]" />
             <p className="font-['Oswald',sans-serif] font-medium text-[34px] md:text-[40px] text-black uppercase leading-[1]">
               ПРОСТОРИ
             </p>
@@ -322,7 +322,7 @@ export default function SpacesComponent({ onBuyTicket }: { onBuyTicket?: () => v
                 onClick={() => selectSpace(i)}
                 className={`shrink-0 px-[12px] py-[10px] font-['Montserrat',sans-serif] text-[13px] whitespace-nowrap border-b-2 transition-colors ${
                   activeIdx === i
-                    ? "border-[#e6bc00] text-black font-semibold"
+                    ? "border-[#DFBE22] text-black font-semibold"
                     : "border-transparent text-[#555] hover:text-black"
                 }`}
               >
@@ -342,7 +342,7 @@ export default function SpacesComponent({ onBuyTicket }: { onBuyTicket?: () => v
                   onClick={() => selectSpace(i)}
                   className={`w-full text-left px-[16px] py-[14px] mr-[16px] font-['Montserrat',sans-serif] text-[16px] leading-[1.3] transition-colors ${
                     activeIdx === i
-                      ? "bg-[#e6bc00] text-black font-medium"
+                      ? "bg-[#DFBE22] text-black font-medium"
                       : "text-black hover:bg-[#f5f3e9]"
                   }`}
                 >
@@ -368,7 +368,7 @@ export default function SpacesComponent({ onBuyTicket }: { onBuyTicket?: () => v
               <div className="flex flex-col gap-[16px] pb-[8px]">
                 {space.features.map((f, i) => (
                   <div key={i} className="flex items-center gap-[12px]">
-                    <div className="text-[#e6bc00] shrink-0 size-[24px] flex items-center justify-center">
+                    <div className="text-[#DFBE22] shrink-0 size-[24px] flex items-center justify-center">
                       {ICON_MAP[f.icon]}
                     </div>
                     <span className="font-['Montserrat',sans-serif] font-normal text-[16px] text-black">

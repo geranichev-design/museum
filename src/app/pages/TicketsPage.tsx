@@ -51,7 +51,7 @@ export default function TicketsPage() {
 
       // Handle "Придбати квиток" button in header
       const headerButton = target.closest('[data-name="button"]');
-      if (headerButton?.textContent?.includes("Придбати квиток") && !headerButton.classList.contains('bg-[#e6bc00]')) {
+      if (headerButton?.textContent?.includes("Придбати квиток") && !headerButton.classList.contains('bg-[#DFBE22]')) {
         e.preventDefault();
         navigate("/tickets");
         return;

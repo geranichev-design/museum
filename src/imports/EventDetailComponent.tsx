@@ -95,7 +95,7 @@ export default function EventDetailComponent({
           <div className="flex-1 flex flex-col gap-[20px] md:gap-[24px]">
             {/* Title */}
             <div className="flex items-center gap-[12px]">
-              <div className="bg-[#e6bc00] shrink-0 size-[32px]" />
+              <div className="bg-[#DFBE22] shrink-0 size-[32px]" />
               <h1 className="font-['Oswald',sans-serif] font-medium text-[28px] md:text-[36px] text-black uppercase leading-[1.1]">
                 {event.title}
               </h1>

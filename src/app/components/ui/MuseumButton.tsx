@@ -41,18 +41,18 @@ function SearchIcon() {
 
 const COLOR_STYLES: Record<`${Variant}-${Theme}`, string> = {
   "solid-dark":
-    "bg-[#F8B700] text-black border-[#F8B700] hover:bg-[#e0a800] hover:border-[#e0a800] active:bg-black active:text-[#F8B700] active:border-black",
+    "bg-[#DFBE22] text-black border-[#DFBE22] hover:bg-[#C9AB1F] hover:border-[#C9AB1F] active:bg-black active:text-[#DFBE22] active:border-black",
   "outlined-dark":
-    "bg-transparent text-[#F8B700] border-[#F8B700] hover:bg-[#F8B700] hover:text-black active:bg-black active:text-[#F8B700] active:border-black",
+    "bg-transparent text-[#DFBE22] border-[#DFBE22] hover:bg-[#DFBE22] hover:text-black active:bg-black active:text-[#DFBE22] active:border-black",
   "solid-light":
-    "bg-black text-white border-black hover:bg-[#F8B700] hover:text-black hover:border-[#F8B700] active:bg-black active:text-[#F8B700] active:border-black",
+    "bg-black text-white border-black hover:bg-[#DFBE22] hover:text-black hover:border-[#DFBE22] active:bg-black active:text-[#DFBE22] active:border-black",
   "outlined-light":
-    "bg-transparent text-black border-black hover:bg-[#F8B700] hover:text-black hover:border-[#F8B700] active:bg-black active:text-[#F8B700] active:border-[#F8B700]",
+    "bg-transparent text-black border-black hover:bg-[#DFBE22] hover:text-black hover:border-[#DFBE22] active:bg-black active:text-[#DFBE22] active:border-[#DFBE22]",
   // Ghost: no visible border/bg by default; gains fill on hover, black on push
   "ghost-light":
-    "bg-transparent text-black border-transparent hover:bg-[#F8B700] hover:text-black hover:border-[#F8B700] active:bg-black active:text-[#F8B700] active:border-black",
+    "bg-transparent text-black border-transparent hover:bg-[#DFBE22] hover:text-black hover:border-[#DFBE22] active:bg-black active:text-[#DFBE22] active:border-black",
   "ghost-dark":
-    "bg-transparent text-[#F8B700] border-transparent hover:bg-[#F8B700] hover:text-black hover:border-[#F8B700] active:bg-black active:text-[#F8B700] active:border-black",
+    "bg-transparent text-[#DFBE22] border-transparent hover:bg-[#DFBE22] hover:text-black hover:border-[#DFBE22] active:bg-black active:text-[#DFBE22] active:border-black",
 };
 
 const FONT_STYLES: Record<FontStyle, string> = {
