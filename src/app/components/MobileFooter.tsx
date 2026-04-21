@@ -87,17 +87,11 @@ export default function MobileFooter() {
             {uk ? 'Наші соцмережі' : 'Our social media'}
           </p>
           <div className="flex gap-[16px] items-center">
-            <a href="#" aria-label="Facebook" className="opacity-80 hover:opacity-100 transition-opacity">
+            <a href="https://www.facebook.com/museumchornobyl/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="opacity-80 hover:opacity-100 transition-opacity">
               <img src="/facebook.svg" alt="Facebook" width={32} height={32} />
             </a>
-            <a href="#" aria-label="LinkedIn" className="opacity-80 hover:opacity-100 transition-opacity">
-              <img src="/Linkedin.svg" alt="LinkedIn" width={32} height={32} />
-            </a>
-            <a href="#" aria-label="Twitter / X" className="opacity-80 hover:opacity-100 transition-opacity">
-              <img src="/twitter.svg" alt="Twitter" width={32} height={32} />
-            </a>
-            <a href="#" aria-label="YouTube" className="opacity-80 hover:opacity-100 transition-opacity">
-              <img src="/youtube.svg" alt="YouTube" width={32} height={32} />
+            <a href="https://www.instagram.com/national.museum.chornobyl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="opacity-80 hover:opacity-100 transition-opacity">
+              <img src="/instagram.svg" alt="Instagram" width={32} height={32} />
             </a>
           </div>
         </div>

@@ -1,7 +1,9 @@
 import svgPaths from "./Desktop-1/svg-3y1rwqhzbp";
+import imgAtom from "./Desktop-1/f32c44e2ec35515e3fee340405c927a880e0b926.png";
+import imgLightning from "./Desktop-1/428dd839ddca8b7fde2e5829c3f9eed0834855e8.png";
+import { MuseumLogo } from "../app/components/MuseumLogo";
 import imgImage103 from "./Desktop-1/0d9b0ae1908ad31d6398a074f9850d27aa46b21e.png";
 import imgImage94 from "./Desktop-1/12d55ea741390a634a9e6b5bc97caec76f2eee58.png";
-import imgRectangle837 from "./Desktop-1/b9c97d9f84f70aa97a7cf312696a6b0fb1c9c236.png";
 import imgAtom1 from "./Desktop-1/6e507b6f905be2669cd6a7132ee56cbac1ba5620.png";
 import imgExcursion1 from "./Desktop-1/2a9ee835dd5e339329f9844110e462c45ec767c5.png";
 import imgTemple1 from "./Desktop-1/91bbcb127e963955343f67160a0ecbeada584668.png";
@@ -181,6 +183,55 @@ function MissionSection() {
   );
 }
 
+/* ─── LOGO CONCEPT ─── */
+function LogoConceptSection() {
+  return (
+    <div className="bg-white px-[16px] py-[40px] border-t-4 border-black" data-name="logo-concept">
+      <div className="relative border-[6px] border-black p-[16px] flex flex-col gap-[20px]">
+        <SectionTitle label="Концепція логотипа" />
+
+        {/* Atom */}
+        <div className="flex justify-center">
+          <img src={imgAtom} alt="Атом" className="w-[140px] h-[140px] object-contain" />
+        </div>
+        <p className="font-['Montserrat',sans-serif] font-normal text-[15px] leading-[22px] text-black">
+          Класичне, найпростіше і легке для сприйняття зображення атому може бути виразною основою логотипу
+        </p>
+
+        {/* + */}
+        <p className="font-['Oswald',sans-serif] font-medium text-[#e6bc00] text-[72px] leading-none text-center">+</p>
+
+        {/* Text about museum */}
+        <p className="font-['Montserrat',sans-serif] font-normal text-[15px] leading-[22px] text-black text-center">
+          Чорнобильський музей – це місце, де зібрано унікальну інформацію про одну з найбільших техногенних катастроф
+        </p>
+        <p className="font-['Montserrat',sans-serif] font-normal text-[15px] leading-[22px] text-black">
+          {`Акцентною частиною лого є траєкторія електрону, що формує собою літеру "Ч", від назви "Чорнобиль", та одночасно літеру "І", від слова "інформація", бо музей асоціюється саме з інформацією, яка розповідається відвідувачам.`}
+        </p>
+
+        {/* + */}
+        <p className="font-['Oswald',sans-serif] font-medium text-[#e6bc00] text-[72px] leading-none text-center">+</p>
+
+        {/* Lightning */}
+        <div className="flex justify-center">
+          <img src={imgLightning} alt="Блискавка" className="w-[100px] h-[150px] object-contain" />
+        </div>
+        <p className="font-['Montserrat',sans-serif] font-normal text-[15px] leading-[22px] text-black">
+          Атом є джерелом енергії, найвиразнішим символом якої є блискавка.
+        </p>
+
+        {/* = */}
+        <p className="font-['Oswald',sans-serif] font-medium text-[#e6bc00] text-[72px] leading-none text-center">=</p>
+
+        {/* Logo */}
+        <div className="flex justify-center">
+          <MuseumLogo color="black" width={220} height={60} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ─── HISTORY ─── */
 const HISTORY_ITEMS = [
   { year: "1992", text: "Музей створений на базі фотодокументальної виставки «Пам'ять мужності і слави», організованої у першу річницю трагедії учасниками ліквідації наслідків аварії на Чорнобильській АЕС – пожежними Київщини." },
@@ -210,9 +261,9 @@ function HistorySection() {
 
 /* ─── TEAM ─── */
 const TEAM_MEMBERS = [
-  { name: "Віталіна Мартиновська", role: "Генеральний директор" },
-  { name: "Яніна Швачко", role: "Заступник генерального директора", sub: "наукова та експозиційна діяльність" },
-  { name: "Євген Кундель", role: "Заступник генерального директора", sub: "адміністративна та господарська діяльність" },
+  { name: "Віталіна Мартиновська", role: "Генеральний директор", photo: "/team-vitalina.png" },
+  { name: "Яніна Швачко", role: "Заступник генерального директора", sub: "наукова та експозиційна діяльність", photo: "/team-yanina.png" },
+  { name: "Євген Кундель", role: "Заступник генерального директора", sub: "адміністративна та господарська діяльність", photo: "/team-yevhen.png" },
 ];
 
 const DEPARTMENTS = [
@@ -230,10 +281,10 @@ function TeamSection() {
     <div className="bg-[#f5f3e9] flex flex-col gap-[32px] px-[16px] py-[40px]" data-name="team">
       <SectionTitle label="Команда" />
 
-      {TEAM_MEMBERS.map(({ name, role, sub }) => (
+      {TEAM_MEMBERS.map(({ name, role, sub, photo }) => (
         <div key={name} className="flex gap-[16px] items-start">
           <div className="relative shrink-0 size-[80px]">
-            <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgRectangle837} />
+            <img alt={name} className="absolute inset-0 max-w-none object-cover object-top size-full" src={photo} />
             <div aria-hidden="true" className="absolute border-4 border-black border-solid inset-0" />
           </div>
           <div className="flex flex-col gap-[4px] text-black">
@@ -243,6 +294,10 @@ function TeamSection() {
           </div>
         </div>
       ))}
+
+      <div className="relative w-full h-[220px] shrink-0">
+        <img alt="Команда музею" className="absolute inset-0 w-full h-full object-cover" src="/Museum_team.jpeg" />
+      </div>
 
       <div className="flex flex-col gap-[24px]">
         {DEPARTMENTS.map(({ icon, title, desc }) => (
@@ -318,11 +373,11 @@ function DocumentsSection() {
   return (
     <div className="bg-[#f5f3e9] flex flex-col gap-[16px] px-[16px] py-[40px]" data-name="docs">
       <SectionTitle label="Документи" />
-      <div className="flex flex-col gap-[12px] mt-[8px]">
+      <div className="grid grid-cols-2 gap-[16px] mt-[8px]">
         {DOCS.map((doc) => (
-          <div key={doc} className="flex items-center justify-between gap-[12px] px-[16px] py-[16px] relative">
+          <div key={doc} className="flex items-center justify-between gap-[8px] px-[12px] py-[14px] relative">
             <div aria-hidden="true" className="absolute border-4 border-black border-solid inset-0 pointer-events-none" />
-            <p className="font-['Oswald',sans-serif] font-medium text-[16px] leading-[20px] text-black uppercase flex-1">{doc}</p>
+            <p className="font-['Oswald',sans-serif] font-medium text-[13px] leading-[18px] text-black uppercase flex-1">{doc}</p>
             <DownloadIcon />
           </div>
         ))}
@@ -347,17 +402,23 @@ function DonateSection() {
         </p>
       </div>
 
-      <div className="bg-[#e6bc00] flex flex-col gap-[8px] p-[16px]">
-        <p className="font-['Oswald',sans-serif] font-medium text-[18px] leading-[24px] uppercase text-black">Реквізити благодійного рахунку Музею:</p>
-        <div className="font-['Montserrat',sans-serif] font-normal text-[14px] leading-[20px] text-black">
-          <p><span className="font-bold">Одержувач:</span> Національний музей «Чорнобиль»</p>
-          <p><span className="font-bold">Юридична адреса:</span> 04071, м. Київ, провулок Хорива, 1</p>
-          <p><span className="font-bold">Контактний тел.:</span> (044) 425-44-62</p>
-          <p><span className="font-bold">Код ЄДРПОУ:</span> 24520773</p>
-          <p><span className="font-bold">р/рах.:</span> №UA028201720313231001301007687 – благодійні внески в ДКСУ м. Києва, МФО 820172</p>
-          <p>Неприбуткова організація – ознака неприбутковості 0002</p>
-          <p><span className="font-bold">В призначенні платежу зазначати:</span> Нецільова благодійна допомога</p>
-        </div>
+      <div className="bg-[#e6bc00] flex flex-col gap-[16px] p-[16px] text-black">
+        <p className="font-['Oswald',sans-serif] font-medium text-[20px] not-italic leading-[22px] uppercase">
+          Реквізити благодійного рахунку Музею:
+        </p>
+        {[
+          { label: "Одержувач:", value: `Національний музей "Чорнобиль"` },
+          { label: "Юридична адреса:", value: "04071, м. Київ, провулок Хорива, 1" },
+          { label: "Контактний тел.:", value: "(044) 425-44-62" },
+          { label: "код ЄДРПОУ:", value: "24520773" },
+          { label: "р/рах.:", value: "№UA028201720313231001301007687 – благодійні внески" },
+          { label: "В призначенні платежу зазначати:", value: "Нецільова благодійна допомога" },
+        ].map((row) => (
+          <div key={row.label} className="flex flex-col gap-[2px]">
+            <p className="font-['Montserrat',sans-serif] font-bold text-[15px] leading-[22px]">{row.label}</p>
+            <p className="font-['Montserrat',sans-serif] font-normal text-[15px] leading-[22px]">{row.value}</p>
+          </div>
+        ))}
       </div>
 
       <div className="flex flex-col gap-[8px] text-black">
@@ -377,12 +438,25 @@ function DonateSection() {
         </ul>
       </div>
 
-      <div className="bg-[#e6bc00] flex flex-col gap-[8px] p-[16px]">
-        <p className="font-['Oswald',sans-serif] font-medium text-[18px] leading-[24px] uppercase text-black">Надсилайте запит на адресу</p>
-        <p className="font-['Montserrat',sans-serif] font-normal text-[14px] leading-[20px] text-black">
-          <a className="underline" href="mailto:info@chornobyl-museum.kyiv.ua">info@chornobyl-museum.kyiv.ua</a>
-          {` з прикріпленим мотиваційним листом (до 200 слів). Тема листа: НМ "Чорнобиль". Волонтери.`}
+      <div className="bg-[#e6bc00] flex flex-col gap-[16px] p-[16px] text-black">
+        <p className="font-['Oswald',sans-serif] font-medium text-[20px] not-italic leading-[22px] uppercase">
+          Надсилайте запит на адресу
         </p>
+        <a
+          className="font-['Montserrat',sans-serif] font-bold text-[15px] leading-[22px] underline"
+          href="mailto:info@chornobyl-museum.kyiv.ua"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          info@chornobyl-museum.kyiv.ua
+        </a>
+        <p className="font-['Montserrat',sans-serif] font-normal text-[15px] leading-[22px]">
+          з прикріпленим мотиваційним листом (до 200 слів)
+        </p>
+        <div className="flex flex-col gap-[2px]">
+          <p className="font-['Montserrat',sans-serif] font-bold text-[15px] leading-[22px]">Тема листа:</p>
+          <p className="font-['Montserrat',sans-serif] font-normal text-[15px] leading-[22px]">{`НМ "Чорнобиль". Волонтери.`}</p>
+        </div>
       </div>
     </div>
   );
@@ -438,6 +512,7 @@ export default function MobileAbout() {
       <HeroSection />
       <AboutSection />
       <MissionSection />
+      <LogoConceptSection />
       <HistorySection />
       <TeamSection />
       <PartnersSection />

@@ -298,7 +298,7 @@ function ClipPathGroup() {
 
 function Component5() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[31px] items-center min-w-px relative" data-name="1">
+    <div className="content-stretch flex flex-1 flex-col gap-[31px] items-center min-w-0 relative" data-name="1">
       <ClipPathGroup />
       <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-black w-[min-content]">Класичне, найпростіше і легке для сприйняття зображення атому може бути виразною основою логотипу</p>
     </div>
@@ -307,7 +307,7 @@ function Component5() {
 
 function Component6() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[40px] items-start min-w-px relative" data-name="2">
+    <div className="content-stretch flex flex-1 flex-col gap-[40px] items-start min-w-0 relative" data-name="2">
       <div className="absolute h-[18px] left-[-1.33px] top-[2px] w-[14px]">
         <div aria-hidden="true" className="absolute border-2 border-[#e6bc00] border-solid inset-0 pointer-events-none" />
       </div>
@@ -342,7 +342,7 @@ function ClipPathGroup1() {
 
 function Component7() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[18px] items-center leading-[0] min-w-px relative" data-name="3">
+    <div className="content-stretch flex flex-1 flex-col gap-[18px] items-center leading-[0] min-w-0 relative" data-name="3">
       <ClipPathGroup1 />
       <div className="font-['Montserrat',sans-serif] font-normal min-w-full relative shrink-0 text-[16px] text-black w-[min-content]">
         <p className="leading-[22px] mb-0">Атом є джерелом енергії,</p>
@@ -354,7 +354,7 @@ function Component7() {
 
 function Line() {
   return (
-    <div className="col-1 content-stretch flex gap-[16px] items-center relative row-2 self-start shrink-0 w-[1107.999px]" data-name="line">
+    <div className="col-1 content-stretch flex gap-[16px] items-center relative row-2 self-start shrink-0 w-full" data-name="line">
       <Component5 />
       <p className="font-['Oswald',sans-serif] font-medium leading-[122px] relative shrink-0 text-[#e6bc00] text-[196px] uppercase whitespace-nowrap">+</p>
       <Component6 />
@@ -510,7 +510,7 @@ function Component9() {
   return (
     <div className="content-stretch flex flex-[1_0_0] gap-[16px] h-[169px] items-start min-w-px relative" data-name="1">
       <div className="pointer-events-none relative shrink-0 size-[169px]">
-        <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgRectangle837} />
+        <img alt="Віталіна Мартиновська" className="absolute inset-0 max-w-none object-cover object-top size-full" src="/team-vitalina.png" />
         <div aria-hidden="true" className="absolute border-8 border-black border-solid inset-0" />
       </div>
       <Info />
@@ -532,7 +532,7 @@ function Component10() {
   return (
     <div className="content-stretch flex flex-[1_0_0] gap-[16px] h-[169px] items-start min-w-px relative" data-name="2">
       <div className="pointer-events-none relative shrink-0 size-[169px]">
-        <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgRectangle837} />
+        <img alt="Яніна Швачко" className="absolute inset-0 max-w-none object-cover object-top size-full" src="/team-yanina.png" />
         <div aria-hidden="true" className="absolute border-8 border-black border-solid inset-0" />
       </div>
       <Info1 />
@@ -554,7 +554,7 @@ function Component11() {
   return (
     <div className="content-stretch flex flex-[1_0_0] gap-[16px] h-[169px] items-start min-w-px relative" data-name="3">
       <div className="pointer-events-none relative shrink-0 size-[169px]">
-        <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgRectangle837} />
+        <img alt="Євген Кундель" className="absolute inset-0 max-w-none object-cover object-top size-full" src="/team-yevhen.png" />
         <div aria-hidden="true" className="absolute border-8 border-black border-solid inset-0" />
       </div>
       <Info2 />
@@ -725,7 +725,7 @@ function Team1() {
       <div className="h-[590px] relative shrink-0 w-full">
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
           <div className="absolute bg-[#e4e3e3] inset-0" />
-          <img alt="" className="absolute max-w-none object-cover size-full" src={imgRectangle846} />
+          <img alt="Команда музею" className="absolute max-w-none object-cover size-full" src="/Museum_team.jpeg" />
         </div>
       </div>
       <Departments />
@@ -880,7 +880,7 @@ function Accessability() {
 
 function Doc() {
   return (
-    <div className="col-1 justify-self-stretch relative row-2 self-start shrink-0" data-name="doc1">
+    <div className="col-1 justify-self-stretch relative row-2 self-stretch shrink-0" data-name="doc1">
       <div aria-hidden="true" className="absolute border-6 border-black border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between px-[32px] py-[24px] relative size-full">
@@ -900,7 +900,7 @@ function Doc() {
 
 function Doc1() {
   return (
-    <div className="col-2 justify-self-stretch relative row-2 self-start shrink-0" data-name="doc2">
+    <div className="col-2 justify-self-stretch relative row-2 self-stretch shrink-0" data-name="doc2">
       <div aria-hidden="true" className="absolute border-6 border-black border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between px-[32px] py-[24px] relative size-full">
@@ -920,7 +920,7 @@ function Doc1() {
 
 function Doc2() {
   return (
-    <div className="col-1 justify-self-stretch relative row-3 self-start shrink-0" data-name="doc3">
+    <div className="col-1 justify-self-stretch relative row-3 self-stretch shrink-0" data-name="doc3">
       <div aria-hidden="true" className="absolute border-6 border-black border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between px-[32px] py-[24px] relative size-full">
@@ -940,7 +940,7 @@ function Doc2() {
 
 function Doc3() {
   return (
-    <div className="col-2 justify-self-stretch relative row-3 self-start shrink-0" data-name="doc4">
+    <div className="col-2 justify-self-stretch relative row-3 self-stretch shrink-0" data-name="doc4">
       <div aria-hidden="true" className="absolute border-6 border-black border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between px-[32px] py-[24px] relative size-full">
@@ -960,7 +960,7 @@ function Doc3() {
 
 function Doc4() {
   return (
-    <div className="col-1 justify-self-stretch relative row-4 self-start shrink-0" data-name="doc5">
+    <div className="col-1 justify-self-stretch relative row-4 self-stretch shrink-0" data-name="doc5">
       <div aria-hidden="true" className="absolute border-6 border-black border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between px-[32px] py-[24px] relative size-full">
@@ -1000,7 +1000,7 @@ function Doc5() {
 
 function Doc6() {
   return (
-    <div className="col-1 justify-self-stretch relative row-5 self-start shrink-0" data-name="doc7">
+    <div className="col-1 justify-self-stretch relative row-5 self-stretch shrink-0" data-name="doc7">
       <div aria-hidden="true" className="absolute border-6 border-black border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between px-[32px] py-[24px] relative size-full">
@@ -1023,7 +1023,7 @@ function Doc6() {
 
 function Doc7() {
   return (
-    <div className="col-2 justify-self-stretch relative row-5 self-start shrink-0" data-name="doc8">
+    <div className="col-2 justify-self-stretch relative row-5 self-stretch shrink-0" data-name="doc8">
       <div aria-hidden="true" className="absolute border-6 border-black border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between px-[32px] py-[24px] relative size-full">
@@ -1043,14 +1043,18 @@ function Doc7() {
 
 function Doc8() {
   return (
-    <div className="col-1 content-stretch flex items-center justify-between px-[32px] py-[24px] relative row-6 self-start shrink-0 w-[573px]" data-name="doc9">
+    <div className="col-1 justify-self-stretch relative row-6 self-stretch shrink-0" data-name="doc9">
       <div aria-hidden="true" className="absolute border-6 border-black border-solid inset-0 pointer-events-none" />
-      <p className="flex-[1_0_0] font-['Oswald',sans-serif] font-medium leading-[24px] min-w-px relative text-[20px] text-black uppercase">{`Положення про систему енергетичного менеджменту у Національному музеї "Чорнобиль"`}</p>
-      <div className="relative shrink-0 size-[32px]" data-name="icons">
-        <div className="absolute inset-[14.58%_20.83%]" data-name="icon/action/get_app_24px">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 18.667 22.667">
-            <path d={svgPaths.p7648580} fill="var(--fill-0, black)" id="icon/action/get_app_24px" />
-          </svg>
+      <div className="flex flex-row items-center size-full">
+        <div className="content-stretch flex items-center justify-between px-[32px] py-[24px] relative size-full">
+          <p className="flex-[1_0_0] font-['Oswald',sans-serif] font-medium leading-[24px] min-w-px relative text-[20px] text-black uppercase">{`Положення про систему енергетичного менеджменту у Національному музеї "Чорнобиль"`}</p>
+          <div className="relative shrink-0 size-[32px]" data-name="icons">
+            <div className="absolute inset-[14.58%_20.83%]" data-name="icon/action/get_app_24px">
+              <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 18.667 22.667">
+                <path d={svgPaths.p7648580} fill="var(--fill-0, black)" id="icon/action/get_app_24px" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1059,7 +1063,7 @@ function Doc8() {
 
 function Doc9() {
   return (
-    <div className="col-2 justify-self-stretch relative row-6 self-start shrink-0" data-name="doc 10">
+    <div className="col-2 justify-self-stretch relative row-6 self-stretch shrink-0" data-name="doc 10">
       <div aria-hidden="true" className="absolute border-6 border-black border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between px-[32px] py-[24px] relative size-full">
@@ -1091,7 +1095,7 @@ function Title6() {
 function Docs() {
   return (
     <div className="bg-[#f5f3e9] relative shrink-0 w-full z-[3]" data-name="docs">
-      <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(6,fit-content(100%))] max-w-[1200px] mx-auto px-[55px] py-[72px] relative w-full">
+      <div className="gap-[16px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(6,fit-content(100%))] max-w-[1200px] mx-auto px-[55px] py-[72px] relative w-full">
         <Doc />
         <Doc1 />
         <Doc2 />
@@ -1121,44 +1125,29 @@ function Frame3() {
   );
 }
 
+const REQUISITES = [
+  { label: "Одержувач:", value: `Національний музей "Чорнобиль"` },
+  { label: "Юридична адреса:", value: "04071, м. Київ, провулок Хорива, 1" },
+  { label: "Контактний тел.:", value: "(044) 425-44-62" },
+  { label: "код ЄДРПОУ:", value: "24520773" },
+  { label: "р/рах.:", value: "№UA028201720313231001301007687 – благодійні внески" },
+  { label: "В призначенні платежу зазначати:", value: "Нецільова благодійна допомога" },
+];
+
 function Card() {
   return (
     <div className="bg-[#e6bc00] col-1 justify-self-stretch relative row-3 self-start shrink-0" data-name="card 1">
-      <div className="flex flex-col items-center justify-center size-full">
-        <div className="content-stretch flex flex-col gap-[8px] items-center justify-center p-[32px] relative size-full text-black">
-          <p className="font-['Oswald',sans-serif] font-medium leading-[24px] relative shrink-0 text-[20px] uppercase w-full">Реквізити благодійного рахунку Музею:</p>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[0] relative shrink-0 text-[0px] w-full">
-            <span className="font-['Montserrat',sans-serif] font-bold leading-[normal] text-[16px]">Одержувач:</span>
-            <span className="leading-[normal] text-[16px]">
-              {` Національний музей "Чорнобиль"`}
-              <br aria-hidden="true" />
-            </span>
-            <span className="font-['Montserrat',sans-serif] font-bold leading-[normal] text-[16px]">Юридична адреса:</span>
-            <span className="leading-[normal] text-[16px]">
-              {` 04071, м. Київ, провулок Хорива, 1`}
-              <br aria-hidden="true" />
-            </span>
-            <span className="font-['Montserrat',sans-serif] font-bold leading-[normal] text-[16px]">{`Контактний тел.: `}</span>
-            <span className="leading-[normal] text-[16px]">
-              (044) 425-44-62
-              <br aria-hidden="true" />
-            </span>
-            <span className="font-['Montserrat',sans-serif] font-bold leading-[normal] text-[16px]">код ЄДРПОУ:</span>
-            <span className="leading-[normal] text-[16px]">
-              {` 24520773,`}
-              <br aria-hidden="true" />
-            </span>
-            <span className="font-['Montserrat',sans-serif] font-bold leading-[normal] text-[16px]">р/рах.:</span>
-            <span className="leading-[normal] text-[16px]">
-              {` №UA028201720313231001301007687 – благодійні внески`}
-              <br aria-hidden="true" />в ДКСУ м. Києва, МФО 820172
-              <br aria-hidden="true" />
-              Неприбуткова організація – ознака неприбутковості 0002
-              <br aria-hidden="true" />
-            </span>
-            <span className="font-['Montserrat',sans-serif] font-bold leading-[normal] text-[16px]">В призначенні платежу зазначати :</span>
-            <span className="leading-[normal] text-[16px]">{` Нецільова благодійна допомога`}</span>
-          </p>
+      <div className="flex flex-col gap-[24px] p-[40px] text-black">
+        <p className="font-['Oswald',sans-serif] font-medium text-[20px] not-italic leading-[22px] uppercase">
+          Реквізити благодійного рахунку Музею:
+        </p>
+        <div className="flex flex-col">
+          {REQUISITES.map((row) => (
+            <div key={row.label} className="grid grid-cols-[2fr_3fr] gap-x-[32px] py-[12px] border-b border-black/20 last:border-b-0">
+              <p className="font-['Montserrat',sans-serif] font-bold text-[16px] leading-[24px]">{row.label}</p>
+              <p className="font-['Montserrat',sans-serif] font-normal text-[16px] leading-[24px]">{row.value}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -1196,24 +1185,26 @@ function Frame2() {
 
 function Card1() {
   return (
-    <div className="bg-[#e6bc00] col-2 justify-self-stretch relative row-3 self-stretch shrink-0" data-name="card 2">
-      <div className="flex flex-col items-center justify-center size-full">
-        <div className="content-stretch flex flex-col gap-[8px] items-center justify-center p-[32px] relative size-full text-black">
-          <p className="font-['Oswald',sans-serif] font-medium h-[20px] leading-[24px] relative shrink-0 text-[20px] uppercase w-[489px]">Надсилайте запит на адресу</p>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[0] min-w-full relative shrink-0 text-[0px] w-[min-content]">
-            <a className="cursor-pointer decoration-solid leading-[normal] text-[16px] underline" href="mailto:info@chornobyl-museum.kyiv.ua" target="_blank">
-              <span className="decoration-solid underline">
-                info@chornobyl-museum.kyiv.ua
-              </span>
-            </a>
-            <span className="leading-[normal] text-[16px]">{` з прикріпленим мотиваційним листом (до 200 слів). Тема листа: НМ "Чорнобиль". Волонтери.`}</span>
-          </p>
-        </div>
+    <div className="bg-[#e6bc00] col-2 justify-self-stretch relative row-3 self-start shrink-0" data-name="card 2">
+      <div className="flex flex-col gap-[24px] p-[40px] text-black">
+        <p className="font-['Oswald',sans-serif] font-medium text-[20px] not-italic leading-[22px] uppercase">
+          Надсилайте запит на адресу
+        </p>
+        <a
+          className="font-['Montserrat',sans-serif] font-normal text-[16px] leading-[24px] underline"
+          href="mailto:info@chornobyl-museum.kyiv.ua"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          info@chornobyl-museum.kyiv.ua
+        </a>
+        <p className="font-['Montserrat',sans-serif] font-normal text-[16px] leading-[24px]">
+          {`з прикріпленим мотиваційним листом (до 200 слів). Тема листа: НМ "Чорнобиль". Волонтери.`}
+        </p>
       </div>
     </div>
   );
 }
-
 function Header() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="header">

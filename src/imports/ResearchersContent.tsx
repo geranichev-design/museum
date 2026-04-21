@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router";
 import { MuseumInput } from "../app/components/ui/MuseumInput";
 import { PageHero } from "../app/components/PageHero";
@@ -518,48 +519,105 @@ function ArticlesSection() {
 }
 
 function ApplicationSection() {
-  const [name, setName] = useState("");
-  const [emailInfo, setEmailInfo] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [visitDate, setVisitDate] = useState("");
   const [institution, setInstitution] = useState("");
-  const [topics, setTopics] = useState("");
-  const [documents, setDocuments] = useState("");
-  const [extra, setExtra] = useState("");
+  const [position, setPosition] = useState("");
+  const [education, setEducation] = useState("");
+  const [researchTopic, setResearchTopic] = useState("");
+  const [researchGoal, setResearchGoal] = useState("");
+  const [visitPurpose, setVisitPurpose] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const handleSubmit = async () => {
+    if (!firstName || !lastName || !phone || !email) return;
+    setStatus("sending");
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          to_email: "mykola.geranichev@infotech.gov.ua",
+          from_name: `${firstName} ${lastName}`,
+          reply_to: email,
+          phone,
+          visit_date: visitDate || "не вказано",
+          institution: institution || "не вказано",
+          position: position || "не вказано",
+          education: education || "не вказано",
+          research_topic: researchTopic || "не вказано",
+          research_goal: researchGoal || "не вказано",
+          visit_purpose: visitPurpose || "не вказано",
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      setStatus("success");
+      setFirstName(""); setLastName(""); setPhone(""); setEmail("");
+      setVisitDate(""); setInstitution(""); setPosition(""); setEducation("");
+      setResearchTopic(""); setResearchGoal(""); setVisitPurpose("");
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
     <section id="application-form" className="w-full bg-[#DFBE22]">
       <div className="px-[16px] md:px-[55px] py-[40px] md:py-[72px] max-w-[1200px] mx-auto w-full">
         <SectionTitle darkSquare>Подати заявку</SectionTitle>
 
-        <p className="font-['Montserrat',sans-serif] text-[13px] md:text-[16px] text-black leading-[1.6] mb-[24px] md:mb-[40px] max-w-[900px]">
-          Національний музей «Чорнобиль» відкритий для вчених, дослідників і журналістів, зацікавлених у науковому дослідженні
-          фондів і архівів Музею. Для отримання доступу до роботи зі збіркою та підготовчими матеріалами заповніть форму нижче або
-          зв'яжіться з нами за адресою:{" "}
-          <a href="mailto:email@format-music.kyiv.ua" className="text-black underline">
-            email@format-music.kyiv.ua
-          </a>{" "}
-          або заповніть форму на сайті.
-        </p>
+        <div className="font-['Montserrat',sans-serif] text-[13px] md:text-[16px] text-black leading-[1.6] mb-[24px] md:mb-[40px] flex flex-col gap-[12px]">
+          <p>
+            Національний музей «Чорнобиль» володіє унікальною колекцією історичних матеріалів і відкритий до співпраці з дослідниками з України та світу. У Музеї облаштовано спеціальну кімнату для науково-дослідної роботи.
+          </p>
+          <p>
+            Для роботи з фондами просимо надіслати запит на електронну адресу:{" "}
+            <a href="mailto:research@chornobyl-museum.kyiv.ua" className="text-black font-bold underline">
+              research@chornobyl-museum.kyiv.ua
+            </a>
+            {" "}<span className="font-bold">або заповніть форму на сайті</span>
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[24px] gap-y-[12px] md:gap-y-[16px]">
-          <MuseumInput label="Ваше ім'я *" value={name} onChange={setName} />
-          <MuseumInput label="email@format-music.kyiv.ua або заповніть форму на сайті" value={emailInfo} onChange={setEmailInfo} type="email" />
-          <MuseumInput label="Ваш контактний номер телефону *" value={phone} onChange={setPhone} type="tel" />
-          <MuseumInput label="Ваша контактна електронна пошта *" value={email} onChange={setEmail} type="email" />
-          <MuseumInput label="Дата візиту" value={visitDate} onChange={setVisitDate} type="date" />
-          <MuseumInput label="Вкажіть установу та посаду, яку ви представляєте *" value={institution} onChange={setInstitution} />
-          <MuseumInput label="Теми вашого дослідження *" value={topics} onChange={setTopics} multiline rows={3} />
-          <MuseumInput label="Назва документів/джерел (статті, книги, фільми, фото, ...)" value={documents} onChange={setDocuments} multiline rows={3} />
+          <MuseumInput label="Ваше ім'я *" value={firstName} onChange={setFirstName} />
+          <MuseumInput label="Ваше прізвище *" value={lastName} onChange={setLastName} />
+          <MuseumInput label="Ваш контактний номер телефона *" value={phone} onChange={setPhone} type="tel" />
+          <MuseumInput label="Ваша електронна пошта *" value={email} onChange={setEmail} type="email" />
+          <MuseumInput label="Оберіть бажану дату роботи" value={visitDate} onChange={setVisitDate} type="date" />
+          <MuseumInput label="Назва установи/організації яку ви представляєте" value={institution} onChange={setInstitution} />
+          <MuseumInput label="Ваша посада" value={position} onChange={setPosition} />
+          <MuseumInput label="Ваша освіта та фах" value={education} onChange={setEducation} />
+          <MuseumInput label="Тема вашого дослідження" value={researchTopic} onChange={setResearchTopic} />
+          <MuseumInput label="Мета дослідження (дисертація, стаття, книга, фільм, проект т..." value={researchGoal} onChange={setResearchGoal} />
           <div className="col-span-1 md:col-span-2">
-            <MuseumInput label="Додаткова інформація чи питання, які хочете уточнити перед відвідинами" value={extra} onChange={setExtra} multiline rows={3} />
+            <MuseumInput label="Коротко опишіть мету візиту та які консультації вам потрібні" value={visitPurpose} onChange={setVisitPurpose} multiline rows={4} />
           </div>
         </div>
 
+        {status === "success" && (
+          <p className="mt-[16px] font-['Montserrat',sans-serif] font-medium text-[15px] text-black">
+            ✓ Заявку надіслано! Ми зв'яжемось з вами найближчим часом.
+          </p>
+        )}
+        {status === "error" && (
+          <p className="mt-[16px] font-['Montserrat',sans-serif] font-medium text-[15px] text-red-800">
+            Помилка надсилання. Спробуйте ще раз або напишіть нам на пошту.
+          </p>
+        )}
+
         <div className="mt-[20px] md:mt-[24px]">
-          <MuseumButton variant="solid" theme="dark" icon="arrow" className="w-full md:w-auto border-2 border-black">
-            ПОДАТИ ЗАЯВКУ
+          <MuseumButton
+            variant="solid"
+            theme="dark"
+            icon="arrow"
+            className="w-full md:w-auto border-2 border-black"
+            onClick={handleSubmit}
+            disabled={status === "sending"}
+          >
+            {status === "sending" ? "НАДСИЛАННЯ..." : "ПОДАТИ ЗАЯВКУ"}
           </MuseumButton>
         </div>
       </div>

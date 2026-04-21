@@ -9,8 +9,8 @@ export default function DesktopFooter() {
     <div className="bg-[#f5f3e9] relative shrink-0 w-full min-h-[400px]" data-name="custom-footer">
       <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[repeat(4,minmax(0,1fr))] grid-rows-[repeat(3,fit-content(100%))] px-[55px] py-[72px] relative w-full max-w-[1280px] mx-auto">
         {/* Column 1: Logo and Contacts */}
-        <div className="col-1 relative row-1 shrink-0">
-          <MuseumLogo linked color="black" width={267} height={74} />
+        <div className="col-1 relative row-1 shrink-0 w-full [&_svg]:w-full [&_svg]:h-auto">
+          <MuseumLogo linked color="black" className="block w-full" />
         </div>
 
         <div className="col-1 content-stretch flex flex-col gap-[8px] items-start justify-self-stretch relative row-[2/span_2] self-start shrink-0 text-black">
@@ -93,17 +93,11 @@ export default function DesktopFooter() {
             {uk ? 'Наші соцмережі' : 'Our social media'}
           </p>
           <div className="flex gap-[16px] items-center">
-            <a href="#" aria-label="Facebook" className="opacity-80 hover:opacity-100 transition-opacity">
+            <a href="https://www.facebook.com/museumchornobyl/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="opacity-80 hover:opacity-100 transition-opacity">
               <img src="/facebook.svg" alt="Facebook" width={32} height={32} />
             </a>
-            <a href="#" aria-label="LinkedIn" className="opacity-80 hover:opacity-100 transition-opacity">
-              <img src="/Linkedin.svg" alt="LinkedIn" width={32} height={32} />
-            </a>
-            <a href="#" aria-label="Twitter / X" className="opacity-80 hover:opacity-100 transition-opacity">
-              <img src="/twitter.svg" alt="Twitter" width={32} height={32} />
-            </a>
-            <a href="#" aria-label="YouTube" className="opacity-80 hover:opacity-100 transition-opacity">
-              <img src="/youtube.svg" alt="YouTube" width={32} height={32} />
+            <a href="https://www.instagram.com/national.museum.chornobyl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="opacity-80 hover:opacity-100 transition-opacity">
+              <img src="/instagram.svg" alt="Instagram" width={32} height={32} />
             </a>
           </div>
         </div>
