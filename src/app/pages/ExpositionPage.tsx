@@ -1,8 +1,11 @@
+import { useHashScroll } from "../hooks/useHashScroll";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { ExpositionPageContent } from "../components/ExpositionPageContent";
 
 export default function ExpositionPage() {
+  useHashScroll();
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />

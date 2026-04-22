@@ -4,11 +4,13 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import DesktopTicketsBase from "../../imports/Desktop/Desktop-4-29";
 import MobileTicketsBase from "../../imports/Mobile/Mobile-4-743";
+import { useHashScroll } from "../hooks/useHashScroll";
 
 export default function TicketsPage() {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
   const [activeTab, setActiveTab] = useState<"single" | "group" | "free" | "additional">("single");
+  useHashScroll();
 
   useEffect(() => {
     const checkMobile = () => {

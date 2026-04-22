@@ -162,6 +162,7 @@ export default function HomePage() {
           titleTop={uk ? "ЧОРНОБИЛЬ" : "CHORNOBYL"}
           title={uk ? "ПАМʼЯТЬ, ЩО ФОРМУЄ МАЙБУТНЄ" : "MEMORY THAT SHAPES THE FUTURE"}
           imageSrc="/hero-bg.jpg"
+          videoSrc="/video/historry.mp4"
           buttonText={uk ? "Придбати квиток" : "Buy a ticket"}
           buttonTo="/tickets"
         />

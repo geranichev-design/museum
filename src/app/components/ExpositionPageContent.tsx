@@ -1,6 +1,7 @@
 import { type ReactNode } from "react";
 import { Link, useNavigate } from "react-router";
 import { Gallery } from "./ui/Gallery";
+import { PageHero } from "./PageHero";
 
 const HISTORY_IMAGES = [
   "/gallery/exp_history/expo_09.png",
@@ -165,18 +166,15 @@ function NavigationBar() {
 export function ExpositionPageContent() {
   return (
     <div className="w-full bg-white">
+      <PageHero
+        title="ЕКСПОЗИЦІЯ"
+        imageSrc="/hero-bg.jpg"
+        videoSrc="/video/exposition.mp4"
+      />
       <div className="max-w-[1200px] mx-auto px-[16px] md:px-[55px] py-[32px] md:py-[48px] flex flex-col gap-[40px] md:gap-[56px]">
 
         {/* Navigation Bar */}
         <NavigationBar />
-
-        {/* Page title */}
-        <div className="flex gap-[8px] items-center">
-          <div className="bg-[#dfbe22] shrink-0 size-[32px] md:size-[40px]" />
-          <h1 className="font-['Oswald',sans-serif] font-medium text-[32px] md:text-[48px] text-black uppercase leading-none">
-            ЕКСПОЗИЦІЯ
-          </h1>
-        </div>
 
         {/* Gallery 1 */}
         <Gallery

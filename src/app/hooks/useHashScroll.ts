@@ -15,15 +15,17 @@ export function scrollToHashTarget(hash: string, behavior: ScrollBehavior = "smo
 }
 
 export function useHashScroll() {
-  const { hash } = useLocation();
+  const { pathname, search, hash } = useLocation();
 
   useEffect(() => {
-    if (!hash) return;
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
     const timer = window.setTimeout(() => {
-      scrollToHashTarget(hash);
+      if (hash) {
+        scrollToHashTarget(hash);
+      }
     }, 80);
 
     return () => window.clearTimeout(timer);
-  }, [hash]);
+  }, [pathname, search, hash]);
 }

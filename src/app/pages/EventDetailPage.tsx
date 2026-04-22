@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import EventDetailComponent from "../../imports/EventDetailComponent";
 import { EVENTS_DATA } from "../../data/eventsData";
+import { useHashScroll } from "../hooks/useHashScroll";
 
 export default function EventDetailPage() {
   const navigate = useNavigate();
@@ -13,9 +14,7 @@ export default function EventDetailPage() {
     ? EVENTS_DATA.filter((item) => item.id !== event.id).slice(0, 4)
     : [];
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useHashScroll();
 
   useEffect(() => {
     if (!event) {

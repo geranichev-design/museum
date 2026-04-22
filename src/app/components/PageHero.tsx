@@ -3,6 +3,7 @@ import { Link } from "react-router";
 interface PageHeroProps {
   title: string;
   imageSrc: string;
+  videoSrc?: string;
   /** Optional yellow label above the main title */
   titleTop?: string;
   buttonText?: string;
@@ -18,6 +19,7 @@ export function PageHero({
   title,
   titleTop,
   imageSrc,
+  videoSrc,
   buttonText,
   buttonTo,
   buttonHref,
@@ -30,13 +32,25 @@ export function PageHero({
   );
 
   return (
-    <div className="relative w-full min-h-[280px] md:min-h-[340px] overflow-hidden flex items-center">
+    <div className="relative w-full min-h-[280px] md:min-h-[460px] overflow-hidden flex items-center">
       {/* Background */}
       <img
         src={imageSrc}
         alt=""
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
       />
+      {videoSrc && (
+        <video
+          aria-hidden="true"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={imageSrc}
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          src={videoSrc}
+        />
+      )}
       <div className="absolute inset-0 bg-black/60 pointer-events-none" />
 
       {/* Content */}

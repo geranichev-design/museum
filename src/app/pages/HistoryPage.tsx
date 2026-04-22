@@ -4,10 +4,12 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import DesktopHistoryBase from "../../imports/Desktop-3-11477";
 import MobileHistoryBase from "../../imports/Mobile-3-12177";
+import { useHashScroll } from "../hooks/useHashScroll";
 
 export default function HistoryPage() {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
+  useHashScroll();
 
   useEffect(() => {
     const checkMobile = () => {

@@ -298,6 +298,7 @@ export default function SpacesComponent({ onBuyTicket }: { onBuyTicket?: () => v
       <PageHero
         title="ПРОСТОРИ МУЗЕЮ"
         imageSrc="/hero-bg.jpg"
+        videoSrc="/video/spaces.mp4"
         buttonText="ПРИДБАТИ КВИТОК"
         onButtonClick={onBuyTicket}
       />
