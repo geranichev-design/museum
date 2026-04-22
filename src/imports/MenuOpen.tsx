@@ -20,22 +20,6 @@ function ChevronIcon({ open }: { open: boolean }) {
   );
 }
 
-function ChevronDisabled({ open }: { open: boolean }) {
-  return (
-    <div className="flex items-center justify-center shrink-0 size-[24px]">
-      <svg
-        width="24"
-        height="14"
-        viewBox="0 0 24 13.394"
-        fill="none"
-        className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
-      >
-        <path d={svgPaths.p1c158b70} fill="white" fillOpacity="0.3" />
-      </svg>
-    </div>
-  );
-}
-
 interface AccordionSectionProps {
   label: string;
   to: string;
@@ -62,30 +46,6 @@ function AccordionSection({ label, to, children }: AccordionSectionProps) {
           {children}
         </div>
       )}
-    </div>
-  );
-}
-
-interface DisabledSectionProps {
-  label: string;
-  children?: React.ReactNode;
-}
-
-function DisabledSection({ label, children }: DisabledSectionProps) {
-  const [open, setOpen] = useState(false);
-  const hasChildren = !!children;
-  return (
-    <div className="w-full">
-      <div className="flex gap-[16px] items-center w-full">
-        <span className="flex-1 font-['Oswald',sans-serif] font-medium leading-[22px] text-[20px] text-white/30 uppercase cursor-default">
-          {label}
-        </span>
-        {hasChildren && (
-          <button type="button" onClick={() => setOpen((v) => !v)} className="shrink-0 p-1 -m-1">
-            <ChevronDisabled open={open} />
-          </button>
-        )}
-      </div>
     </div>
   );
 }
@@ -129,16 +89,6 @@ export default function MenuOpen() {
         {uk ? "Простори музею" : "Museum spaces"}
       </Link>
 
-      <div className="bg-white h-[4px] shrink-0 w-full" />
-
-      {/* Оренда — no page */}
-      <DisabledSection label={uk ? "Оренда приміщень" : "Room rental"} />
-
-      <div className="bg-white h-[4px] shrink-0 w-full" />
-
-      {/* Магазин — no page */}
-      <DisabledSection label={uk ? "Магазин" : "Shop"} />
-
       {/* Події та активності — has page /events */}
       <Link
         to="/events"
@@ -150,9 +100,7 @@ export default function MenuOpen() {
       {/* Дослідникам — has page /researchers */}
       <AccordionSection label={uk ? "Дослідникам" : "For researchers"} to="/researchers">
         <NavSubLink to="/researchers#funds">{uk ? "Фонди" : "Funds"}</NavSubLink>
-        <NavSubLink to="/researchers#articles">{uk ? "Наукові статті" : "Scientific articles"}</NavSubLink>
         <NavSubLink to="/researchers#library">{uk ? "Музейна бібліотека" : "Museum library"}</NavSubLink>
-        <NavSubLink to="/researchers#apply">{uk ? "Подати заявку" : "Submit application"}</NavSubLink>
         <NavSubLink to="/researchers#registry">{uk ? "Реєстр музейного фонду" : "Museum fund registry"}</NavSubLink>
       </AccordionSection>
 

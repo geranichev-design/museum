@@ -10,6 +10,8 @@ interface DesktopNavItemProps {
   /** Disabled/inactive: no page exists yet */
   disabled?: boolean;
   size?: "lg" | "sm";
+  /** Show a right-arrow icon after the label */
+  arrow?: boolean;
   className?: string;
   onClick?: () => void;
 }
@@ -26,6 +28,14 @@ interface DesktopNavItemProps {
  * size="lg"  — Oswald 20px uppercase, for section headings and top-level links
  * size="sm"  — Montserrat 14px, for sub-items within a section
  */
+function ArrowIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  );
+}
+
 export function DesktopNavItem({
   children,
   to,
@@ -33,9 +43,14 @@ export function DesktopNavItem({
   preset = false,
   disabled = false,
   size = "lg",
+  arrow = false,
   className,
   onClick,
 }: DesktopNavItemProps) {
+  const label = arrow ? (
+    <span className="flex items-center gap-[6px]">{children}<ArrowIcon /></span>
+  ) : children;
+
   const classes = cn(
     "block w-full px-[4px] py-[2px]",
     size === "lg"
@@ -50,13 +65,13 @@ export function DesktopNavItem({
   );
 
   if (disabled) {
-    return <span className={classes}>{children}</span>;
+    return <span className={classes}>{label}</span>;
   }
 
   if (to) {
     return (
       <Link to={to} className={classes} onClick={onClick}>
-        {children}
+        {label}
       </Link>
     );
   }
@@ -64,14 +79,14 @@ export function DesktopNavItem({
   if (href) {
     return (
       <a href={href} className={classes} onClick={onClick}>
-        {children}
+        {label}
       </a>
     );
   }
 
   return (
     <button type="button" className={classes} onClick={onClick}>
-      {children}
+      {label}
     </button>
   );
 }

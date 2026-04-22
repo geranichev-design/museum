@@ -22,24 +22,37 @@ export function MuseumSpacesSection() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
   return (
-    <section className="w-full bg-white">
-      <div className="flex flex-col md:flex-row items-stretch max-w-[1200px] mx-auto px-[16px] md:px-[55px] pt-[48px] md:pt-0 pb-[48px] md:pb-0 gap-[40px] md:gap-[56px]">
+    <section className="w-full bg-[#F5F3E9]">
+      <div className="max-w-[1200px] mx-auto px-[16px] md:px-[55px] py-[48px] md:py-[64px] flex flex-col gap-[32px] md:grid md:grid-cols-2 md:gap-x-[56px] md:gap-y-[40px]">
 
-        {/* Left — content */}
-        <div className="flex flex-col gap-[32px] flex-1 min-w-0 md:justify-center md:py-[40px]">
+        {/* Title — row 1, spans both columns */}
+        <div className="flex gap-[8px] items-center md:col-span-2">
+          <div className="bg-[#dfbe22] shrink-0 size-[32px] md:size-[34px]" />
+          <p className="hidden md:block font-['Oswald',sans-serif] font-medium text-[34px] text-black uppercase leading-none">
+            ПРОСТОРИ МУЗЕЮ
+          </p>
+          <p className="md:hidden font-['Oswald',sans-serif] font-medium text-[28px] text-black uppercase leading-none">
+            МАПА МУЗЕЮ
+          </p>
+        </div>
 
-          {/* Title */}
-          <div className="flex gap-[8px] items-center">
-            <div className="bg-[#dfbe22] shrink-0 size-[32px] md:size-[34px]" />
-            {/* Desktop title */}
-            <p className="hidden md:block font-['Oswald',sans-serif] font-medium text-[34px] text-black uppercase leading-none">
-              ПРОСТОРИ МУЗЕЮ
-            </p>
-            {/* Mobile title */}
-            <p className="md:hidden font-['Oswald',sans-serif] font-medium text-[28px] text-black uppercase leading-none">
-              МАПА МУЗЕЮ
-            </p>
-          </div>
+        {/* Video — row 2, col 1 (desktop only) */}
+        <div
+          className="hidden md:block cursor-pointer md:col-start-1 md:row-start-2"
+          onClick={() => setLightboxOpen(true)}
+        >
+          <video
+            src="/museum_720.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover pointer-events-none"
+          />
+        </div>
+
+        {/* Tabs + text + button — row 2, col 2 (desktop) / full width (mobile) */}
+        <div className="flex flex-col gap-[32px] md:col-start-2 md:row-start-2 md:justify-center">
 
           {/* Tabs */}
           <div>
@@ -83,21 +96,6 @@ export function MuseumSpacesSection() {
               ДО ПРОСТОРІВ МУЗЕЮ
             </MuseumButton>
           </div>
-        </div>
-
-        {/* Right — video (desktop only) */}
-        <div
-          className="hidden md:flex flex-1 min-w-0 items-center justify-center cursor-pointer"
-          onClick={() => setLightboxOpen(true)}
-        >
-          <video
-            src="/museum_720.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full object-contain pointer-events-none"
-          />
         </div>
 
       </div>
