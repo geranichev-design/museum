@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { MuseumInput } from "../app/components/ui/MuseumInput";
 import { PageHero } from "../app/components/PageHero";
 import { MuseumButton } from "../app/components/ui/MuseumButton";
+import { getFirstCollectionItemId } from "../data/collectionData";
 
 function SectionTitle({ children, white, darkSquare }: { children: string; white?: boolean; darkSquare?: boolean }) {
   return (
@@ -66,33 +67,35 @@ const DIGITAL_ITEMS = [
 ];
 
 const NEW_ITEMS = [
-  "Поповнення фондової колекції",
-  "Нові надходження",
-  "Музей отримав обладнання від Рівненської АЕС",
-];
+  { title: "Поповнення фондової колекції", itemId: "new-поповнення" },
+  { title: "Нові надходження", itemId: "new-надходження" },
+  { title: "Музей отримав обладнання від Рівненської АЕС", itemId: "new-рівненська-аес" },
+] as const;
 
-const BUTTON_TO_ITEM_ID: Record<string, string> = {
-  "Речові пам'ятки": "digital-речові-памятки",
-  "Фото-, кіно-, пам'ятки": "digital-фото-кіно-памятки",
-  "Образотворче мистецтво": "digital-образотворче",
-  "Декоративно-ужиткове мистецтво": "digital-декоративно-ужиткове",
-  "Писемні джерела": "digital-писемні-джерела",
-  "Поповнення фондової колекції": "new-поповнення",
-  "Нові надходження": "new-надходження",
-  "Музей отримав обладнання від Рівненської АЕС": "new-рівненська-аес",
-};
-
-function CollectionCard({ title }: { title: string }) {
+function CollectionCard({
+  title,
+  itemId,
+  lookupMode = "collection",
+}: {
+  title: string;
+  itemId?: string;
+  lookupMode?: "collection" | "item";
+}) {
   const navigate = useNavigate();
+  const firstItemId = lookupMode === "item" ? itemId ?? null : getFirstCollectionItemId(title);
+  const isAvailable = Boolean(firstItemId);
 
   const handleClick = () => {
-    const id = BUTTON_TO_ITEM_ID[title];
-    if (id) navigate(`/collection/${id}`);
+    if (firstItemId) {
+      navigate(`/collection/${firstItemId}`);
+    }
   };
 
   return (
     <div
-      className="border-[6px] border-black px-[16px] md:px-[24px] py-[16px] md:py-[20px] cursor-pointer hover:bg-gray-50 transition-colors"
+      className={`border-[6px] border-black px-[16px] md:px-[24px] py-[16px] md:py-[20px] transition-colors ${
+        isAvailable ? "cursor-pointer hover:bg-gray-50" : "opacity-50 cursor-default"
+      }`}
       onClick={handleClick}
     >
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-[8px] md:gap-0">
@@ -100,7 +103,7 @@ function CollectionCard({ title }: { title: string }) {
           {title}
         </p>
         <span className="font-['Oswald',sans-serif] font-medium text-[16px] md:text-[18px] text-black md:whitespace-nowrap md:ml-4">
-          Детальніше &raquo;
+          {isAvailable ? "Детальніше »" : "Незабаром"}
         </span>
       </div>
     </div>
@@ -109,7 +112,6 @@ function CollectionCard({ title }: { title: string }) {
 
 function FondsSection() {
   const [activeTab, setActiveTab] = useState<"digital" | "new">("digital");
-  const activeItems = activeTab === "digital" ? DIGITAL_ITEMS : NEW_ITEMS;
 
   return (
     <section id="funds" className="w-full bg-[#F5F3E8]">
@@ -201,9 +203,11 @@ function FondsSection() {
           </button>
         </div>
         <div className="flex flex-col gap-[8px]">
-          {activeItems.map((title) => (
-            <CollectionCard key={title} title={title} />
-          ))}
+          {activeTab === "digital"
+            ? DIGITAL_ITEMS.map((title) => <CollectionCard key={title} title={title} />)
+            : NEW_ITEMS.map(({ title, itemId }) => (
+                <CollectionCard key={itemId} title={title} itemId={itemId} lookupMode="item" />
+              ))}
         </div>
       </div>
 
@@ -224,8 +228,8 @@ function FondsSection() {
             НОВІ НАДХОДЖЕННЯ
           </p>
           <div className="flex flex-col gap-[8px]">
-            {NEW_ITEMS.map((title) => (
-              <CollectionCard key={title} title={title} />
+            {NEW_ITEMS.map(({ title, itemId }) => (
+              <CollectionCard key={itemId} title={title} itemId={itemId} lookupMode="item" />
             ))}
           </div>
         </div>

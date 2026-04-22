@@ -10,7 +10,7 @@ export interface MuseumButtonProps {
   variant?: Variant;
   theme?: Theme;
   font?: FontStyle;
-  icon?: "arrow" | "search";
+  icon?: "arrow" | "back-arrow" | "search";
   iconPosition?: "left" | "right";
   iconOnly?: boolean;
   to?: string;
@@ -26,6 +26,15 @@ function DoubleArrowIcon() {
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M10.6061 21.18L14.0752 24L24.0001 12L14.0752 0L10.6061 2.82L18.3755 12L10.6061 21.18Z" />
       <path d="M0 21.18L3.46903 24L13.394 12L3.46903 0L0 2.82L7.76937 12L0 21.18Z" />
+    </svg>
+  );
+}
+
+function BackDoubleArrowIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M13.394 21.18L9.9249 24L0 12L9.9249 0L13.394 2.82L5.62465 12L13.394 21.18Z" />
+      <path d="M24 21.18L20.531 24L10.606 12L20.531 0L24 2.82L16.2306 12L24 21.18Z" />
     </svg>
   );
 }
@@ -76,7 +85,13 @@ export function MuseumButton({
   className = "",
 }: MuseumButtonProps) {
   const iconEl =
-    icon === "search" ? <SearchIcon /> : icon === "arrow" ? <DoubleArrowIcon /> : null;
+    icon === "search"
+      ? <SearchIcon />
+      : icon === "arrow"
+        ? <DoubleArrowIcon />
+        : icon === "back-arrow"
+          ? <BackDoubleArrowIcon />
+          : null;
 
   const cls = [
     "inline-flex items-center justify-center gap-[8px] border-[3px] transition-colors cursor-pointer",

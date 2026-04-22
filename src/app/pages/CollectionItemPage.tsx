@@ -20,11 +20,11 @@ export default function CollectionItemPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <div className="flex-1 pt-[89px] md:pt-[105px]">
+      <div className="flex-1">
         <CollectionItemComponent
           item={item}
           relatedItems={relatedItems}
-          onBack={() => navigate("/researchers")}
+          onBack={() => navigate("/researchers#funds")}
           onRelatedClick={(relatedId) => navigate(`/collection/${relatedId}`)}
         />
       </div>

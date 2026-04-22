@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Gallery } from "../app/components/ui/Gallery";
+import { MuseumButton } from "../app/components/ui/MuseumButton";
 import { COLLECTION_ITEMS } from "../data/collectionData";
 import type { CollectionItem } from "../data/collectionData";
 
@@ -7,7 +8,7 @@ const VISIBLE = 4;
 
 export default function CollectionItemComponent({
   item,
-  relatedItems: _relatedItems,
+  relatedItems,
   onBack,
   onRelatedClick,
 }: {
@@ -16,7 +17,7 @@ export default function CollectionItemComponent({
   onBack?: () => void;
   onRelatedClick?: (id: string) => void;
 }) {
-  const allItems = COLLECTION_ITEMS;
+  const allItems = relatedItems.length > 0 ? relatedItems : COLLECTION_ITEMS;
   const currentIdx = allItems.findIndex((i) => i.id === item.id);
 
   const [startIdx, setStartIdx] = useState(() =>
@@ -35,23 +36,19 @@ export default function CollectionItemComponent({
 
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-[1200px] px-[16px] md:px-[24px] py-[32px] md:py-[48px] flex flex-col gap-[48px] md:gap-[64px]">
+      <div className="mx-auto max-w-[1200px] px-[16px] md:px-[24px] pt-[12px] pb-[32px] md:pt-[20px] md:pb-[48px] flex flex-col gap-[48px] md:gap-[64px]">
 
         {/* Back link */}
-        <button
+        <MuseumButton
           onClick={onBack}
-          className="flex items-center gap-[8px] font-['Oswald',sans-serif] font-medium text-[28px] uppercase text-black hover:opacity-70 self-start leading-none"
+          variant="ghost"
+          theme="light"
+          icon="back-arrow"
+          iconPosition="left"
+          className="self-start !px-0 !py-0 !border-transparent !text-[28px] !leading-none hover:!bg-transparent hover:!border-transparent active:!bg-transparent active:!border-transparent"
         >
-          <span className="flex items-center" style={{ letterSpacing: "-0.1em" }}>
-            <svg width="22" height="28" viewBox="0 0 22 28" fill="none">
-              <path d="M16 4L6 14L16 24" stroke="black" strokeWidth="3.5" strokeLinecap="square" strokeLinejoin="miter" />
-            </svg>
-            <svg width="22" height="28" viewBox="0 0 22 28" fill="none" className="-ml-[6px]">
-              <path d="M16 4L6 14L16 24" stroke="black" strokeWidth="3.5" strokeLinecap="square" strokeLinejoin="miter" />
-            </svg>
-          </span>
-          <span>До колекції</span>
-        </button>
+          До колекції
+        </MuseumButton>
 
         {/* Main layout: gallery + details */}
         <div className="flex flex-col md:flex-row gap-[32px] md:gap-[56px] items-start">
@@ -94,7 +91,7 @@ export default function CollectionItemComponent({
 
             <div className="border-b border-[#e0e0e0]" />
 
-            <div className="flex flex-col gap-[16px]">
+            <div className="flex max-h-[420px] flex-col gap-[16px] overflow-y-auto pr-[8px] md:max-h-[520px]">
               {item.description.map((para, i) => (
                 <p key={i} className="font-['Montserrat',sans-serif] font-normal text-[16px] text-black leading-[1.65]">
                   {para}
