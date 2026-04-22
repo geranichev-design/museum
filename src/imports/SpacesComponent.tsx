@@ -1,5 +1,5 @@
 import { useState, useEffect, type ReactElement } from "react";
-import { useSearchParams } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { Gallery } from "../app/components/ui/Gallery";
 import { PageHero } from "../app/components/PageHero";
 

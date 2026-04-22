@@ -128,7 +128,6 @@ function NavigationBar() {
 function ImageFrame() {
   return (
     <div className="absolute contents left-0 top-[-8px]" data-name="Image Frame">
-      <p className="absolute font-['Bebas_Neue',sans-serif] leading-[normal] left-0 not-italic text-[#e4e3e3] text-[263.653px] top-[-8px] whitespace-nowrap">Аварія</p>
       <div className="absolute h-[363px] left-0 top-0 w-[567.044px]" data-name="Rectangle upd 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src="/AV.jpg" />
