@@ -99,8 +99,8 @@ export function MuseumButton({
     </>
   );
 
-  if (to) return <Link to={to} className={cls}>{content}</Link>;
-  if (href) return <a href={href} className={cls}>{content}</a>;
+  if (to) return <Link to={to} onClick={onClick} className={cls}>{content}</Link>;
+  if (href) return <a href={href} onClick={onClick} className={cls}>{content}</a>;
   return (
     <button type={type} onClick={onClick} disabled={disabled} className={cls}>
       {content}

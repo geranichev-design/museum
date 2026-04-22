@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import DesktopAboutBase from "../../imports/Desktop-1/Desktop-4-2135";
 import MobileAboutBase from "../../imports/Mobile-1-About";
 import { PageHero } from "../components/PageHero";
+import { useHashScroll } from "../hooks/useHashScroll";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function AboutPage() {
@@ -12,6 +13,7 @@ export default function AboutPage() {
   const { lang } = useLanguage();
   const uk = lang === "uk";
   const [isMobile, setIsMobile] = useState(false);
+  useHashScroll();
 
   useEffect(() => {
     const checkMobile = () => {

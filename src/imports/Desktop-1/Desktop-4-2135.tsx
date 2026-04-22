@@ -249,7 +249,7 @@ function Title1() {
 
 function Mission() {
   return (
-    <div className="gap-x-[32px] gap-y-[32px] grid grid-cols-[repeat(2,fit-content(100%))] grid-rows-[repeat(4,fit-content(100%))] px-[55px] py-[72px] relative shrink-0 w-full max-w-[1200px] mx-auto z-[9]" data-name="#mission">
+    <div id="mission" className="gap-x-[32px] gap-y-[32px] grid grid-cols-[repeat(2,fit-content(100%))] grid-rows-[repeat(4,fit-content(100%))] px-[55px] py-[72px] relative shrink-0 w-full max-w-[1200px] mx-auto z-[9]" data-name="mission">
       <Component />
       <div className="col-2 h-[326px] relative row-2 shrink-0 w-[572px]" data-name="image 94">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -443,7 +443,7 @@ function Title2() {
 
 function History() {
   return (
-    <div className="bg-black relative shrink-0 w-full z-[7]" data-name="history">
+    <div id="history" className="bg-black relative shrink-0 w-full z-[7]" data-name="history">
       <div className="gap-x-[56px] gap-y-[56px] grid grid-cols-[__fit-content(100%)_minmax(0,1fr)] grid-rows-[repeat(8,fit-content(100%))] max-w-[1200px] mx-auto px-[55px] py-[72px] relative w-full">
         <div className="col-1 font-['Oswald',sans-serif] font-medium leading-[0] relative row-2 self-start shrink-0 text-[#e6bc00] text-[34px] uppercase w-[269px]">
           <p className="leading-[43px] mb-0">1992</p>
@@ -735,7 +735,7 @@ function Team1() {
 
 function Team() {
   return (
-    <div className="bg-[#f5f3e9] relative shrink-0 w-full z-[6]" data-name="team">
+    <div id="team" className="bg-[#f5f3e9] relative shrink-0 w-full z-[6]" data-name="team">
       <div className="content-stretch flex flex-col gap-[56px] items-start justify-center max-w-[1200px] mx-auto px-[55px] py-[72px] relative w-full">
         <Title3 />
         <Team1 />
@@ -780,7 +780,7 @@ function Logos() {
 
 function Partners() {
   return (
-    <div className="relative shrink-0 w-full z-[5]" data-name="partners">
+    <div id="partners" className="relative shrink-0 w-full z-[5]" data-name="partners">
       <div className="content-stretch flex flex-col gap-[64px] items-start max-w-[1200px] mx-auto px-[55px] py-[72px] relative w-full">
         <Title4 />
         <Logos />
@@ -865,7 +865,7 @@ function Frame7() {
 
 function Accessability() {
   return (
-    <div className="bg-black relative shrink-0 w-full z-[4]" data-name="accessability">
+    <div id="accessibility" className="bg-black relative shrink-0 w-full z-[4]" data-name="accessibility">
       <div className="gap-x-[40px] gap-y-[40px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(4,fit-content(100%))] max-w-[1200px] mx-auto px-[55px] py-[72px] relative w-full">
         <Title5 />
         <Frame4 />
@@ -1092,20 +1092,72 @@ function Title6() {
   );
 }
 
+const DOCUMENT_ITEMS = [
+  { title: `Указ Президента України "Про музей "Чорнобиль"`, href: "/docs/ukaz-prezidenta-ukrayini.pdf" },
+  { title: "Звіт про проведення радіаційного обстеження", href: "/docs/radiaciine-obstezennia-predmetiv-muzeiu.pdf" },
+  { title: `Статут Національного музею "Чорнобиль"`, href: "/docs/statut-resize3.pdf" },
+  { title: "Правила фотографування та проведення зйомок", href: "/docs/pravilafotograftaprovziomokvmuzeyi-3.pdf" },
+  { title: `КОНЦЕПЦІЯ ОСУЧАСНЕННЯ ТА РОЗВИТКУ НАЦІОНАЛЬНОГО МУЗЕЮ "ЧОРНОБИЛЬ" на період ДО 2025 року`, href: "/docs/koncepciia.pdf" },
+  { title: `Колективний договір Національного музею "Чорнобиль" на 2025-2028 роки`, href: "/docs/kolektivnii-2025-scan-pict-optim.pdf" },
+  { title: `ПРАВИЛА ВІДВІДУВАННЯ НАЦІОНАЛЬНОГО МУЗЕЮ "ЧОРНОБИЛЬ"` },
+  { title: `План діяльності системи енергетичного менеджменту Національного музею "Чорнобиль"`, href: "/docs/plan-diialnostisistemienergeticnogomenedzmentu.pdf" },
+  { title: `Положення про систему енергетичного менеджменту у Національному музеї "Чорнобиль"`, href: "/docs/polozennia-prosistemuenergeticnogomenedzmentu.pdf" },
+  { title: `Декларація енергетичної політики Національного музею "Чорнобиль"`, href: "/docs/deklar-m2.pdf" },
+];
+
+function DocumentCard({ title, href, className }: { title: string; href?: string; className: string }) {
+  const content = (
+    <>
+      <div aria-hidden="true" className="absolute border-6 border-black border-solid inset-0 pointer-events-none" />
+      <div className="flex flex-row items-center size-full">
+        <div className="content-stretch flex items-center justify-between px-[32px] py-[24px] relative size-full">
+          <p className="flex-[1_0_0] font-['Oswald',sans-serif] font-medium leading-[24px] min-w-px relative text-[20px] text-black uppercase whitespace-pre-wrap">{title}</p>
+          <div className="relative shrink-0 size-[32px]" data-name="icons">
+            <div className="absolute inset-[14.58%_20.83%]" data-name="icon/action/get_app_24px">
+              <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 18.667 22.667">
+                <path d={svgPaths.p7648580} fill="var(--fill-0, black)" id="icon/action/get_app_24px" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+
+  if (!href) {
+    return (
+      <div className={className}>
+        {content}
+      </div>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${className} block cursor-pointer`}
+    >
+      {content}
+    </a>
+  );
+}
+
 function Docs() {
   return (
-    <div className="bg-[#f5f3e9] relative shrink-0 w-full z-[3]" data-name="docs">
+    <div id="documents" className="bg-[#f5f3e9] relative shrink-0 w-full z-[3]" data-name="documents">
       <div className="gap-[16px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(6,fit-content(100%))] max-w-[1200px] mx-auto px-[55px] py-[72px] relative w-full">
-        <Doc />
-        <Doc1 />
-        <Doc2 />
-        <Doc3 />
-        <Doc4 />
-        <Doc5 />
-        <Doc6 />
-        <Doc7 />
-        <Doc8 />
-        <Doc9 />
+        <DocumentCard className="col-1 justify-self-stretch relative row-2 self-stretch shrink-0" {...DOCUMENT_ITEMS[0]} />
+        <DocumentCard className="col-2 justify-self-stretch relative row-2 self-stretch shrink-0" {...DOCUMENT_ITEMS[1]} />
+        <DocumentCard className="col-1 justify-self-stretch relative row-3 self-stretch shrink-0" {...DOCUMENT_ITEMS[2]} />
+        <DocumentCard className="col-2 justify-self-stretch relative row-3 self-stretch shrink-0" {...DOCUMENT_ITEMS[3]} />
+        <DocumentCard className="col-1 justify-self-stretch relative row-4 self-stretch shrink-0" {...DOCUMENT_ITEMS[4]} />
+        <DocumentCard className="col-2 justify-self-stretch relative row-4 self-stretch shrink-0" {...DOCUMENT_ITEMS[5]} />
+        <DocumentCard className="col-1 justify-self-stretch relative row-5 self-stretch shrink-0" {...DOCUMENT_ITEMS[6]} />
+        <DocumentCard className="col-2 justify-self-stretch relative row-5 self-stretch shrink-0" {...DOCUMENT_ITEMS[7]} />
+        <DocumentCard className="col-1 justify-self-stretch relative row-6 self-stretch shrink-0" {...DOCUMENT_ITEMS[8]} />
+        <DocumentCard className="col-2 justify-self-stretch relative row-6 self-stretch shrink-0" {...DOCUMENT_ITEMS[9]} />
         <Title6 />
       </div>
     </div>
@@ -1226,7 +1278,7 @@ function Frame() {
 
 function Donate() {
   return (
-    <div className="relative shrink-0 w-full z-[2]" data-name="donate">
+    <div id="help" className="relative shrink-0 w-full z-[2]" data-name="help">
       <div className="gap-x-[32px] gap-y-[24px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(3,fit-content(100%))] max-w-[1200px] mx-auto px-[55px] py-[72px] relative w-full">
         <Frame3 />
         <Card />
@@ -1386,7 +1438,7 @@ function Component14() {
 
 function Contacts() {
   return (
-    <div className="bg-black relative shrink-0 w-full z-[1]" data-name="contacts">
+    <div id="contacts" className="bg-black relative shrink-0 w-full z-[1]" data-name="contacts">
       <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[__fit-content(100%)_minmax(0,1fr)] grid-rows-[repeat(4,fit-content(100%))] max-w-[1200px] mx-auto px-[55px] py-[72px] relative w-full">
         <Frame1 />
         <Component12 />

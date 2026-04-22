@@ -1152,7 +1152,7 @@ function Content() {
       <div id="spaces" className="w-full"><MuseumSpacesSection /></div>
       <div id="events" className="w-full"><HomeEventsSection /></div>
       <Frame33 />
-      <Map />
+      <div id="map" className="w-full"><Map /></div>
       <div className="bg-[#f5f3e9] relative shrink-0 w-full" data-name="footer">
         <div className="content-stretch flex flex-col gap-[24px] items-start px-[16px] py-[56px] relative size-full">
           <Logo />

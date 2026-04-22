@@ -3,10 +3,12 @@ import { useNavigate } from "react-router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ResearchersContent from "../../imports/ResearchersContent";
+import { useHashScroll } from "../hooks/useHashScroll";
 
 export default function ResearchersPage() {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
+  useHashScroll();
 
   useEffect(() => {
     const checkMobile = () => {

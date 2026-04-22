@@ -112,7 +112,7 @@ function FondsSection() {
   const activeItems = activeTab === "digital" ? DIGITAL_ITEMS : NEW_ITEMS;
 
   return (
-    <section className="w-full bg-[#F5F3E8]">
+    <section id="funds" className="w-full bg-[#F5F3E8]">
       <div className="px-[16px] md:px-[55px] py-[40px] md:py-[72px] max-w-[1200px] mx-auto w-full">
       <SectionTitle>Фонди</SectionTitle>
 
@@ -237,7 +237,7 @@ function FondsSection() {
 
 function LibrarySection() {
   return (
-    <section className="w-full bg-black text-white">
+    <section id="library" className="w-full bg-black text-white">
       <div className="px-[16px] md:px-[55px] py-[40px] md:py-[72px] max-w-[1200px] mx-auto w-full">
         <SectionTitle white>МУЗЕЙНА БІБЛІОТЕКА</SectionTitle>
 
@@ -628,6 +628,7 @@ function ApplicationSection() {
 function RegistryBanner() {
   return (
     <div
+      id="registry"
       className="w-full px-[16px] md:px-[55px] py-[24px] md:py-[32px] relative bg-cover bg-center"
       style={{ backgroundImage: "url('/reg_museum.png')" }}
     >

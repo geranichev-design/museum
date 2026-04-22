@@ -1036,7 +1036,7 @@ function Content1() {
       <div id="spaces" className="w-full"><MuseumSpacesSection /></div>
       <div id="events" className="w-full"><HomeEventsSection /></div>
       <Section3 />
-      <Map />
+      <div id="map" className="w-full"><Map /></div>
       <div className="bg-[#f5f3e9] relative shrink-0 w-full" data-name="footer">
         <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[repeat(4,minmax(0,1fr))] grid-rows-[repeat(3,fit-content(100%))] px-[55px] py-[72px] relative size-full">
           <Logo />

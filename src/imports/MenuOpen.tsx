@@ -4,6 +4,12 @@ import svgPaths from "./svg-p8dzwbpvk0";
 import { useLanguage } from "../app/context/LanguageContext";
 import { MuseumButton } from "../app/components/ui/MuseumButton";
 
+function scrollToTopOnPageLink(to: string) {
+  if (!to.includes("#")) {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }
+}
+
 function ChevronIcon({ open }: { open: boolean }) {
   return (
     <div className="flex items-center justify-center shrink-0 size-[24px]">
@@ -33,6 +39,7 @@ function AccordionSection({ label, to, children }: AccordionSectionProps) {
       <div className="flex gap-[16px] items-center w-full">
         <Link
           to={to}
+          onClick={() => scrollToTopOnPageLink(to)}
           className="flex-1 font-['Oswald',sans-serif] font-medium leading-[22px] text-[20px] text-white uppercase hover:text-[#dfbe22] active:text-[#dfbe22] transition-colors"
         >
           {label}
@@ -54,6 +61,7 @@ function NavSubLink({ to, children }: { to: string; children: React.ReactNode })
   return (
     <Link
       to={to}
+      onClick={() => scrollToTopOnPageLink(to)}
       className="font-['Montserrat',sans-serif] font-normal text-[14px] text-white hover:text-[#dfbe22] active:text-[#dfbe22] transition-colors"
     >
       {children}
@@ -68,22 +76,23 @@ export default function MenuOpen() {
   return (
     <div className="bg-black content-stretch flex flex-col gap-[24px] items-start p-[16px] relative size-full" data-name="menu open">
       {/* Tickets button */}
-      <MuseumButton to="/tickets" variant="solid" theme="dark" className="w-full">
+      <MuseumButton to="/tickets" onClick={() => scrollToTopOnPageLink("/tickets")} variant="solid" theme="dark" className="w-full">
         {uk ? "Квитки" : "Tickets"}
       </MuseumButton>
 
       {/* Головна — has page / */}
       <AccordionSection label={uk ? "Головна" : "Home"} to="/">
         <NavSubLink to="/#history">{uk ? "Історія катастрофи" : "History of the disaster"}</NavSubLink>
-        <NavSubLink to="/#tours">{uk ? "Екскурсії" : "Tours"}</NavSubLink>
+        <NavSubLink to="/#exposition">{uk ? "Експозиція" : "Exhibition"}</NavSubLink>
         <NavSubLink to="/#events">{uk ? "Анонс подій" : "Upcoming events"}</NavSubLink>
         <NavSubLink to="/#spaces">{uk ? "Простори музею" : "Museum spaces"}</NavSubLink>
-        <NavSubLink to="/#quiz">{uk ? "Вікторина" : "Quiz"}</NavSubLink>
+        <NavSubLink to="/#map">{uk ? "Мапа" : "Map"}</NavSubLink>
       </AccordionSection>
 
       {/* Простори музею — has page /spaces */}
       <Link
         to="/spaces"
+        onClick={() => scrollToTopOnPageLink("/spaces")}
         className="font-['Oswald',sans-serif] font-medium leading-[22px] text-[20px] text-white uppercase hover:text-[#dfbe22] active:text-[#dfbe22] transition-colors w-full"
       >
         {uk ? "Простори музею" : "Museum spaces"}
@@ -92,6 +101,7 @@ export default function MenuOpen() {
       {/* Події та активності — has page /events */}
       <Link
         to="/events"
+        onClick={() => scrollToTopOnPageLink("/events")}
         className="font-['Oswald',sans-serif] font-medium leading-[22px] text-[20px] text-white uppercase hover:text-[#dfbe22] active:text-[#dfbe22] transition-colors w-full"
       >
         {uk ? "Події та активності" : "Events and activities"}

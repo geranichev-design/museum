@@ -2,7 +2,7 @@ import { MuseumButton } from "./ui/MuseumButton";
 
 export function ExpositionSection() {
   return (
-    <section className="w-full bg-white">
+    <section id="exposition" className="w-full bg-white">
       <div className="flex flex-col md:flex-row items-stretch max-w-[1200px] mx-auto px-[16px] md:px-[55px] py-[48px] md:py-[72px] gap-[40px] md:gap-[56px]">
 
         {/* Left — text content */}

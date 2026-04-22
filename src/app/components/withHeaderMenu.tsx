@@ -55,7 +55,7 @@ export function withHeaderMenu<P extends object>(Component: ComponentType<P>) {
     useEffect(() => {
       const handleMenuToggle = (e: MouseEvent) => {
         const target = e.target as HTMLElement;
-        const menuButton = target.closest('[data-name="icons"]');
+        const menuButton = target.closest('[data-menu-toggle="true"]');
         const headerEl = document.querySelector('[data-name="header menu"]');
 
         if (menuButton && headerEl) {
@@ -67,7 +67,7 @@ export function withHeaderMenu<P extends object>(Component: ComponentType<P>) {
       const handleClickOutside = (e: MouseEvent) => {
         const target = e.target as HTMLElement;
         const menuPortal = document.querySelector('[data-menu-portal="true"]');
-        const menuButton = target.closest('[data-name="icons"]');
+        const menuButton = target.closest('[data-menu-toggle="true"]');
 
         if (isMenuOpen && menuPortal && !menuPortal.contains(target) && !menuButton) {
           setIsMenuOpen(false);
@@ -85,7 +85,7 @@ export function withHeaderMenu<P extends object>(Component: ComponentType<P>) {
 
     useEffect(() => {
       // Update burger icon to X when menu is open
-      const iconButton = document.querySelector('[data-name="icons"]') as HTMLElement;
+      const iconButton = document.querySelector('[data-menu-toggle="true"]') as HTMLElement;
       if (iconButton && iconButton.tagName === 'BUTTON') {
         if (isMenuOpen) {
           iconButton.innerHTML = `

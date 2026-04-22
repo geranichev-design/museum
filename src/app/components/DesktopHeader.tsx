@@ -46,22 +46,6 @@ function Logo() {
   );
 }
 
-function LanguageSwitcher() {
-  const { lang, setLang } = useLanguage();
-  return (
-    <div className="content-stretch flex font-['Oswald',sans-serif] font-medium gap-[19px] items-center leading-[22px] relative shrink-0 text-[20px] uppercase whitespace-nowrap">
-      <button
-        onClick={() => setLang('uk')}
-        className={`cursor-pointer bg-transparent border-0 p-0 relative shrink-0 ${lang === 'uk' ? 'text-[#dfbe22]' : 'text-white opacity-50 hover:opacity-80'}`}
-      >укр</button>
-      <button
-        onClick={() => setLang('en')}
-        className={`cursor-pointer bg-transparent border-0 p-0 relative shrink-0 ${lang === 'en' ? 'text-[#dfbe22]' : 'text-white opacity-50 hover:opacity-80'}`}
-      >eng</button>
-    </div>
-  );
-}
-
 function TicketsButton() {
   const { lang } = useLanguage();
   return (
@@ -73,7 +57,7 @@ function TicketsButton() {
 
 function MenuButton() {
   return (
-    <button className="content-stretch cursor-pointer flex flex-col gap-[6px] items-center justify-center relative shrink-0 size-[24px]" data-name="icons">
+    <button className="content-stretch cursor-pointer flex flex-col gap-[6px] items-center justify-center relative shrink-0 size-[24px]" data-name="icons" data-menu-toggle="true">
       <div className="h-[4px] relative shrink-0 w-full" data-name="Line 60 (Stroke)">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 4">
           <path d="M24 0V4H0V0H24Z" fill="var(--fill-0, #F5F3EA)" id="Line 60 (Stroke)" style={{ fill: "color(display-p3 0.9608 0.9529 0.9176)", fillOpacity: "1" }} />
@@ -95,8 +79,7 @@ function MenuButton() {
 
 function Navigation() {
   return (
-    <div className="content-stretch flex gap-[48px] items-center justify-end relative shrink-0 w-[561px]">
-      <LanguageSwitcher />
+    <div className="content-stretch flex gap-[48px] items-center justify-end relative shrink-0">
       <TicketsButton />
       <MenuButton />
     </div>

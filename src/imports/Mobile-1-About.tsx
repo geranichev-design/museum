@@ -104,7 +104,7 @@ function AboutSection() {
 /* ─── MISSION ─── */
 function MissionSection() {
   return (
-    <div className="bg-white flex flex-col gap-[24px] px-[16px] py-[40px] border-t-4 border-black" data-name="mission">
+    <div id="mission" className="bg-white flex flex-col gap-[24px] px-[16px] py-[40px] border-t-4 border-black" data-name="mission">
       <SectionTitle label="Місія" />
 
       <div className="flex flex-col gap-[8px]">
@@ -245,7 +245,7 @@ const HISTORY_ITEMS = [
 
 function HistorySection() {
   return (
-    <div className="bg-black flex flex-col gap-[0px] px-[16px] py-[40px]" data-name="history">
+    <div id="history" className="bg-black flex flex-col gap-[0px] px-[16px] py-[40px]" data-name="history">
       <SectionTitle label="Історія музею" dark />
       <div className="flex flex-col mt-[24px]">
         {HISTORY_ITEMS.map(({ year, text }) => (
@@ -278,7 +278,7 @@ const DEPARTMENTS = [
 
 function TeamSection() {
   return (
-    <div className="bg-[#f5f3e9] flex flex-col gap-[32px] px-[16px] py-[40px]" data-name="team">
+    <div id="team" className="bg-[#f5f3e9] flex flex-col gap-[32px] px-[16px] py-[40px]" data-name="team">
       <SectionTitle label="Команда" />
 
       {TEAM_MEMBERS.map(({ name, role, sub, photo }) => (
@@ -317,7 +317,7 @@ function TeamSection() {
 /* ─── PARTNERS ─── */
 function PartnersSection() {
   return (
-    <div className="bg-white flex flex-col gap-[32px] px-[16px] py-[40px]" data-name="partners">
+    <div id="partners" className="bg-white flex flex-col gap-[32px] px-[16px] py-[40px]" data-name="partners">
       <SectionTitle label="Партнери" />
       <div className="flex flex-wrap gap-[24px] items-center justify-center">
         <img alt="" src={img202604101107531} className="h-[50px] object-contain" />
@@ -332,7 +332,7 @@ function PartnersSection() {
 /* ─── ACCESSIBILITY ─── */
 function AccessabilitySection() {
   return (
-    <div className="bg-black flex flex-col gap-[24px] px-[16px] py-[40px]" data-name="accessability">
+    <div id="accessibility" className="bg-black flex flex-col gap-[24px] px-[16px] py-[40px]" data-name="accessibility">
       <SectionTitle label="Доступність та інклюзивність" dark />
       <div className="flex flex-col gap-[24px]">
         <p className="font-['Montserrat',sans-serif] font-normal text-[15px] leading-[22px] text-white">
@@ -357,28 +357,43 @@ function AccessabilitySection() {
 
 /* ─── DOCUMENTS ─── */
 const DOCS = [
-  "Указ Президента України «Про музей «Чорнобиль»",
-  "Звіт про проведення радіаційного обстеження",
-  "Статут Національного музею «Чорнобиль»",
-  "Правила фотографування та проведення зйомок",
-  "КОНЦЕПЦІЯ ОСУЧАСНЕННЯ ТА РОЗВИТКУ НАЦІОНАЛЬНОГО МУЗЕЮ «ЧОРНОБИЛЬ» на період ДО 2025 року",
-  "Колективний договір Національного музею «Чорнобиль» на 2025-2028 роки",
-  "ПРАВИЛА ВІДВІДУВАННЯ НАЦІОНАЛЬНОГО МУЗЕЮ «ЧОРНОБИЛЬ»",
-  "План діяльності системи енергетичного менеджменту Національного музею «Чорнобиль»",
-  "Положення про систему енергетичного менеджменту у Національному музеї «Чорнобиль»",
-  "Декларація енергетичної політики Національного музею «Чорнобиль»",
+  { title: "Указ Президента України «Про музей «Чорнобиль»", href: "/docs/ukaz-prezidenta-ukrayini.pdf" },
+  { title: "Звіт про проведення радіаційного обстеження", href: "/docs/radiaciine-obstezennia-predmetiv-muzeiu.pdf" },
+  { title: "Статут Національного музею «Чорнобиль»", href: "/docs/statut-resize3.pdf" },
+  { title: "Правила фотографування та проведення зйомок", href: "/docs/pravilafotograftaprovziomokvmuzeyi-3.pdf" },
+  { title: "КОНЦЕПЦІЯ ОСУЧАСНЕННЯ ТА РОЗВИТКУ НАЦІОНАЛЬНОГО МУЗЕЮ «ЧОРНОБИЛЬ» на період ДО 2025 року", href: "/docs/koncepciia.pdf" },
+  { title: "Колективний договір Національного музею «Чорнобиль» на 2025-2028 роки", href: "/docs/kolektivnii-2025-scan-pict-optim.pdf" },
+  { title: "ПРАВИЛА ВІДВІДУВАННЯ НАЦІОНАЛЬНОГО МУЗЕЮ «ЧОРНОБИЛЬ»" },
+  { title: "План діяльності системи енергетичного менеджменту Національного музею «Чорнобиль»", href: "/docs/plan-diialnostisistemienergeticnogomenedzmentu.pdf" },
+  { title: "Положення про систему енергетичного менеджменту у Національному музеї «Чорнобиль»", href: "/docs/polozennia-prosistemuenergeticnogomenedzmentu.pdf" },
+  { title: "Декларація енергетичної політики Національного музею «Чорнобиль»", href: "/docs/deklar-m2.pdf" },
 ];
 
 function DocumentsSection() {
   return (
-    <div className="bg-[#f5f3e9] flex flex-col gap-[16px] px-[16px] py-[40px]" data-name="docs">
+    <div id="documents" className="bg-[#f5f3e9] flex flex-col gap-[16px] px-[16px] py-[40px]" data-name="documents">
       <SectionTitle label="Документи" />
       <div className="grid grid-cols-2 gap-[16px] mt-[8px]">
-        {DOCS.map((doc) => (
-          <div key={doc} className="flex items-center justify-between gap-[8px] px-[12px] py-[14px] relative">
-            <div aria-hidden="true" className="absolute border-4 border-black border-solid inset-0 pointer-events-none" />
-            <p className="font-['Oswald',sans-serif] font-medium text-[13px] leading-[18px] text-black uppercase flex-1">{doc}</p>
-            <DownloadIcon />
+        {DOCS.map(({ title, href }) => (
+          <div key={title} className="relative">
+            {href ? (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between gap-[8px] px-[12px] py-[14px] relative h-full cursor-pointer"
+              >
+                <div aria-hidden="true" className="absolute border-4 border-black border-solid inset-0 pointer-events-none" />
+                <p className="font-['Oswald',sans-serif] font-medium text-[13px] leading-[18px] text-black uppercase flex-1">{title}</p>
+                <DownloadIcon />
+              </a>
+            ) : (
+              <div className="flex items-center justify-between gap-[8px] px-[12px] py-[14px] relative h-full">
+                <div aria-hidden="true" className="absolute border-4 border-black border-solid inset-0 pointer-events-none" />
+                <p className="font-['Oswald',sans-serif] font-medium text-[13px] leading-[18px] text-black uppercase flex-1">{title}</p>
+                <DownloadIcon />
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -389,7 +404,7 @@ function DocumentsSection() {
 /* ─── DONATE ─── */
 function DonateSection() {
   return (
-    <div className="bg-white flex flex-col gap-[24px] px-[16px] py-[40px]" data-name="donate">
+    <div id="help" className="bg-white flex flex-col gap-[24px] px-[16px] py-[40px]" data-name="help">
       <SectionTitle label="Допомога музею" />
 
       <div className="flex flex-col gap-[8px] text-black">
@@ -465,7 +480,7 @@ function DonateSection() {
 /* ─── CONTACTS ─── */
 function ContactsSection() {
   return (
-    <div className="bg-black flex flex-col gap-[24px] px-[16px] py-[40px]" data-name="contacts">
+    <div id="contacts" className="bg-black flex flex-col gap-[24px] px-[16px] py-[40px]" data-name="contacts">
       <SectionTitle label="Контакти" dark />
 
       <div className="flex flex-col gap-[16px]">
