@@ -308,13 +308,9 @@ function Component5() {
 function Component6() {
   return (
     <div className="content-stretch flex flex-1 flex-col gap-[40px] items-start min-w-0 relative" data-name="2">
-      <div className="absolute h-[18px] left-[-1.33px] top-[2px] w-[14px]">
-        <div aria-hidden="true" className="absolute border-2 border-[#e6bc00] border-solid inset-0 pointer-events-none" />
-      </div>
-      <div className="absolute h-[18px] left-[182.67px] top-[24px] w-[9px]">
-        <div aria-hidden="true" className="absolute border-2 border-[#e6bc00] border-solid inset-0 pointer-events-none" />
-      </div>
-      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-black text-center w-[min-content]">Чорнобильський музей – це місце, де зібрано унікальну інформацію про одну з найбільших техногенних катастроф.</p>
+      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-black text-center w-[min-content]">
+        <span className="font-bold">Ч</span>орнобильський музей – це місце, де зібрано унікальну <span className="font-bold">і</span>нформацію про одну з найбільших техногенних катастроф.
+      </p>
       <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-black w-[min-content]">{`Акцентною частиною лого є траєкторія електрону, що формує собою літеру "Ч", від назви "Чорнобиль", та одночасно літеру "І", від слова "інформація", бо музей асоціюється саме з інформацією, яка розповідається відвідувачам.`}</p>
     </div>
   );

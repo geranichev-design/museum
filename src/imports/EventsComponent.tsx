@@ -7,6 +7,7 @@ import { EVENTS_DATA, TAG_STYLES, type EventRecord } from "../data/eventsData";
 import { MuseumButton } from "../app/components/ui/MuseumButton";
 
 const EVENT_TYPE_OPTIONS = [
+  { value: "", label: "Показати всі" },
   { value: "Виставки", label: "Виставки" },
   { value: "Майстер-класи", label: "Майстер-класи" },
   { value: "Тимчасові проєкти", label: "Тимчасові проєкти" },
@@ -153,13 +154,6 @@ export default function EventsComponent({ onBuyTicket }: { onBuyTicket?: () => v
                 onClick={applyFilters}
               />
             </div>
-          </div>
-
-          {/* Archive link */}
-          <div className="flex justify-end">
-            <a href="#" className="font-['Montserrat',sans-serif] text-[16px] text-black hover:underline">
-              архів »
-            </a>
           </div>
 
           {/* Events Grid */}

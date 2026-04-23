@@ -8,7 +8,7 @@ export default function MobileFooter() {
   return (
     <div className="bg-[#f5f3e9] relative shrink-0 w-full min-h-[400px]" data-name="custom-footer">
       <div className="content-stretch flex flex-col gap-[24px] items-start px-[16px] py-[56px] relative w-full">
-        <MuseumLogo linked color="black" width={267} height={74} />
+        <MuseumLogo linked color="black" width={267} height={74} className="pr-[16px]" />
 
         <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 text-black w-full">
           <p className="font-['Oswald',sans-serif] font-medium leading-[24px] relative shrink-0 text-[20px] uppercase w-full">
@@ -38,46 +38,40 @@ export default function MobileFooter() {
           <Link to="/history" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Історія катастрофи' : 'History of the disaster'}
           </Link>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
-            {uk ? 'Екскурсії' : 'Tours'}
-          </p>
           <Link to="/events" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Анонс подій' : 'Upcoming events'}
           </Link>
           <Link to="/spaces" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Простори музею' : 'Museum spaces'}
           </Link>
-          <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
-            {uk ? 'Вікторина' : 'Quiz'}
-          </p>
         </div>
 
         <div className="content-stretch flex flex-col gap-[12px] items-start justify-between relative shrink-0 text-black w-full">
           <Link to="/about" className="font-['Oswald',sans-serif] font-medium leading-[24px] relative shrink-0 text-[20px] uppercase w-full hover:underline block">
             {uk ? 'Про музей' : 'About museum'}
           </Link>
-          <Link to="/about" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
+          <Link to="/about#history" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Історія' : 'History'}
           </Link>
-          <Link to="/about" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
+          <Link to="/about#mission" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Місія' : 'Mission'}
           </Link>
-          <Link to="/researchers" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
+          <Link to="/about#team" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Команда' : 'Team'}
           </Link>
-          <Link to="/about" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
+          <Link to="/about#partners" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Партнери' : 'Partners'}
           </Link>
-          <Link to="/about" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
+          <Link to="/about#accessibility" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Доступність' : 'Accessibility'}
           </Link>
-          <Link to="/about" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
+          <Link to="/about#documents" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Документи' : 'Documents'}
           </Link>
-          <Link to="/about" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
+          <Link to="/about#help" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Допомога музею' : 'Support the museum'}
           </Link>
-          <Link to="/about" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
+          <Link to="/about#contacts" className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full hover:underline block">
             {uk ? 'Контакти' : 'Contacts'}
           </Link>
         </div>

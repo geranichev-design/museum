@@ -126,15 +126,6 @@ export default function MenuOpen() {
         <NavSubLink to="/about#contacts">{uk ? "Контакти" : "Contacts"}</NavSubLink>
       </AccordionSection>
 
-      {/* Report corruption */}
-      <div className="relative shrink-0 w-full">
-        <div aria-hidden="true" className="absolute border-3 border-[#d93a32] border-solid inset-0 pointer-events-none" />
-        <div className="flex items-center justify-center px-[16px] py-[8px]">
-          <span className="font-['Oswald',sans-serif] font-medium text-[14px] text-[#d93a32] uppercase leading-[22px]">
-            {uk ? "Повідомити про корупцію" : "Report corruption"}
-          </span>
-        </div>
-      </div>
     </div>
   );
 }
