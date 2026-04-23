@@ -2,6 +2,7 @@ import { useEffect } from "react";
 // useState removed — Gallery manages its own state
 import { TAG_STYLES, type EventRecord } from "../data/eventsData";
 import { Gallery } from "../app/components/ui/Gallery";
+import { MuseumButton } from "../app/components/ui/MuseumButton";
 
 function AtomIcon() {
   return (
@@ -69,20 +70,16 @@ export default function EventDetailComponent({
       <div className="mx-auto max-w-[1200px] px-[16px] md:px-[24px] py-[32px] md:py-[48px] flex flex-col gap-[48px] md:gap-[64px]">
 
         {/* Back link */}
-        <button
+        <MuseumButton
           onClick={onBack}
-          className="flex items-center gap-[8px] font-['Oswald',sans-serif] font-medium text-[28px] uppercase text-black hover:opacity-70 self-start leading-none"
+          variant="ghost"
+          theme="light"
+          icon="back-arrow"
+          iconPosition="left"
+          className="self-start !px-0 !py-0 !border-transparent !text-[28px] !leading-none hover:!bg-transparent hover:!border-transparent active:!bg-transparent active:!border-transparent"
         >
-          <span className="flex items-center" style={{ letterSpacing: "-0.1em" }}>
-            <svg width="22" height="28" viewBox="0 0 22 28" fill="none">
-              <path d="M16 4L6 14L16 24" stroke="black" strokeWidth="3.5" strokeLinecap="square" strokeLinejoin="miter" />
-            </svg>
-            <svg width="22" height="28" viewBox="0 0 22 28" fill="none" className="-ml-[6px]">
-              <path d="M16 4L6 14L16 24" stroke="black" strokeWidth="3.5" strokeLinecap="square" strokeLinejoin="miter" />
-            </svg>
-          </span>
-          <span>Події</span>
-        </button>
+          Події
+        </MuseumButton>
 
         {/* Main layout: gallery + details */}
         <div className="flex flex-col md:flex-row gap-[32px] md:gap-[56px] items-start">
