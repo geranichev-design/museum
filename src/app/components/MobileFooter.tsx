@@ -24,7 +24,7 @@ export default function MobileFooter() {
             {uk ? 'Пн – Сб (Нд - вихідний день)' : 'Mon – Sat (Sun – day off)'}
           </p>
           <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">
-            {uk ? '10:00 – 18.00 (каса працює до 17.00)' : '10:00 – 18:00 (ticket office until 17:00)'}
+            {uk ? '10:00 – 18:0 (каса працює до 17:00)' : '10:00 – 18:00 (ticket office until 17:00)'}
           </p>
         </div>
 

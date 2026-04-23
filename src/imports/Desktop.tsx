@@ -705,7 +705,7 @@ function Contacts() {
       <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full"><T uk="м. Київ, провулок Хорива, 1," en="Kyiv, Khoriva Lane, 1," /></p>
       <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">тел. +38 044 482-56-27</p>
       <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full"><T uk="Пн – Сб (Нд - вихідний день)" en="Mon – Sat (Sun – day off)" /></p>
-      <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full"><T uk="10:00 – 18.00 (каса працює до 17.00)" en="10:00 – 18:00 (ticket office until 17:00)" /></p>
+      <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full"><T uk="10:00 – 18:0 (каса працює до 17:00)" en="10:00 – 18:00 (ticket office until 17:00)" /></p>
     </div>
   );
 }

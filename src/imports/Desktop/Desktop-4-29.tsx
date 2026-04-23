@@ -435,7 +435,7 @@ function Contacts() {
       <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">м. Київ, провулок Хорива, 1,</p>
       <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">тел. +38 044 482-56-27</p>
       <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">Пн – Сб (Нд - вихідний день)</p>
-      <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">10:00 – 18.00 (каса працює до 17.00)</p>
+      <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[14px] w-full">10:00 – 18:0 (каса працює до 17:00)</p>
     </div>
   );
 }
