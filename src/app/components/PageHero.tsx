@@ -32,12 +32,12 @@ export function PageHero({
   );
 
   return (
-    <div className="relative w-full min-h-[280px] md:min-h-[460px] overflow-hidden flex items-center">
+    <div className="relative isolate w-full min-h-[280px] md:min-h-[460px] overflow-hidden flex items-center">
       {/* Background */}
       <img
         src={imageSrc}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        className="absolute inset-0 z-0 w-full h-full object-cover pointer-events-none"
       />
       {videoSrc && (
         <video
@@ -47,14 +47,14 @@ export function PageHero({
           loop
           playsInline
           poster={imageSrc}
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          className="absolute inset-0 z-10 w-full h-full object-cover pointer-events-none"
           src={videoSrc}
         />
       )}
-      <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+      <div className="absolute inset-0 z-20 bg-black/60 pointer-events-none" />
 
       {/* Content */}
-      <div className="relative w-full mx-auto max-w-[1200px] px-[16px] md:px-[55px] py-[48px] md:py-[64px] flex flex-col gap-[8px] items-start">
+      <div className="relative z-30 w-full mx-auto max-w-[1200px] px-[16px] md:px-[55px] py-[48px] md:py-[64px] flex flex-col gap-[8px] items-start">
         {titleTop && (
           <p
             className="uppercase"
