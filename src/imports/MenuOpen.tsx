@@ -110,8 +110,8 @@ export default function MenuOpen() {
       {/* Дослідникам — has page /researchers */}
       <AccordionSection label={uk ? "Дослідникам" : "For researchers"} to="/researchers">
         <NavSubLink to="/researchers#funds">{uk ? "Фонди" : "Funds"}</NavSubLink>
-        <NavSubLink to="/researchers#library">{uk ? "Музейна бібліотека" : "Museum library"}</NavSubLink>
-        <NavSubLink to="/researchers#registry">{uk ? "Реєстр музейного фонду" : "Museum fund registry"}</NavSubLink>
+        <NavSubLink to="/researchers#funds">{uk ? "Музейна бібліотека" : "Museum library"}</NavSubLink>
+        <NavSubLink to="/researchers#funds">{uk ? "Реєстр музейного фонду" : "Museum fund registry"}</NavSubLink>
       </AccordionSection>
 
       {/* Про музей — has page /about */}

@@ -20,7 +20,7 @@ export function ExpositionSection() {
           <div className="flex flex-col gap-[16px] font-['Montserrat',sans-serif] text-[14px] md:text-[16px] text-black leading-[1.5]">
 
             <div>
-              <p className="font-bold mb-[6px]">Експозиція налічує 2 простори:</p>
+              <p className="font-bold mb-[6px]">Експозиція розділена на 2 простори:</p>
               <ul className="flex flex-col gap-[2px] pl-[4px]">
                 <li className="flex gap-[8px]"><span className="shrink-0">·</span>історичний</li>
                 <li className="flex gap-[8px]"><span className="shrink-0">·</span>освітній</li>

@@ -195,7 +195,7 @@ function LogoConceptSection() {
           <img src={imgAtom} alt="Атом" className="w-[140px] h-[140px] object-contain" />
         </div>
         <p className="font-['Montserrat',sans-serif] font-normal text-[15px] leading-[22px] text-black">
-          Класичне, найпростіше і легке для сприйняття зображення атому може бути виразною основою логотипу
+          Класичне, найпростіше і легке для сприйняття зображення атому може бути виразною основою логотипу.
         </p>
 
         {/* + */}
@@ -203,7 +203,7 @@ function LogoConceptSection() {
 
         {/* Text about museum */}
         <p className="font-['Montserrat',sans-serif] font-normal text-[15px] leading-[22px] text-black text-center">
-          Чорнобильський музей – це місце, де зібрано унікальну інформацію про одну з найбільших техногенних катастроф
+          Чорнобильський музей – це місце, де зібрано унікальну інформацію про одну з найбільших техногенних катастроф.
         </p>
         <p className="font-['Montserrat',sans-serif] font-normal text-[15px] leading-[22px] text-black">
           {`Акцентною частиною лого є траєкторія електрону, що формує собою літеру "Ч", від назви "Чорнобиль", та одночасно літеру "І", від слова "інформація", бо музей асоціюється саме з інформацією, яка розповідається відвідувачам.`}

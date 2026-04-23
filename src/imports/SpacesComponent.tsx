@@ -53,6 +53,32 @@ function IconCoffee() {
     </svg>
   );
 }
+function IconClock() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 3" />
+    </svg>
+  );
+}
+function IconVr() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 9h6l2 2 2-2h6v8h-6l-2-2-2 2H4V9Z" />
+      <path d="M10 11.5v1M14 11.5v1" />
+    </svg>
+  );
+}
+function IconChart() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 20h16" />
+      <path d="M7 20V12" />
+      <path d="M12 20V8" />
+      <path d="M17 20V15" />
+    </svg>
+  );
+}
 function IconLab() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -84,7 +110,7 @@ function IconTower() {
 }
 
 // ── Data ───────────────────────────────────────────────────────────────────
-type FeatureIcon = "monitor" | "star" | "person" | "briefcase" | "camera" | "coffee" | "lab" | "wifi" | "tower";
+type FeatureIcon = "monitor" | "star" | "person" | "briefcase" | "camera" | "coffee" | "lab" | "wifi" | "tower" | "clock" | "vr" | "chart";
 
 interface Feature { icon: FeatureIcon; text: string }
 interface Space { name: string; gallery: string[]; description: string; features: Feature[] }
@@ -99,6 +125,9 @@ const ICON_MAP: Record<FeatureIcon, ReactElement> = {
   lab: <IconLab />,
   wifi: <IconWifi />,
   tower: <IconTower />,
+  clock: <IconClock />,
+  vr: <IconVr />,
+  chart: <IconChart />,
 };
 
 const SPACES: Space[] = [
@@ -133,7 +162,7 @@ const SPACES: Space[] = [
       { icon: "monitor", text: "2 оглядові майданчики (15 м і 28 м)" },
       { icon: "person", text: "Доступна для індивідуальних відвідувань та груп до 10 осіб" },
       { icon: "briefcase", text: "Кількість сходинок — 122" },
-      { icon: "coffee", text: "Час підйому — 5–7 хвилин" },
+      { icon: "clock", text: "Час підйому — 5–7 хвилин" },
     ],
   },
   {
@@ -146,7 +175,7 @@ const SPACES: Space[] = [
     description: "Віртуальна зона Музею — це інноваційна зона, де відвідувачі можуть подивитися VR-тур зоною відчуження чи «відвідати» віртуальний музей «Чорнобиль: історія перемоги». Тут кожен має змогу «перенестися» до Прип'яті, побачити місця, які сьогодні недоступні або змінені часом. Завдяки VR відчуття присутності стає максимально реалістичним, а історія — ближчою й зрозумілішою. Цей простір поєднує технології та пам'ять, відкриваючи новий формат пізнання, що викликає сильні емоції та глибокі роздуми.",
     features: [
       { icon: "monitor", text: "VR-зона з ефектом повного занурення" },
-      { icon: "camera", text: "Віртуальні тури зоною відчуження та Прип'яттю" },
+      { icon: "vr", text: "Віртуальні тури зоною відчуження та Прип'яттю" },
       { icon: "person", text: "Одночасна участь: 3 особи" },
       { icon: "star", text: "Інтерактивні сценарії перегляду" },
       { icon: "briefcase", text: "Музейний досвід, недоступний у реальному просторі" },
@@ -170,7 +199,7 @@ const SPACES: Space[] = [
       { icon: "wifi", text: "Стабільне підключення до інтернету" },
       { icon: "star", text: "Тиха робоча атмосфера" },
       { icon: "monitor", text: "Зони для обговорень і зустрічей" },
-      { icon: "lab", text: "Можливість оренди для роботи чи подій" },
+      { icon: "chart", text: "Можливість оренди для роботи чи подій" },
     ],
   },
   {
@@ -237,7 +266,7 @@ const SPACES: Space[] = [
     ],
   },
   {
-    name: "Виставковий простір (Open-space)",
+    name: "Виставковий простір",
     gallery: [
       "/gallery/sapces_open_space/open_space_01.png",
       "/gallery/sapces_open_space/open_space_02.png",
@@ -277,13 +306,13 @@ export default function SpacesComponent({ onBuyTicket }: { onBuyTicket?: () => v
   const [activeIdx, setActiveIdx] = useState(() => {
     const name = searchParams.get("space");
     if (!name) return 0;
-    const idx = SPACES.findIndex((s) => s.name === name);
+    const idx = SPACES.findIndex((s) => s.name === name || (s.name === "Виставковий простір" && name === "Виставковий простір (Open-space)"));
     return idx >= 0 ? idx : 0;
   });
   useEffect(() => {
     const name = searchParams.get("space");
     if (!name) return;
-    const idx = SPACES.findIndex((s) => s.name === name);
+    const idx = SPACES.findIndex((s) => s.name === name || (s.name === "Виставковий простір" && name === "Виставковий простір (Open-space)"));
     if (idx >= 0) setActiveIdx(idx);
   }, [searchParams]);
 

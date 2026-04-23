@@ -48,7 +48,7 @@ export default function HeaderMenuContent() {
               <DesktopNavItem to="/spaces?space=Лабораторія" onClick={() => scrollToTopOnPageLink("/spaces?space=Лабораторія")} size="sm">{uk ? 'Лабораторія' : 'Laboratory'}</DesktopNavItem>
               <DesktopNavItem to="/spaces?space=Коворкінг" onClick={() => scrollToTopOnPageLink("/spaces?space=Коворкінг")} size="sm">{uk ? 'Коворкінг' : 'Coworking'}</DesktopNavItem>
               <DesktopNavItem to="/spaces?space=Кав'ярня" onClick={() => scrollToTopOnPageLink("/spaces?space=Кав'ярня")} size="sm">{uk ? "Кав'ярня" : 'Café'}</DesktopNavItem>
-              <DesktopNavItem to="/spaces?space=Виставковий простір (Open-space)" onClick={() => scrollToTopOnPageLink("/spaces?space=Виставковий простір (Open-space)")} size="sm">{uk ? 'Виставковий простір (Open-space)' : 'Exhibition space (Open-space)'}</DesktopNavItem>
+              <DesktopNavItem to="/spaces?space=Виставковий простір" onClick={() => scrollToTopOnPageLink("/spaces?space=Виставковий простір")} size="sm">{uk ? 'Виставковий простір' : 'Exhibition space'}</DesktopNavItem>
             </div>
           </div>
 
@@ -66,8 +66,8 @@ export default function HeaderMenuContent() {
           <div className="col-4 content-stretch flex flex-col gap-[16px] items-start justify-self-stretch relative row-1 self-start shrink-0" data-name="4">
             <DesktopNavItem to="/researchers" onClick={() => scrollToTopOnPageLink("/researchers")} preset={pathname === "/researchers"} size="lg">{uk ? 'Дослідникам:' : 'For researchers:'}</DesktopNavItem>
             <DesktopNavItem to="/researchers#funds" size="sm">{uk ? 'Фонди' : 'Funds'}</DesktopNavItem>
-            <DesktopNavItem to="/researchers#library" size="sm">{uk ? 'Музейна бібліотека' : 'Museum library'}</DesktopNavItem>
-            <DesktopNavItem to="/researchers#registry" size="sm">{uk ? 'Реєстр музейного фонду' : 'Museum fund registry'}</DesktopNavItem>
+            <DesktopNavItem to="/researchers#funds" size="sm">{uk ? 'Музейна бібліотека' : 'Museum library'}</DesktopNavItem>
+            <DesktopNavItem to="/researchers#funds" size="sm">{uk ? 'Реєстр музейного фонду' : 'Museum fund registry'}</DesktopNavItem>
           </div>
 
           {/* Column 5 */}

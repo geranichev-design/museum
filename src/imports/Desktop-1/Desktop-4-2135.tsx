@@ -300,7 +300,7 @@ function Component5() {
   return (
     <div className="content-stretch flex flex-1 flex-col gap-[31px] items-center min-w-0 relative" data-name="1">
       <ClipPathGroup />
-      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-black w-[min-content]">Класичне, найпростіше і легке для сприйняття зображення атому може бути виразною основою логотипу</p>
+      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-black w-[min-content]">Класичне, найпростіше і легке для сприйняття зображення атому може бути виразною основою логотипу.</p>
     </div>
   );
 }
@@ -314,8 +314,8 @@ function Component6() {
       <div className="absolute h-[18px] left-[182.67px] top-[24px] w-[9px]">
         <div aria-hidden="true" className="absolute border-2 border-[#e6bc00] border-solid inset-0 pointer-events-none" />
       </div>
-      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-black text-center w-[min-content]">Чорнобильський музей – це місце, де зібрано унікальну інформацію про одну з найбільших техногенних катастроф</p>
-      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-black w-[min-content]">{`Акцентною частиною лого є траекторія електрону, що формує собою літеру "Ч", від назви "Чорнобиль", та одночасно літеру "І", від слова "інформація", бо музей асоціюється саме з інформацією, яка розповідається відвічувачам.`}</p>
+      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-black text-center w-[min-content]">Чорнобильський музей – це місце, де зібрано унікальну інформацію про одну з найбільших техногенних катастроф.</p>
+      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-black w-[min-content]">{`Акцентною частиною лого є траєкторія електрону, що формує собою літеру "Ч", від назви "Чорнобиль", та одночасно літеру "І", від слова "інформація", бо музей асоціюється саме з інформацією, яка розповідається відвідувачам.`}</p>
     </div>
   );
 }
@@ -843,7 +843,7 @@ function Frame6() {
           </svg>
         </div>
       </div>
-      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-white w-[min-content]">Інформаційні вказівники продубльовані шрифтом Брайля, нанесено контрастне маркування, що допомагає людям із порушеннями зору орієнтуватися в приміщенні та отримувати необхідну інформацію. Також у музеї облаштовані універсальні кабіни санітарно-гігієнічних приміщень .</p>
+      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-white w-[min-content]">Інформаційні вказівники продубльовані шрифтом Брайля, нанесено контрастне маркування, що допомагає людям із порушеннями зору орієнтуватися в приміщенні та отримувати необхідну інформацію. Також у музеї облаштовані універсальні кабіни санітарно-гігієнічних приміщень.</p>
     </div>
   );
 }
@@ -858,7 +858,7 @@ function Frame7() {
           </svg>
         </div>
       </div>
-      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-white w-[min-content]">Оновлений музей має укриття, пристосоване для безпечного перебування персоналу та відвідувачів під час повітряної тривоги. Простір укриття продуманий із урахуванням зручної навігації: звідси можна швидко піднятися на перший поверх за допомогою спеціального підйомника, а далі - скористатися ліфтом, щоб потрапити до будь-якої зали музею.</p>
+      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-white w-[min-content]">Оновлений музей має укриття, пристосоване для безпечного перебування персоналу та відвідувачів під час повітряної тривоги. Простір укриття продуманий із урахуванням зручної навігації: звідси можна швидко піднятися на перший поверх за допомогою спеціального підйомника, а далі — скористатися ліфтом, щоб потрапити до будь-якої зали музею.</p>
     </div>
   );
 }
