@@ -64,58 +64,60 @@ export function ImageLightbox({ images, currentIndex, onClose, onSelect }: Image
 
       {/* Thumbnails strip */}
       <div
-        className="flex items-center gap-[16px] mt-[24px]"
+        className="mt-[24px] w-full px-[16px] md:px-0"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Prev arrow */}
-        <button
-          onClick={prev}
-          disabled={currentIndex === 0}
-          className="flex items-center justify-center w-[44px] h-[44px] border-2 border-white text-white disabled:opacity-30 hover:border-[#dfbe22] hover:text-[#dfbe22] transition-colors shrink-0"
-        aria-label="Попереднє"
-      >
-          <img
-            src={encodeURI("/icons/1arrow_left_blak.svg")}
-            alt=""
-            aria-hidden="true"
-            className="block size-[20px] shrink-0 object-contain"
-          />
-        </button>
+        <div className="flex items-center gap-[16px] md:gap-[16px]">
+          {/* Prev arrow */}
+          <button
+            onClick={prev}
+            disabled={currentIndex === 0}
+            className="flex items-center justify-center w-[44px] h-[44px] border-2 border-white text-white disabled:opacity-30 hover:border-[#dfbe22] hover:text-[#dfbe22] transition-colors shrink-0"
+            aria-label="Попереднє"
+          >
+            <img
+              src={encodeURI("/icons/1arrow_left_blak.svg")}
+              alt=""
+              aria-hidden="true"
+              className="block size-[20px] shrink-0 object-contain"
+            />
+          </button>
 
-        {/* Thumbnails */}
-        <div className="flex items-center gap-[8px]">
-          {images.map((src, i) => (
-            <button
-              key={i}
-              onClick={() => onSelect(i)}
-              className="shrink-0 transition-all"
-              style={{
-                width: 64,
-                height: 64,
-                outline: i === currentIndex ? "3px solid #dfbe22" : "2px solid transparent",
-                outlineOffset: "2px",
-              }}
-              aria-label={`Зображення ${i + 1}`}
-            >
-              <img src={src} alt="" className="w-full h-full object-cover" />
-            </button>
-          ))}
+          {/* Thumbnails */}
+          <div className="flex min-w-0 flex-1 items-center gap-[8px] overflow-x-auto py-[4px] pr-[4px] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {images.map((src, i) => (
+              <button
+                key={i}
+                onClick={() => onSelect(i)}
+                className="shrink-0 transition-all"
+                style={{
+                  width: 64,
+                  height: 64,
+                  outline: i === currentIndex ? "3px solid #dfbe22" : "2px solid transparent",
+                  outlineOffset: "2px",
+                }}
+                aria-label={`Зображення ${i + 1}`}
+              >
+                <img src={src} alt="" className="w-full h-full object-cover" />
+              </button>
+            ))}
+          </div>
+
+          {/* Next arrow */}
+          <button
+            onClick={next}
+            disabled={currentIndex === images.length - 1}
+            className="flex items-center justify-center w-[44px] h-[44px] border-2 border-white text-white disabled:opacity-30 hover:border-[#dfbe22] hover:text-[#dfbe22] transition-colors shrink-0"
+            aria-label="Наступне"
+          >
+            <img
+              src={encodeURI("/icons/1arrow_right_blak.svg")}
+              alt=""
+              aria-hidden="true"
+              className="block size-[20px] shrink-0 object-contain"
+            />
+          </button>
         </div>
-
-        {/* Next arrow */}
-        <button
-          onClick={next}
-          disabled={currentIndex === images.length - 1}
-          className="flex items-center justify-center w-[44px] h-[44px] border-2 border-white text-white disabled:opacity-30 hover:border-[#dfbe22] hover:text-[#dfbe22] transition-colors shrink-0"
-        aria-label="Наступне"
-      >
-          <img
-            src={encodeURI("/icons/1arrow_right_blak.svg")}
-            alt=""
-            aria-hidden="true"
-            className="block size-[20px] shrink-0 object-contain"
-          />
-        </button>
       </div>
     </div>,
     document.body,
