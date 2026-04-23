@@ -106,7 +106,7 @@ function Informer() {
         <div className="content-stretch flex items-center justify-center px-[16px] py-[32px] relative size-full">
           <p className="flex-[1_0_0] font-['Montserrat',sans-serif] font-normal leading-[0] min-w-px relative text-[0px] text-black text-center whitespace-pre-wrap">
             <span className="leading-[normal] text-[16px]">
-              {`При виникненні питань телефонуйте за номерами: `}
+              {`У разі виникнення запитань телефонуйте за номерами: `}
               <br aria-hidden="true" />
             </span>
             <span className="font-['Montserrat',sans-serif] font-bold leading-[normal] text-[16px]">+38 044 425-44-62, 063 946-21-43</span>

@@ -370,7 +370,7 @@ function NewspaperFundSection() {
           <div>
             <SectionImage src="/res_lib05.png" />
             <p className="font-['Oswald',sans-serif] font-medium text-[15px] md:text-[16px] text-white uppercase mb-[10px] md:mb-[12px]">
-              PERIODИКА МІСТИТЬ МАТЕРІАЛИ ПРО:
+              ПЕРІОДИКА МІСТИТЬ МАТЕРІАЛИ ПРО:
             </p>
             <BulletList items={[
               "причини та наслідки аварії на ЧАЕС;",
@@ -415,7 +415,7 @@ function PhotoFundSection() {
             &lt;&nbsp;3'000
           </p>
           <p className="font-['Montserrat',sans-serif] text-[13px] md:text-[14px] text-white">
-            Налічує колекція та охоплює різні periods
+            Налічує колекція та охоплює різні періоди
           </p>
         </div>
 
@@ -427,7 +427,7 @@ function PhotoFundSection() {
               items: ["життя Чорнобильського Полісся;", "будівництво та робота ЧАЕС;", "розвиток міста Прип'ять."],
             },
             {
-              label: "PERIOD АВАРІЇ:",
+              label: "ПЕРІОД АВАРІЇ:",
               image: "/res_lib08.png",
               items: ["зруйнований 4-й енергоблок;", "евакуація населення;", "ліквідація наслідків."],
             },

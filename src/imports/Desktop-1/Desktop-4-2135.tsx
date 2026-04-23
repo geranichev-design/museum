@@ -808,7 +808,7 @@ function Frame4() {
       </div>
       <div className="font-['Montserrat',sans-serif] font-normal leading-[0] min-w-full relative shrink-0 text-[16px] text-white w-[min-content]">
         <p className="leading-[22px] mb-0">Музей створений як відкритий і зручний простір для всіх відвідувачів. Під час оновлення особливу увагу приділено створенню безбар’єрного простору та можливості самостійно орієнтуватися в будівлі.</p>
-        <p className="leading-[22px]">{`Простір обладнаний ліфтом і пандусами, що забезпечують зручне пересування між поверхами. `}</p>
+        <p className="leading-[22px]">{`Простір обладнаний ліфтом і пандусами для зручного пересування між поверхами. `}</p>
       </div>
     </div>
   );
@@ -839,7 +839,7 @@ function Frame6() {
           </svg>
         </div>
       </div>
-      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-white w-[min-content]">Інформаційні вказівники продубльовані шрифтом Брайля, нанесено контрастне маркування, що допомагає людям із порушеннями зору орієнтуватися в приміщенні та отримувати необхідну інформацію. Також у музеї облаштовані універсальні кабіни санітарно-гігієнічних приміщень.</p>
+      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-white w-[min-content]">Інформаційні вказівники продубльовані шрифтом Брайля, а на скляні двері та сходи нанесено контрастне маркування. Це допомагає людям із порушеннями зору вчасно отримувати необхідну інформацію та безпечно орієнтуватися у просторі. Також у музеї облаштовані універсальні інклюзивні санітарно-гігієнічні приміщення.</p>
     </div>
   );
 }
@@ -854,7 +854,7 @@ function Frame7() {
           </svg>
         </div>
       </div>
-      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-white w-[min-content]">Оновлений музей має укриття, пристосоване для безпечного перебування персоналу та відвідувачів під час повітряної тривоги. Простір укриття продуманий із урахуванням зручної навігації: звідси можна швидко піднятися на перший поверх за допомогою спеціального підйомника, а далі — скористатися ліфтом, щоб потрапити до будь-якої зали музею.</p>
+      <p className="font-['Montserrat',sans-serif] font-normal leading-[22px] min-w-full relative shrink-0 text-[16px] text-white w-[min-content]">Під час повітряної тривоги відвідувачі та персонал можуть скористатися музейним укриттям. Укриття має зручну навігацію: звідси можна швидко піднятися на перший поверх за допомогою спеціального підйомника, а далі — скористатися ліфтом, щоб безперешкодно потрапити до будь-якої зали музею.</p>
     </div>
   );
 }
@@ -1386,17 +1386,19 @@ function Component13() {
       <Title8 />
       <ul className="block font-['Montserrat',sans-serif] font-normal leading-[0] list-disc min-w-full relative shrink-0 text-[0px] text-white w-[min-content]">
         <li className="mb-0 ms-[calc(var(--list-marker-font-size,0)*1.5*1)]">
-          <span className="leading-[22px] text-[16px]">тел. +38 044 482-56-27, +38 063 946-21-43</span>
+          <span className="font-['Montserrat',sans-serif] font-bold">Інформація щодо вартості або замовлення послуг:</span>
         </li>
         <li className="mb-0 ms-[calc(var(--list-marker-font-size,0)*1.5*1)]">
-          <span className="leading-[22px] text-[16px]">email: info@chornobyl-museum.kyiv.ua</span>
+          <span className="leading-[22px] text-[16px]">+38 044 482-56-27</span>
         </li>
         <li className="mb-0 ms-[calc(var(--list-marker-font-size,0)*1.5*1)]">
-          <span className="leading-[22px] text-[16px]">Замовлення послуг: +38 044 482-56-27, +38 063 946-21-43</span>
+          <span className="leading-[22px] text-[16px]">+38 063 946-21-43</span>
         </li>
-        <li className="leading-[22px] ms-[calc(var(--list-marker-font-size,0)*1.5*1)] text-[16px]">
-          <span className="font-['Montserrat',sans-serif] font-bold">Інформація щодо вартості послуг:</span>
-          {` +38 044 482-56-27, +38 063 946-21-43`}
+        <li className="mb-0 ms-[calc(var(--list-marker-font-size,0)*1.5*1)]">
+          <span className="leading-[22px] text-[16px]">email:</span>
+        </li>
+        <li className="mb-0 ms-[calc(var(--list-marker-font-size,0)*1.5*1)]">
+          <span className="leading-[22px] text-[16px]">info@chornobyl-museum.kyiv.ua</span>
         </li>
       </ul>
     </div>
