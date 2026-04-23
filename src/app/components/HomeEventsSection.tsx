@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
-import { EVENTS_DATA, TAG_STYLES, pickRandom4, type EventRecord } from "../../data/eventsData";
+import { EVENTS_DATA, TAG_STYLES, pickNearest4, type EventRecord } from "../../data/eventsData";
 
 function AtomIcon() {
   return (
@@ -13,14 +12,23 @@ function AtomIcon() {
   );
 }
 
+function getCoverSrc(event: EventRecord) {
+  return event.gallery.find((image) => image.src)?.src ?? null;
+}
+
 function EventCard({ event, onClick }: { event: EventRecord; onClick: () => void }) {
+  const coverSrc = getCoverSrc(event);
   return (
     <div className="flex flex-col gap-[16px] cursor-pointer group w-full" onClick={onClick}>
       <div className="aspect-square bg-[#d9d9d9] flex items-center justify-center relative overflow-hidden">
         <div aria-hidden="true" className="absolute border-[8px] border-black inset-0 pointer-events-none" />
-        <div className="w-[50%] h-[50%]">
-          <AtomIcon />
-        </div>
+        {coverSrc ? (
+          <img src={coverSrc} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        ) : (
+          <div className="w-[50%] h-[50%]">
+            <AtomIcon />
+          </div>
+        )}
       </div>
       <div className="flex flex-col gap-[8px]">
         <p
@@ -42,11 +50,7 @@ function EventCard({ event, onClick }: { event: EventRecord; onClick: () => void
 
 export function HomeEventsSection() {
   const navigate = useNavigate();
-  const [events, setEvents] = useState<EventRecord[]>([]);
-
-  useEffect(() => {
-    setEvents(pickRandom4(EVENTS_DATA));
-  }, []);
+  const events = pickNearest4(EVENTS_DATA);
 
   return (
     <div className="bg-[#dfbe22] w-full" data-name="section 6">
