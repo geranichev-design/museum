@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from "react-router";
 import { PageHero } from "../app/components/PageHero";
 import { MuseumSelect } from "../app/components/ui/MuseumSelect";
 import { MuseumInput } from "../app/components/ui/MuseumInput";
-import { EVENTS_DATA, TAG_STYLES } from "../data/eventsData";
+import { EVENTS_DATA, TAG_STYLES, type EventRecord } from "../data/eventsData";
 import { MuseumButton } from "../app/components/ui/MuseumButton";
 
 const EVENT_TYPE_OPTIONS = [
@@ -26,18 +26,27 @@ function AtomIcon() {
   );
 }
 
-function EventCard({ tags, title, date, onClick }: { tags: string[]; title: string; date: string; onClick?: () => void }) {
+function getCoverSrc(event: EventRecord) {
+  return event.gallery.find((image) => image.src)?.src ?? null;
+}
+
+function EventCard({ event, onClick }: { event: EventRecord; onClick?: () => void }) {
+  const coverSrc = getCoverSrc(event);
   return (
     <div className="flex flex-col gap-[12px] cursor-pointer group" onClick={onClick}>
       <div className="aspect-square bg-[#d9d9d9] flex items-center justify-center relative overflow-hidden">
         <div aria-hidden="true" className="absolute border-[6px] border-black inset-0 pointer-events-none" />
-        <div className="w-[55%] h-[55%]">
-          <AtomIcon />
-        </div>
+        {coverSrc ? (
+          <img src={coverSrc} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        ) : (
+          <div className="w-[55%] h-[55%]">
+            <AtomIcon />
+          </div>
+        )}
       </div>
       <div className="flex flex-col gap-[8px]">
         <div className="flex flex-wrap gap-[4px]">
-          {tags.map((tag) => (
+          {event.tags.map((tag) => (
             <span
               key={tag}
               className={`${TAG_STYLES[tag] ?? "bg-[#d4d4d4]"} font-['Montserrat',sans-serif] font-medium text-[12px] text-black px-[8px] py-[2px]`}
@@ -47,9 +56,9 @@ function EventCard({ tags, title, date, onClick }: { tags: string[]; title: stri
           ))}
         </div>
         <p className="font-['Oswald',sans-serif] font-medium text-[20px] text-black uppercase leading-[1.2] group-hover:underline">
-          {title}
+          {event.title}
         </p>
-        <p className="font-['Montserrat',sans-serif] font-normal text-[16px] text-black leading-[normal]">{date}</p>
+        <p className="font-['Montserrat',sans-serif] font-normal text-[16px] text-black leading-[normal]">{event.date}</p>
       </div>
     </div>
   );
@@ -156,7 +165,7 @@ export default function EventsComponent({ onBuyTicket }: { onBuyTicket?: () => v
           {/* Events Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-[16px] md:gap-x-[24px] gap-y-[32px] md:gap-y-[48px]">
             {paginatedEvents.map((event) => (
-              <EventCard key={event.id} {...event} onClick={() => navigate(`/events/${event.id}`)} />
+              <EventCard key={event.id} event={event} onClick={() => navigate(`/events/${event.id}`)} />
             ))}
           </div>
 

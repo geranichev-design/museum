@@ -14,28 +14,36 @@ function AtomIcon() {
   );
 }
 
+function getCoverSrc(event: EventRecord) {
+  return event.gallery.find((image) => image.src)?.src ?? null;
+}
 
-function RelatedCard({ tags, title, date, onClick }: { tags: string[]; title: string; date: string; onClick?: () => void }) {
+function RelatedCard({ event, onClick }: { event: EventRecord; onClick?: () => void }) {
+  const coverSrc = getCoverSrc(event);
   return (
     <div className="flex flex-col gap-[12px] cursor-pointer group" onClick={onClick}>
       <div className="aspect-square bg-[#d9d9d9] flex items-center justify-center relative overflow-hidden">
         <div aria-hidden="true" className="absolute border-[6px] border-black inset-0 pointer-events-none" />
-        <div className="w-[55%] h-[55%]">
-          <AtomIcon />
-        </div>
+        {coverSrc ? (
+          <img src={coverSrc} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        ) : (
+          <div className="w-[55%] h-[55%]">
+            <AtomIcon />
+          </div>
+        )}
       </div>
       <div className="flex flex-col gap-[8px]">
         <div className="flex flex-wrap gap-[4px]">
-          {tags.map((tag) => (
+          {event.tags.map((tag) => (
             <span key={tag} className={`${TAG_STYLES[tag] ?? "bg-[#d4d4d4]"} font-['Montserrat',sans-serif] font-medium text-[12px] text-black px-[8px] py-[2px]`}>
               {tag}
             </span>
           ))}
         </div>
         <p className="font-['Oswald',sans-serif] font-medium text-[18px] md:text-[20px] text-black uppercase leading-[1.2] group-hover:underline">
-          {title}
+          {event.title}
         </p>
-        <p className="font-['Montserrat',sans-serif] font-normal text-[16px] text-black">{date}</p>
+        <p className="font-['Montserrat',sans-serif] font-normal text-[16px] text-black">{event.date}</p>
       </div>
     </div>
   );
@@ -136,9 +144,7 @@ export default function EventDetailComponent({
             {relatedEvents.map((relatedEvent) => (
               <RelatedCard
                 key={relatedEvent.id}
-                tags={relatedEvent.tags}
-                title={relatedEvent.title}
-                date={relatedEvent.date}
+                event={relatedEvent}
                 onClick={() => onRelatedClick?.(relatedEvent.id)}
               />
             ))}
