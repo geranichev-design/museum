@@ -67,7 +67,7 @@ export function ImageLightbox({ images, currentIndex, onClose, onSelect }: Image
         className="mt-[24px] w-full px-[16px] md:px-0"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center gap-[16px] md:gap-[16px]">
+        <div className="flex items-center gap-[16px] md:justify-center">
           {/* Prev arrow */}
           <button
             onClick={prev}
@@ -84,7 +84,7 @@ export function ImageLightbox({ images, currentIndex, onClose, onSelect }: Image
           </button>
 
           {/* Thumbnails */}
-          <div className="flex min-w-0 flex-1 items-center gap-[8px] overflow-x-auto py-[4px] pr-[4px] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex min-w-0 flex-1 items-center gap-[8px] overflow-x-auto py-[4px] pr-[4px] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:flex-none md:w-auto md:max-w-[min(72vw,960px)] md:justify-center">
             {images.map((src, i) => (
               <button
                 key={i}
