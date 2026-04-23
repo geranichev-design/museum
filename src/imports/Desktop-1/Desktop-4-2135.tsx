@@ -217,19 +217,19 @@ function Component4() {
       <p className="font-['Oswald',sans-serif] font-medium leading-[24px] relative shrink-0 text-[20px] uppercase w-full">Основні напрями статутної діяльності</p>
       <ul className="block font-['Montserrat',sans-serif] font-normal leading-[0] list-disc relative shrink-0 text-[16px] w-full">
         <li className="mb-0 ms-[24px]">
-          <span className="leading-[22px]">науково-дослідна</span>
+          <span className="leading-[22px]">науково-дослідна;</span>
         </li>
         <li className="mb-0 ms-[24px]">
-          <span className="leading-[22px]">культурно-освітня</span>
+          <span className="leading-[22px]">культурно-освітня;</span>
         </li>
         <li className="mb-0 ms-[24px]">
-          <span className="leading-[22px]">фондова</span>
+          <span className="leading-[22px]">фондова;</span>
         </li>
         <li className="mb-0 ms-[24px]">
-          <span className="leading-[22px]">експозиційна</span>
+          <span className="leading-[22px]">експозиційна;</span>
         </li>
         <li className="ms-[24px]">
-          <span className="leading-[22px]">видавнича</span>
+          <span className="leading-[22px]">видавнича.</span>
         </li>
       </ul>
     </div>
