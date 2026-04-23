@@ -2,6 +2,7 @@ import { useState, useEffect, type ReactElement } from "react";
 import { Link, useSearchParams } from "react-router";
 import { Gallery } from "../app/components/ui/Gallery";
 import { PageHero } from "../app/components/PageHero";
+import { MuseumButton } from "../app/components/ui/MuseumButton";
 
 // ── Icons ──────────────────────────────────────────────────────────────────
 function IconMonitor() {
@@ -131,6 +132,30 @@ const ICON_MAP: Record<FeatureIcon, ReactElement> = {
 };
 
 const SPACES: Space[] = [
+  {
+    name: "Експозиція",
+    gallery: [
+      "/gallery/exp_history/expo_09.png",
+      "/gallery/exp_history/expo_10.png",
+      "/gallery/exp_history/expo_11.png",
+      "/gallery/exp_history/expo_12.png",
+      "/gallery/exp_history/expo_13.png",
+      "/gallery/exp_history/expo_14.png",
+      "/gallery/exp_history/expo_15.png",
+      "/gallery/exp_history/expo_16.png",
+      "/gallery/exp_history/expo_17.png",
+      "/gallery/exp_history/expo_18.png",
+    ],
+    description:
+      "Експозиція налічує 2 простори:\nісторичний\nосвітній\n\nНова експозиція «Чорнобиль: люди і сенси» осмислює Чорнобильську катастрофу як спільний досвід і глибоку травму, яка водночас стала свідченням стійкості українців. Вона розкриває багатогранність поняття «Чорнобиль» - від трагедії до переосмислення, від пам’яті до майбутнього.",
+    features: [
+      { icon: "star", text: "2 виставкові зали" },
+      { icon: "briefcase", text: "947 експонатів" },
+      { icon: "clock", text: "Тривалість екскурсії: 20-40 хв." },
+      { icon: "person", text: "15 відвідувачів одночасно" },
+      { icon: "monitor", text: "Доступно" },
+    ],
+  },
   {
     name: "Мультимедійна зала",
     gallery: [
@@ -387,7 +412,7 @@ export default function SpacesComponent({ onBuyTicket }: { onBuyTicket?: () => v
               <Gallery key={activeIdx} images={space.gallery} aspectClass="aspect-[3/2]" lightbox />
 
               {/* Description */}
-              <p className="font-['Montserrat',sans-serif] font-normal text-[16px] text-black leading-[1.65]">
+              <p className="font-['Montserrat',sans-serif] font-normal text-[16px] text-black leading-[1.65] whitespace-pre-line">
                 {space.description}
               </p>
 
@@ -406,6 +431,14 @@ export default function SpacesComponent({ onBuyTicket }: { onBuyTicket?: () => v
                     </span>
                   </div>
                 ))}
+
+                {space.name === "Експозиція" && (
+                  <div className="pt-[8px] flex justify-start md:justify-end">
+                    <MuseumButton icon="arrow" to="/exposition" className="w-full md:w-auto justify-center">
+                      ДІЗНАТИСЬ БІЛЬШЕ
+                    </MuseumButton>
+                  </div>
+                )}
               </div>
 
             </div>
