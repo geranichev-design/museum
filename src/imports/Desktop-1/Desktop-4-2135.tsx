@@ -204,7 +204,7 @@ function Component3() {
           <span className="leading-[22px]">креативність та інноваційність;</span>
         </li>
         <li className="ms-[24px]">
-          <span className="leading-[22px]">гнучкість і динамічність;</span>
+          <span className="leading-[22px]">гнучкість і динамічність.</span>
         </li>
       </ul>
     </div>
