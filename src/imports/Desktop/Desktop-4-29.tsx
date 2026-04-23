@@ -316,7 +316,7 @@ function Ticket() {
     <div className="gap-x-[24px] grid grid-cols-[minmax(0,1fr)_auto] py-[16px] relative shrink-0 w-full" data-name="ticket">
       <div aria-hidden="true" className="absolute border-b-2 border-black border-solid inset-0 pointer-events-none" />
       <Text />
-      <p className="font-['Oswald',sans-serif] font-medium leading-[24px] relative self-start shrink-0 text-[20px] text-black uppercase whitespace-nowrap">{`131 грн.`}</p>
+      <p className="font-['Oswald',sans-serif] font-medium leading-[24px] relative self-start shrink-0 text-[20px] text-black uppercase whitespace-nowrap">{`131 грн`}</p>
     </div>
   );
 }
@@ -335,7 +335,7 @@ function Ticket1() {
     <div className="gap-x-[24px] grid grid-cols-[minmax(0,1fr)_auto] py-[16px] relative shrink-0 w-full" data-name="ticket">
       <div aria-hidden="true" className="absolute border-b-2 border-black border-solid inset-0 pointer-events-none" />
       <Text1 />
-      <p className="font-['Oswald',sans-serif] font-medium leading-[24px] relative self-start shrink-0 text-[20px] text-black uppercase whitespace-nowrap">66 грн.</p>
+      <p className="font-['Oswald',sans-serif] font-medium leading-[24px] relative self-start shrink-0 text-[20px] text-black uppercase whitespace-nowrap">66 грн</p>
     </div>
   );
 }
@@ -354,7 +354,7 @@ function Ticket2() {
     <div className="gap-x-[24px] grid grid-cols-[minmax(0,1fr)_auto] py-[16px] relative shrink-0 w-full" data-name="ticket">
       <div aria-hidden="true" className="absolute border-b-2 border-black border-solid inset-0 pointer-events-none" />
       <Text2 />
-      <p className="font-['Oswald',sans-serif] font-medium leading-[24px] relative self-start shrink-0 text-[20px] text-black uppercase whitespace-nowrap">579 грн.</p>
+      <p className="font-['Oswald',sans-serif] font-medium leading-[24px] relative self-start shrink-0 text-[20px] text-black uppercase whitespace-nowrap">579 грн</p>
     </div>
   );
 }
