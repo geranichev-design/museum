@@ -148,12 +148,12 @@ function NavigationBar() {
       data-name="Navigation Bar"
       onClick={() => navigate("/")}
     >
-      <div className="relative shrink-0 size-[16px]">
-        <svg className="absolute block inset-0 size-full" fill="none" viewBox="0 0 16 16">
-          <path d="M10 3L5 8L10 13" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M6 3L1 8L6 13" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
+      <img
+        src={encodeURI("/icons/2arrow_left_blak.svg")}
+        alt=""
+        aria-hidden="true"
+        className="block shrink-0 size-[16px]"
+      />
       <p className="font-['Montserrat',sans-serif] font-semibold leading-normal text-black text-[16px] whitespace-nowrap">
         на головну
       </p>

@@ -23,30 +23,42 @@ export interface MuseumButtonProps {
 
 function DoubleArrowIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M10.6061 21.18L14.0752 24L24.0001 12L14.0752 0L10.6061 2.82L18.3755 12L10.6061 21.18Z" />
-      <path d="M0 21.18L3.46903 24L13.394 12L3.46903 0L0 2.82L7.76937 12L0 21.18Z" />
-    </svg>
+    <img
+      src={ICON_SOURCES.arrow}
+      alt=""
+      aria-hidden="true"
+      className="block size-[18px] shrink-0 object-contain"
+    />
   );
 }
 
 function BackDoubleArrowIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M13.394 21.18L9.9249 24L0 12L9.9249 0L13.394 2.82L5.62465 12L13.394 21.18Z" />
-      <path d="M24 21.18L20.531 24L10.606 12L20.531 0L24 2.82L16.2306 12L24 21.18Z" />
-    </svg>
+    <img
+      src={ICON_SOURCES.backArrow}
+      alt=""
+      aria-hidden="true"
+      className="block size-[18px] shrink-0 object-contain"
+    />
   );
 }
 
 function SearchIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="10.5" cy="10.5" r="7" stroke="currentColor" strokeWidth="2" />
-      <path d="M16 16L21.5 21.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    </svg>
+    <img
+      src={ICON_SOURCES.search}
+      alt=""
+      aria-hidden="true"
+      className="block size-[20px] shrink-0 object-contain"
+    />
   );
 }
+
+const ICON_SOURCES = {
+  arrow: encodeURI("/icons/2arrow_right_blak.svg"),
+  backArrow: encodeURI("/icons/2arrow_left_blak.svg"),
+  search: encodeURI("/icons/Property 1=search, Property 2=24.svg"),
+} as const;
 
 const COLOR_STYLES: Record<`${Variant}-${Theme}`, string> = {
   "solid-dark":

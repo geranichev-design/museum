@@ -96,7 +96,19 @@ function CollectionCard({
           {title}
         </p>
         <span className="font-['Oswald',sans-serif] font-medium text-[16px] md:text-[18px] text-black md:whitespace-nowrap md:ml-4">
-          {isAvailable ? "Детальніше »" : "Незабаром"}
+          {isAvailable ? (
+            <span className="inline-flex items-center gap-[6px]">
+              <span>Детальніше</span>
+              <img
+                src={encodeURI("/icons/2arrow_right_blak.svg")}
+                alt=""
+                aria-hidden="true"
+                className="block size-[16px] shrink-0 object-contain"
+              />
+            </span>
+          ) : (
+            "Незабаром"
+          )}
         </span>
       </div>
     </div>
@@ -439,82 +451,6 @@ function PhotoFundSection() {
   );
 }
 
-function ArticleCard({ title, text, date, source }: { title: string; text: string; date: string; source: string }) {
-  return (
-    <div className="flex flex-col md:flex-row">
-      <div className="w-full aspect-square md:w-[220px] md:h-[220px] md:aspect-auto shrink-0 bg-[#2a2a2a]" />
-      <div className="flex flex-col gap-[6px] md:gap-[8px] p-[12px] md:p-[16px] flex-1">
-        <p className="font-['Oswald',sans-serif] font-medium text-[13px] md:text-[16px] text-black uppercase leading-tight">
-          {title}
-        </p>
-        <p className="font-['Montserrat',sans-serif] text-[11px] md:text-[12px] text-gray-600 leading-[1.5]">
-          {text}
-        </p>
-        <div>
-          <p className="font-['Montserrat',sans-serif] text-[11px] md:text-[12px] text-gray-500">{date}</p>
-          <p className="font-['Montserrat',sans-serif] text-[11px] md:text-[12px] text-gray-500">{source}</p>
-        </div>
-        <div className="mt-auto pt-[4px]">
-          <MuseumButton variant="outlined" theme="light" icon="arrow" className="w-full md:w-auto">
-            ПЕРЕГЛЯНУТИ
-          </MuseumButton>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ArticlesSection() {
-  const [authorFilter, setAuthorFilter] = useState("");
-  const [dateFilter, setDateFilter] = useState("");
-
-  const articles = Array(6).fill(null).map(() => ({
-    title: "НАЗВА СТАТТІ, ПОШУК СЕНСУ ЖИТТЯ В УМОВАХ АПОКАЛІПСИСУ",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    date: "10.05.2026",
-    source: "Краєзнавці НП",
-  }));
-
-  return (
-    <section className="px-[16px] md:px-[55px] py-[40px] md:py-[72px] max-w-[1200px] mx-auto w-full">
-      <SectionTitle>Наукові статті</SectionTitle>
-
-      {/* Filters — stack on mobile */}
-      <div className="flex flex-col md:flex-row items-stretch md:items-center gap-[10px] md:gap-[16px] mb-[32px] md:mb-[40px]">
-        <div className="flex-1">
-          <MuseumInput
-            label="Автор публікації"
-            value={authorFilter}
-            onChange={setAuthorFilter}
-          />
-        </div>
-        <div className="md:w-[220px]">
-          <MuseumInput
-            label="Дата публікації"
-            type="date"
-            value={dateFilter}
-            onChange={setDateFilter}
-          />
-        </div>
-        <MuseumButton variant="solid" theme="dark" iconOnly icon="search" className="self-start md:self-auto" />
-      </div>
-
-      {/* Grid — 1 col on mobile, 2 on desktop */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] md:gap-[24px] mb-[32px] md:mb-[40px]">
-        {articles.map((article, i) => (
-          <ArticleCard key={i} {...article} />
-        ))}
-      </div>
-
-      <div className="flex justify-center">
-        <MuseumButton variant="solid" theme="dark" icon="arrow" className="w-full md:w-auto !text-black !border-transparent">
-          ЗАВАНТАЖИТИ БІЛЬШЕ
-        </MuseumButton>
-      </div>
-    </section>
-  );
-}
-
 function RegistryBanner() {
   return (
     <div
@@ -550,7 +486,6 @@ export default function ResearchersContent({ onBuyTicket: _onBuyTicket }: Resear
       <LibrarySection />
       <NewspaperFundSection />
       <PhotoFundSection />
-      <ArticlesSection />
       <RegistryBanner />
     </div>
   );

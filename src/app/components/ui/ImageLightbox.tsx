@@ -72,11 +72,14 @@ export function ImageLightbox({ images, currentIndex, onClose, onSelect }: Image
           onClick={prev}
           disabled={currentIndex === 0}
           className="flex items-center justify-center w-[44px] h-[44px] border-2 border-white text-white disabled:opacity-30 hover:border-[#dfbe22] hover:text-[#dfbe22] transition-colors shrink-0"
-          aria-label="Попереднє"
-        >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M12 5L7 10L12 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+        aria-label="Попереднє"
+      >
+          <img
+            src={encodeURI("/icons/1arrow_left_blak.svg")}
+            alt=""
+            aria-hidden="true"
+            className="block size-[20px] shrink-0 object-contain"
+          />
         </button>
 
         {/* Thumbnails */}
@@ -104,11 +107,14 @@ export function ImageLightbox({ images, currentIndex, onClose, onSelect }: Image
           onClick={next}
           disabled={currentIndex === images.length - 1}
           className="flex items-center justify-center w-[44px] h-[44px] border-2 border-white text-white disabled:opacity-30 hover:border-[#dfbe22] hover:text-[#dfbe22] transition-colors shrink-0"
-          aria-label="Наступне"
-        >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M8 5L13 10L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+        aria-label="Наступне"
+      >
+          <img
+            src={encodeURI("/icons/1arrow_right_blak.svg")}
+            alt=""
+            aria-hidden="true"
+            className="block size-[20px] shrink-0 object-contain"
+          />
         </button>
       </div>
     </div>,
