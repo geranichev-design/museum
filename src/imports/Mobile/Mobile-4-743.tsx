@@ -808,9 +808,14 @@ export default function Mobile({ activeTab, onTabChange }: { activeTab: string; 
         <Payment />
       </div>
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#e6bc00]">
-        <div className="flex items-center justify-center px-[16px] py-[16px]">
+        <a
+          href="https://next.privat24.ua/payments/form/%7B%22token%22:%220e2e9a669370d88b9b0e991d32ade8f4r4fampry%22,%22outSource%22:%22QR-mob%22%7D"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center px-[16px] py-[16px]"
+        >
           <p className="font-['Oswald',sans-serif] font-medium leading-[24px] text-[20px] text-black uppercase"><T uk="Придбати квитки" en="Buy tickets" /></p>
-        </div>
+        </a>
       </div>
     </div>
     </LangCtx.Provider>

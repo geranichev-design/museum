@@ -1,5 +1,4 @@
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router";
 import { MuseumInput } from "../app/components/ui/MuseumInput";
 import { PageHero } from "../app/components/PageHero";
@@ -37,16 +36,10 @@ function BulletList({ items, textClass = "text-white" }: { items: string[]; text
 }
 
 function HeroSection() {
-  const scrollToForm = () => {
-    document.getElementById("application-form")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <PageHero
       title="ДОСЛІДНИКАМ"
       imageSrc="/about-hero-bg.jpg"
-      buttonText="ПОДАТИ ЗАЯВКУ"
-      onButtonClick={scrollToForm}
     />
   );
 }
@@ -522,118 +515,11 @@ function ArticlesSection() {
   );
 }
 
-function ApplicationSection() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [visitDate, setVisitDate] = useState("");
-  const [institution, setInstitution] = useState("");
-  const [position, setPosition] = useState("");
-  const [education, setEducation] = useState("");
-  const [researchTopic, setResearchTopic] = useState("");
-  const [researchGoal, setResearchGoal] = useState("");
-  const [visitPurpose, setVisitPurpose] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-
-  const handleSubmit = async () => {
-    if (!firstName || !lastName || !phone || !email) return;
-    setStatus("sending");
-    try {
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          to_email: "mykola.geranichev@infotech.gov.ua",
-          from_name: `${firstName} ${lastName}`,
-          reply_to: email,
-          phone,
-          visit_date: visitDate || "не вказано",
-          institution: institution || "не вказано",
-          position: position || "не вказано",
-          education: education || "не вказано",
-          research_topic: researchTopic || "не вказано",
-          research_goal: researchGoal || "не вказано",
-          visit_purpose: visitPurpose || "не вказано",
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-      setStatus("success");
-      setFirstName(""); setLastName(""); setPhone(""); setEmail("");
-      setVisitDate(""); setInstitution(""); setPosition(""); setEducation("");
-      setResearchTopic(""); setResearchGoal(""); setVisitPurpose("");
-    } catch {
-      setStatus("error");
-    }
-  };
-
-  return (
-    <section id="application-form" className="w-full bg-[#DFBE22]">
-      <div className="px-[16px] md:px-[55px] py-[40px] md:py-[72px] max-w-[1200px] mx-auto w-full">
-        <SectionTitle darkSquare>Подати заявку</SectionTitle>
-
-        <div className="font-['Montserrat',sans-serif] text-[13px] md:text-[16px] text-black leading-[1.6] mb-[24px] md:mb-[40px] flex flex-col gap-[12px]">
-          <p>
-            Національний музей «Чорнобиль» володіє унікальною колекцією історичних матеріалів і відкритий до співпраці з дослідниками з України та світу. У Музеї облаштовано спеціальну кімнату для науково-дослідної роботи.
-          </p>
-          <p>
-            Для роботи з фондами просимо надіслати запит на електронну адресу:{" "}
-            <a href="mailto:research@chornobyl-museum.kyiv.ua" className="text-black font-bold underline">
-              research@chornobyl-museum.kyiv.ua
-            </a>
-            {" "}<span className="font-bold">або заповніть форму на сайті</span>
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[24px] gap-y-[12px] md:gap-y-[16px]">
-          <MuseumInput label="Ваше ім'я *" value={firstName} onChange={setFirstName} />
-          <MuseumInput label="Ваше прізвище *" value={lastName} onChange={setLastName} />
-          <MuseumInput label="Ваш контактний номер телефона *" value={phone} onChange={setPhone} type="tel" />
-          <MuseumInput label="Ваша електронна пошта *" value={email} onChange={setEmail} type="email" />
-          <MuseumInput label="Оберіть бажану дату роботи" value={visitDate} onChange={setVisitDate} type="date" />
-          <MuseumInput label="Назва установи/організації яку ви представляєте" value={institution} onChange={setInstitution} />
-          <MuseumInput label="Ваша посада" value={position} onChange={setPosition} />
-          <MuseumInput label="Ваша освіта та фах" value={education} onChange={setEducation} />
-          <MuseumInput label="Тема вашого дослідження" value={researchTopic} onChange={setResearchTopic} />
-          <MuseumInput label="Мета дослідження (дисертація, стаття, книга, фільм, проект т..." value={researchGoal} onChange={setResearchGoal} />
-          <div className="col-span-1 md:col-span-2">
-            <MuseumInput label="Коротко опишіть мету візиту та які консультації вам потрібні" value={visitPurpose} onChange={setVisitPurpose} multiline rows={4} />
-          </div>
-        </div>
-
-        {status === "success" && (
-          <p className="mt-[16px] font-['Montserrat',sans-serif] font-medium text-[15px] text-black">
-            ✓ Заявку надіслано! Ми зв'яжемось з вами найближчим часом.
-          </p>
-        )}
-        {status === "error" && (
-          <p className="mt-[16px] font-['Montserrat',sans-serif] font-medium text-[15px] text-red-800">
-            Помилка надсилання. Спробуйте ще раз або напишіть нам на пошту.
-          </p>
-        )}
-
-        <div className="mt-[20px] md:mt-[24px]">
-          <MuseumButton
-            variant="solid"
-            theme="dark"
-            icon="arrow"
-            className="w-full md:w-auto border-2 border-black"
-            onClick={handleSubmit}
-            disabled={status === "sending"}
-          >
-            {status === "sending" ? "НАДСИЛАННЯ..." : "ПОДАТИ ЗАЯВКУ"}
-          </MuseumButton>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function RegistryBanner() {
   return (
     <div
       id="registry"
-      className="w-full px-[16px] md:px-[55px] py-[24px] md:py-[32px] relative bg-cover bg-center"
+      className="w-full px-[16px] md:px-[55px] py-[80px] relative bg-cover bg-center"
       style={{ backgroundImage: "url('/reg_museum.png')" }}
     >
       <div className="absolute inset-0 bg-black/60" />
@@ -665,7 +551,6 @@ export default function ResearchersContent({ onBuyTicket: _onBuyTicket }: Resear
       <NewspaperFundSection />
       <PhotoFundSection />
       <ArticlesSection />
-      <ApplicationSection />
       <RegistryBanner />
     </div>
   );

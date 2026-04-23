@@ -56,11 +56,17 @@ function Frame3() {
   return (
     <div className="content-stretch flex gap-[48px] items-center justify-end relative shrink-0 w-[561px]">
       <Frame2 />
-      <div className="bg-[#dfbe22] content-stretch flex items-center justify-center px-[16px] py-[8px] relative shrink-0" data-name="button">
+      <a
+        href="https://next.privat24.ua/payments/form/%7B%22token%22:%220e2e9a669370d88b9b0e991d32ade8f4r4fampry%22,%22outSource%22:%22QR-mob%22%7D"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-[#dfbe22] content-stretch flex items-center justify-center px-[16px] py-[8px] relative shrink-0"
+        data-name="button"
+      >
         <div className="flex flex-col font-['Oswald',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black uppercase whitespace-nowrap">
           <p className="leading-[22px]">Придбати квиток</p>
         </div>
-      </div>
+      </a>
       <button className="content-stretch cursor-pointer flex flex-col gap-[6px] items-center justify-center relative shrink-0 size-[24px]" data-name="icons">
         <div className="h-[4px] relative shrink-0 w-full" data-name="Line 60 (Stroke)">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 4">
@@ -128,11 +134,17 @@ function Title() {
         </div>
         <p className="font-['Oswald',sans-serif] font-medium leading-[normal] relative shrink-0 text-[34px] text-black uppercase whitespace-nowrap">Квитки</p>
       </div>
-      <div className="bg-[#e6bc00] content-stretch flex items-center justify-center px-[16px] py-[8px] relative shrink-0" data-name="button">
+      <a
+        href="https://next.privat24.ua/payments/form/%7B%22token%22:%220e2e9a669370d88b9b0e991d32ade8f4r4fampry%22,%22outSource%22:%22QR-mob%22%7D"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-[#e6bc00] content-stretch flex items-center justify-center px-[16px] py-[8px] relative shrink-0 cursor-pointer pointer-events-auto z-10"
+        data-name="button"
+      >
         <div className="flex flex-col font-['Oswald',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-black uppercase whitespace-nowrap">
           <p className="leading-[24px]">Купити квиток</p>
         </div>
-      </div>
+      </a>
     </div>
   );
 }
