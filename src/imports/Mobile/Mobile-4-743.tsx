@@ -367,7 +367,7 @@ function Ticket() {
     <div className="gap-y-[8px] flex flex-col py-[16px] relative shrink-0 w-full" data-name="ticket">
       <div aria-hidden="true" className="absolute border-b-2 border-black border-solid inset-0 pointer-events-none" />
       <Text />
-      <p className="font-['Oswald',sans-serif] font-medium leading-[24px] text-[20px] text-black text-center uppercase">131 грн.</p>
+      <p className="font-['Oswald',sans-serif] font-medium leading-[24px] text-[20px] text-black text-center uppercase">131 грн</p>
     </div>
   );
 }
@@ -386,7 +386,7 @@ function Ticket1() {
     <div className="gap-y-[8px] flex flex-col py-[16px] relative shrink-0 w-full" data-name="ticket">
       <div aria-hidden="true" className="absolute border-b-2 border-black border-solid inset-0 pointer-events-none" />
       <Text1 />
-      <p className="font-['Oswald',sans-serif] font-medium leading-[24px] text-[20px] text-black text-center uppercase">66 грн.</p>
+      <p className="font-['Oswald',sans-serif] font-medium leading-[24px] text-[20px] text-black text-center uppercase">66 грн</p>
     </div>
   );
 }
@@ -405,7 +405,7 @@ function Ticket2() {
     <div className="gap-y-[8px] flex flex-col py-[16px] relative shrink-0 w-full" data-name="ticket">
       <div aria-hidden="true" className="absolute border-b-2 border-black border-solid inset-0 pointer-events-none" />
       <Text2 />
-      <p className="font-['Oswald',sans-serif] font-medium leading-[24px] text-[20px] text-black text-center uppercase">579 грн.</p>
+      <p className="font-['Oswald',sans-serif] font-medium leading-[24px] text-[20px] text-black text-center uppercase">579 грн</p>
     </div>
   );
 }

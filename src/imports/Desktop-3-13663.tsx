@@ -180,7 +180,7 @@ function Ticket() {
   return (
     <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[___minmax(0,5fr)_minmax(0,1fr)_minmax(0,1fr)] grid-rows-[repeat(1,fit-content(100%))] h-[86px] py-[16px] relative shrink-0 w-full" data-name="ticket">
       <div aria-hidden="true" className="absolute border-b-2 border-black border-solid inset-0 pointer-events-none" />
-      <p className="col-2 font-['Oswald',sans-serif] font-medium justify-self-stretch leading-[24px] relative row-1 self-start shrink-0 text-[20px] text-black text-center uppercase">{` 131 грн.`}</p>
+      <p className="col-2 font-['Oswald',sans-serif] font-medium justify-self-stretch leading-[24px] relative row-1 self-start shrink-0 text-[20px] text-black text-center uppercase">{` 131 грн`}</p>
       <div className="bg-[#e6bc00] col-3 justify-self-stretch relative row-1 self-start shrink-0" data-name="button">
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex items-center justify-center px-[16px] py-[8px] relative size-full">
@@ -208,7 +208,7 @@ function Ticket1() {
   return (
     <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[___minmax(0,5fr)_minmax(0,1fr)_minmax(0,1fr)] grid-rows-[repeat(1,fit-content(100%))] h-[86px] py-[16px] relative shrink-0 w-full" data-name="ticket">
       <div aria-hidden="true" className="absolute border-b-2 border-black border-solid inset-0 pointer-events-none" />
-      <p className="col-2 font-['Oswald',sans-serif] font-medium justify-self-stretch leading-[24px] relative row-1 self-start shrink-0 text-[20px] text-black text-center uppercase">66 грн.</p>
+      <p className="col-2 font-['Oswald',sans-serif] font-medium justify-self-stretch leading-[24px] relative row-1 self-start shrink-0 text-[20px] text-black text-center uppercase">66 грн</p>
       <div className="bg-[#e6bc00] col-3 justify-self-stretch relative row-1 self-start shrink-0" data-name="button">
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex items-center justify-center px-[16px] py-[8px] relative size-full">
@@ -236,7 +236,7 @@ function Ticket2() {
   return (
     <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[___minmax(0,5fr)_minmax(0,1fr)_minmax(0,1fr)] grid-rows-[repeat(1,fit-content(100%))] h-[108px] py-[16px] relative shrink-0 w-full" data-name="ticket">
       <div aria-hidden="true" className="absolute border-b-2 border-black border-solid inset-0 pointer-events-none" />
-      <p className="col-2 font-['Oswald',sans-serif] font-medium justify-self-stretch leading-[24px] relative row-1 self-start shrink-0 text-[20px] text-black text-center uppercase">579 грн.</p>
+      <p className="col-2 font-['Oswald',sans-serif] font-medium justify-self-stretch leading-[24px] relative row-1 self-start shrink-0 text-[20px] text-black text-center uppercase">579 грн</p>
       <div className="bg-[#e6bc00] col-3 justify-self-stretch relative row-1 self-start shrink-0" data-name="button">
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex items-center justify-center px-[16px] py-[8px] relative size-full">
