@@ -117,7 +117,7 @@ function Informer() {
               {`У разі виникнення запитань телефонуйте за номерами: `}
               <br aria-hidden="true" />
             </span>
-            <span className="font-['Montserrat',sans-serif] font-bold leading-[normal] text-[16px]">+38 044 425-44-62, 063 946-21-43</span>
+            <span className="font-['Montserrat',sans-serif] font-bold leading-[normal] text-[16px]">+38 044 425-44-62, +38 063 946-21-43</span>
           </p>
         </div>
       </div>

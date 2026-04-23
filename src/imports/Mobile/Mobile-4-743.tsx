@@ -301,8 +301,7 @@ function Informer() {
           <p className="font-['Montserrat',sans-serif] font-normal leading-[normal] relative shrink-0 text-[16px] text-black text-center w-full">
             <T uk="У разі виникнення запитань телефонуйте за номерами:" en="If you have any questions, please call:" />
           </p>
-          <p className="font-['Montserrat',sans-serif] font-bold leading-[normal] relative shrink-0 text-[16px] text-black text-center w-full">+38 044 425-44-62</p>
-          <p className="font-['Montserrat',sans-serif] font-bold leading-[normal] relative shrink-0 text-[16px] text-black text-center w-full">063 946-21-43</p>
+          <p className="font-['Montserrat',sans-serif] font-bold leading-[normal] relative shrink-0 text-[16px] text-black text-center w-full">+38 044 425-44-62, +38 063 946-21-43</p>
         </div>
       </div>
     </div>
