@@ -569,7 +569,7 @@ function Description() {
 
 function Since() {
   return (
-    <div className="col-1 content-stretch flex gap-[16px] items-start relative row-1 self-start shrink-0 w-[571px]" data-name="since">
+    <div className="col-1 content-stretch flex gap-[16px] items-start min-w-0 relative row-1 self-start w-full" data-name="since">
       <div className="relative shrink-0 size-[76px]" data-name="atom 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgAtom1} />
       </div>
@@ -589,7 +589,7 @@ function Description1() {
 
 function Excursion() {
   return (
-    <div className="col-2 content-stretch flex gap-[16px] items-start relative row-1 self-start shrink-0 w-[570px]" data-name="excursion">
+    <div className="col-2 content-stretch flex gap-[16px] items-start min-w-0 relative row-1 self-start w-full" data-name="excursion">
       <div className="relative shrink-0 size-[76px]" data-name="excursion 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgExcursion1} />
       </div>
@@ -609,7 +609,7 @@ function Description2() {
 
 function Found() {
   return (
-    <div className="col-1 content-stretch flex gap-[16px] items-start relative row-2 self-start shrink-0 w-[570px]" data-name="found">
+    <div className="col-1 content-stretch flex gap-[16px] items-start min-w-0 relative row-2 self-start w-full" data-name="found">
       <div className="relative shrink-0 size-[76px]" data-name="temple 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgTemple1} />
       </div>
@@ -629,7 +629,7 @@ function Description3() {
 
 function Communication() {
   return (
-    <div className="col-2 content-stretch flex gap-[16px] items-start relative row-2 self-start shrink-0 w-[570px]" data-name="communication">
+    <div className="col-2 content-stretch flex gap-[16px] items-start min-w-0 relative row-2 self-start w-full" data-name="communication">
       <div className="relative shrink-0 size-[76px]" data-name="interactive 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgInteractive1} />
       </div>
@@ -649,7 +649,7 @@ function Description4() {
 
 function Accountist() {
   return (
-    <div className="col-1 content-stretch flex gap-[16px] items-start relative row-3 self-start shrink-0 w-[570px]" data-name="accountist">
+    <div className="col-1 content-stretch flex gap-[16px] items-start min-w-0 relative row-3 self-start w-full" data-name="accountist">
       <div className="relative shrink-0 size-[76px]" data-name="profit 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgProfit1} />
       </div>
@@ -669,7 +669,7 @@ function Description5() {
 
 function Tech() {
   return (
-    <div className="col-2 content-stretch flex gap-[16px] items-start relative row-3 self-start shrink-0 w-[570px]" data-name="tech">
+    <div className="col-2 content-stretch flex gap-[16px] items-start min-w-0 relative row-3 self-start w-full" data-name="tech">
       <div className="relative shrink-0 size-[76px]" data-name="green-technology 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgGreenTechnology1} />
       </div>
@@ -689,7 +689,7 @@ function Description6() {
 
 function Exebition() {
   return (
-    <div className="col-[1/span_2] content-stretch flex gap-[16px] items-start justify-self-stretch relative row-4 self-start shrink-0" data-name="exebition">
+    <div className="col-[1/span_2] content-stretch flex gap-[16px] items-start justify-self-stretch min-w-0 relative row-4 self-start w-full" data-name="exebition">
       <div className="relative shrink-0 size-[76px]" data-name="gallery 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgGallery1} />
       </div>
@@ -700,7 +700,7 @@ function Exebition() {
 
 function Departments() {
   return (
-    <div className="flex-[1_0_0] gap-x-[24px] gap-y-[64px] grid grid-cols-[repeat(2,fit-content(100%))] grid-rows-[repeat(4,fit-content(100%))] min-w-px relative" data-name="departments">
+    <div className="flex-[1_0_0] gap-x-[24px] gap-y-[64px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(4,fit-content(100%))] min-w-0 relative w-full" data-name="departments">
       <Since />
       <Excursion />
       <Found />
