@@ -1339,7 +1339,13 @@ function Component12() {
           <span className="leading-[22px]">Автобус: 62</span>
         </li>
       </ul>
-      <div className="content-stretch flex gap-[4px] items-center p-[2px] relative shrink-0" data-name="button">
+      <a
+        href="https://www.google.com/maps/dir//''/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x40d4ce447d839e63:0x191f859de9e0d5ff!3e0?g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYASAA"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="content-stretch flex gap-[4px] items-center p-[2px] relative shrink-0"
+        data-name="button"
+      >
         <p className="font-['Montserrat',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#dfbe22] text-[16px] whitespace-nowrap">Прокласти маршрут</p>
         <div className="flex items-center justify-center relative shrink-0">
           <div className="-scale-y-100 flex-none rotate-180">
@@ -1353,7 +1359,7 @@ function Component12() {
             </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
   );
 }

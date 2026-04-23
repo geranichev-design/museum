@@ -492,7 +492,12 @@ function ContactsSection() {
             <li className="ms-[20px]">Трамвай: 14,19,18,12</li>
             <li className="ms-[20px]">Автобус: 62</li>
           </ul>
-          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-[4px]">
+          <a
+            href="https://www.google.com/maps/dir//''/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x40d4ce447d839e63:0x191f859de9e0d5ff!3e0?g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYASAA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-[4px]"
+          >
             <p className="font-['Montserrat',sans-serif] font-semibold text-[14px] text-[#dfbe22]">Прокласти маршрут</p>
           </a>
         </div>
