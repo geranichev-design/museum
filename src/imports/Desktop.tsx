@@ -2,6 +2,7 @@ import { createContext, useContext } from "react";
 import { HomeEventsSection } from "../app/components/HomeEventsSection";
 import { ExpositionSection } from "../app/components/ExpositionSection";
 import { MuseumSpacesSection } from "../app/components/MuseumSpacesSection";
+import { MuseumClosureNoticeSection } from "../app/components/MuseumClosureNoticeSection";
 import { useLanguage, type Lang } from "../app/context/LanguageContext";
 import svgPaths from "./svg-egu612f841";
 import imgImage92 from "figma:asset/8d92b713f292821b0a1ee391109f066ed6f10fab.png";
@@ -1031,6 +1032,7 @@ function Content1() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full z-[1]" data-name="Content">
       <Hero />
+      <MuseumClosureNoticeSection />
       <div id="history" className="w-full"><Section /></div>
       <ExpositionSection />
       <div id="spaces" className="w-full"><MuseumSpacesSection /></div>

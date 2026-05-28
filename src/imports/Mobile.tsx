@@ -2,6 +2,7 @@ import svgPaths from "./svg-ruc1duwf30";
 import { HomeEventsSection } from "../app/components/HomeEventsSection";
 import { ExpositionSection } from "../app/components/ExpositionSection";
 import { MuseumSpacesSection } from "../app/components/MuseumSpacesSection";
+import { MuseumClosureNoticeSection } from "../app/components/MuseumClosureNoticeSection";
 import imgImage92 from "figma:asset/8d92b713f292821b0a1ee391109f066ed6f10fab.png";
 import imgForest from "figma:asset/12f073a52eefec5f24fd1d99b95248db5666af0d.png";
 import imgMuseum from "figma:asset/fe939b86272ba154e7cb09fa28cdbb8f264cd151.png";
@@ -1146,6 +1147,7 @@ function Content() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full z-[1]" data-name="Content">
       <Hero />
+      <MuseumClosureNoticeSection />
       <div id="history" className="w-full"><Section /></div>
       <Section3Animate />
       <ExpositionSection />

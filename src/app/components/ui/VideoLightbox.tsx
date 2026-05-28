@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 interface VideoLightboxProps {
   src: string;
   onClose: () => void;
+  autoPlay?: boolean;
 }
 
 function formatTime(s: number) {
@@ -13,7 +14,7 @@ function formatTime(s: number) {
   return `${m}:${sec.toString().padStart(2, "0")}`;
 }
 
-export function VideoLightbox({ src, onClose }: VideoLightboxProps) {
+export function VideoLightbox({ src, onClose, autoPlay = false }: VideoLightboxProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -82,6 +83,15 @@ export function VideoLightbox({ src, onClose }: VideoLightboxProps) {
   };
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v || !autoPlay) return;
+
+    v.muted = false;
+    v.volume = volume;
+    void v.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+  }, [autoPlay, volume]);
 
   return createPortal(
     <div
