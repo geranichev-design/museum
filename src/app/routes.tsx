@@ -9,6 +9,7 @@ import EventDetailPage from "./pages/EventDetailPage";
 import SpacesPage from "./pages/SpacesPage";
 import ExpositionPage from "./pages/ExpositionPage";
 import CollectionItemPage from "./pages/CollectionItemPage";
+import DonatePage from "./pages/DonatePage";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
   {
     path: "/collection/:id",
     Component: CollectionItemPage,
+  },
+  {
+    path: "/donate",
+    Component: DonatePage,
   },
   {
     path: "*",
